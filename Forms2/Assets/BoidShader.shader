@@ -35,10 +35,10 @@ Shader "Custom/Boid" {
 			float3 worldPos;
 		};
 
-		half _Glossiness;
-		half _Metallic;
+		float _Glossiness;
+		float _Metallic;
 		float _Alpha;
-		half _Offset;
+		float _Offset;
 
 		float _PositionScale;
 		float _TimeMultiplier;
@@ -182,9 +182,19 @@ Shader "Custom/Boid" {
 			float ci = 1 + (_CI *  (1.0 / d));//pow(_CI, 1.0 / d);
 
 			fixed3 c = hsv_to_rgb(float3(hue, 1, b * ci));
+
+			/*
+			fixed4 c1 = fixed4(0,0,0,0);
+			c1.r = c.r;
+			c1.g = c.g;
+			c1.b = c.b;
+			c1.a = _Alpha;
+			*/
+
 			//float3 shift = float3(_ColorShift, 1, 1);
 			//c = shift_col(c, shift);
-			o.Albedo = c.rgb;
+			//c.a = _Alpha;
+			o.Albedo = c;
 			// Metallic and smoothness come from slider variables
 			o.Metallic = _Metallic;
 			o.Smoothness = _Glossiness;
