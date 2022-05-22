@@ -221,7 +221,7 @@ public class CornerCamera : MonoBehaviour
         directionalLight.intensity = f;
     }
 
-    private static float distance = -100;
+    private static float distance = -150;
 
     public void RestartScene(InputAction.CallbackContext context)
     {
@@ -238,7 +238,7 @@ public class CornerCamera : MonoBehaviour
         }
         
         float f = context.ReadValue<float>() * 50;        
-        Debug.Log("Front Feeler Length: " + f);
+        Debug.Log("Probe Length: " + f);
         ns.feelerDepth = f;
         ns.sideFeelerDepth  = f;
     }
@@ -331,7 +331,7 @@ public class CornerCamera : MonoBehaviour
             return;
         }        
         
-        Debug.Log("Time Changed: " + context.ReadValue<float>() + "stopped: " + stopped);
+        Debug.Log("Speed: " + context.ReadValue<float>());
         tTimeChanged = context.ReadValue<float>();
         if (! stopped)
         {

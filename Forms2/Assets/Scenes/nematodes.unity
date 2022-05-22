@@ -297,7 +297,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -100}
+  m_LocalPosition: {x: 0, y: 0, z: -150}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -480,7 +480,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1024887882
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1066,7 +1066,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1049925077}
         m_TargetAssemblyTypeName: ConsoleToGUI, Assembly-CSharp
-        m_MethodName: ToggleConsole
+        m_MethodName: Show
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1095,3 +1095,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a037d5e5707075439e233e81de6d414, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ShowStack: 1
+  ShowFPS: 1
+  LogBuffer: 5000
+  LogHeight: 250
+  OnlyInEditor: 0
+  SaveLogFile: 1
+  DisplayInUi: 0
+  ShowLog: 1
+  logFilaName: 
+  FontLogSize: 25
+  path: /Logs/Infinite Forms
+  filePrefix: 'Infinite Forms '
