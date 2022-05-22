@@ -53,6 +53,8 @@ public float shaderTs = 1.0f;
             GameObject nematode = GameObject.Instantiate<GameObject>(prefab, pos, q);
             nematode.transform.parent = this.transform;
         }
+
+        Utilities.AssignmaterialRecorsive(this.gameObject, material);
     }
 
     public float transitionTime = 2.0f;

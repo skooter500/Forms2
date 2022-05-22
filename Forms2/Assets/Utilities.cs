@@ -16,6 +16,16 @@ public class Utilities
         return m1 + ((dist / range1) * range2);
     }
 
+    public static void AssignmaterialRecorsive(GameObject root, Material m)
+    {
+        Renderer[] rs = root.GetComponentsInChildren<Renderer>();
+        foreach(Renderer r in rs)
+        {
+            r.material = m;
+        }
+
+    }
+
     static public bool checkNaN(Quaternion v)
     {
         if (float.IsNaN(v.x) || float.IsInfinity(v.x))

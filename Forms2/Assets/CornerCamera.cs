@@ -313,9 +313,10 @@ public class CornerCamera : MonoBehaviour
         }
         float f = context.ReadValue<float>();        
 
+        f = Utilities.Map(f, 0, 1, -180, 180);
         
         Debug.Log("Color Shift: " + f);
-        colorGrading.hueShift.Override(Utilities.Map(f, 0, 1, -180, 180));
+        colorGrading.hueShift.Override(f);
         //ns.material.SetFloat("_ColorShift", f);
 
     }
