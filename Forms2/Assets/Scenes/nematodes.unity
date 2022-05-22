@@ -507,7 +507,7 @@ MonoBehaviour:
   minRange: 20
   maxRange: 200
   material: {fileID: 2100000, guid: a4eaadbdcf669cc45b81d00303f74558, type: 2}
-  transitionTime: 5
+  transitionTime: 10
   maxJump: 10
   transition: 0
 --- !u!4 &1024887883
@@ -580,7 +580,7 @@ MonoBehaviour:
   toDistance: 0
   to: {x: 0, y: 0, z: 0, w: 0}
   angle: 90
-  transitionTime: 5
+  transitionTime: 10
   elapsed: 0
   step: 50
   min: 0
