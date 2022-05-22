@@ -1,0 +1,781 @@
+{
+    "name": "MIDI Input Actions",
+    "maps": [
+        {
+            "name": "MIDI Controls",
+            "id": "d4ca99a7-29c8-4adc-bdcc-aa057baf5600",
+            "actions": [
+                {
+                    "name": "Speed",
+                    "type": "Value",
+                    "id": "44cf3524-2496-400d-ada4-8f2635abc4c2",
+                    "expectedControlType": "MidiValue",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "Forward",
+                    "type": "Button",
+                    "id": "74aff319-5d7c-49cf-b986-407bb0366034",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Backward",
+                    "type": "Button",
+                    "id": "a8ebe27e-9825-473f-9ed2-41def4761c75",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Yaw Clock",
+                    "type": "Button",
+                    "id": "dc27f454-333f-4a80-8fc5-c8fec77612ad",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Yaw Counter",
+                    "type": "Button",
+                    "id": "e26990d5-845e-4d9b-8c95-978f963cc5bc",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Pitch Clock",
+                    "type": "Button",
+                    "id": "4e1c1724-02a5-4429-8be7-78dadf636e5d",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Pitch Counter",
+                    "type": "Button",
+                    "id": "24cf8cdd-33fc-4b75-a4c0-129e422262d8",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Roll Clock",
+                    "type": "Button",
+                    "id": "4ce96bec-4ecd-40c0-a161-96ddf5a431d5",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Roll Count",
+                    "type": "Button",
+                    "id": "639f586e-e01a-440a-8581-4d1dd3187f46",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Radius",
+                    "type": "Value",
+                    "id": "c10ae3b6-f2fe-47b3-bcec-4e56f1e8f889",
+                    "expectedControlType": "MidiValue",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "CenterLight",
+                    "type": "Value",
+                    "id": "b8ffc3fc-d8b4-45bc-aa80-97bb64e56b25",
+                    "expectedControlType": "MidiValue",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "AmbientLight",
+                    "type": "Value",
+                    "id": "13c264c7-40db-437c-8380-ae3f87227105",
+                    "expectedControlType": "MidiValue",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "Quit",
+                    "type": "Button",
+                    "id": "7d65c2c0-0d25-4f4d-ad55-39349371b35b",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "ColorRange",
+                    "type": "Value",
+                    "id": "819d0f7a-7247-4c06-accc-35c3bbaede6d",
+                    "expectedControlType": "MidiValue",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "Feeler Depth",
+                    "type": "Value",
+                    "id": "15211e8b-2867-40cd-a7b3-df82a8025477",
+                    "expectedControlType": "MidiValue",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "Restart Scene",
+                    "type": "Button",
+                    "id": "a92d57c5-05fb-4281-bae8-1c06207149c7",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "StopStart",
+                    "type": "Button",
+                    "id": "07873dce-11ef-4153-ad57-a6bad1811e5a",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Test",
+                    "type": "Value",
+                    "id": "5bfdbc37-dec6-4c28-8a9c-c0b8c7c929df",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "Alpha",
+                    "type": "Value",
+                    "id": "bf2fe92b-332c-4c12-9377-48f148d55944",
+                    "expectedControlType": "MidiValue",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "ColorShift",
+                    "type": "Value",
+                    "id": "563ec407-07a8-4871-8700-5c9fcb35d298",
+                    "expectedControlType": "MidiValue",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "Bloom",
+                    "type": "Value",
+                    "id": "180a87ea-c524-467d-b589-f273a93044f8",
+                    "expectedControlType": "MidiValue",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "ShaderSpeed",
+                    "type": "Value",
+                    "id": "b8ec0e20-a6fc-4200-af52-2659598a85db",
+                    "expectedControlType": "MidiValue",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "ColorWidth",
+                    "type": "Value",
+                    "id": "d9116ac5-5270-406b-b4a9-fb6fb79ade50",
+                    "expectedControlType": "MidiValue",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "FogEnd",
+                    "type": "Value",
+                    "id": "f5ed9124-7ef1-4638-9b69-82fa12229ba3",
+                    "expectedControlType": "MidiValue",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "Smootyness",
+                    "type": "Value",
+                    "id": "03633395-216b-428b-9276-6c09fb143b02",
+                    "expectedControlType": "MidiValue",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "Metalic",
+                    "type": "Value",
+                    "id": "616eb8eb-1a01-428b-8076-2d0189630bda",
+                    "expectedControlType": "MidiValue",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "Temp",
+                    "type": "Value",
+                    "id": "3db9e6a6-0a92-4290-99e9-2afbdec90b29",
+                    "expectedControlType": "MidiValue",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "Tint",
+                    "type": "Value",
+                    "id": "d77f76f5-c2eb-4979-9f18-33cbb0c41d44",
+                    "expectedControlType": "MidiValue",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "Console",
+                    "type": "Button",
+                    "id": "bb5b105f-16bd-452e-9288-bdd4f6865971",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "fc2cdc72-1015-4eab-a990-f92b24b5cf9e",
+                    "path": "<MidiDevice>/control007",
+                    "interactions": "",
+                    "processors": "Scale(factor=3)",
+                    "groups": "",
+                    "action": "Speed",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "5fd74e05-315d-4b64-93a3-5f959c885477",
+                    "path": "<MidiDevice>/note044",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Forward",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a1ab168d-2206-43d1-b381-227153829f3a",
+                    "path": "<MidiDevice>/note061",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Forward",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "12355413-e457-4f8e-a028-9d4ca473b6b3",
+                    "path": "<MidiDevice>/note075",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Forward",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "72c601c2-a992-4b0f-ac77-4adffbebd451",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Forward",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "f53ec072-549c-4331-a6af-402ae972f6ca",
+                    "path": "<MidiDevice>/note036",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Backward",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "79523699-523f-4e8f-a1c4-5ad5e841fc70",
+                    "path": "<MidiDevice>/note080",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Backward",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "5fb142c4-3f40-41b3-942d-4f0b655884d7",
+                    "path": "<MidiDevice>/note057",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Backward",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "95af8808-906f-4a20-9fe3-02ba51359bfe",
+                    "path": "<MidiDevice>/note045",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Yaw Clock",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "bcd5925a-1666-456c-b57d-c553c498327c",
+                    "path": "<MidiDevice>/note077",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Yaw Clock",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "1f292497-5abf-400c-b364-95a2baf69ca5",
+                    "path": "<MidiDevice>/note048",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Yaw Clock",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "058e99f9-8e42-4964-8b61-1dca4b65afbf",
+                    "path": "<MidiDevice>/note037",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Yaw Counter",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "022d62a7-449c-4357-9bd3-8890a119c925",
+                    "path": "<MidiDevice>/note069",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Yaw Counter",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "3e2043e7-34f6-4128-b165-1c7c4062c369",
+                    "path": "<MidiDevice>/note064",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Yaw Counter",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "612ff8d3-b8bd-49df-9c81-72645cfad99b",
+                    "path": "<MidiDevice>/note046",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Pitch Clock",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "8bf6280a-cd10-4341-873e-306a3340e4f2",
+                    "path": "<MidiDevice>/note075",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Pitch Clock",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ba185e8b-3420-4592-befa-b9978f8154d5",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Pitch Clock",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b91d4672-3dff-412c-a8a1-33311459c73e",
+                    "path": "<MidiDevice>/note038",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Pitch Counter",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "be41f28b-837b-4d3f-bd79-6256e7aaee64",
+                    "path": "<MidiDevice>/note064",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Pitch Counter",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "770685d5-a7bd-403a-9d23-88c400f3ab45",
+                    "path": "<MidiDevice>/note060",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Pitch Counter",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "91a4fb99-d420-412f-a84f-b22c14bedc47",
+                    "path": "<MidiDevice>/note047",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Roll Clock",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "7c23151c-e1a8-41b5-8c76-758e6d300bd7",
+                    "path": "<MidiDevice>/note053",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Roll Clock",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "1dbf7ef2-0a28-49f0-a5b4-d595f7412de7",
+                    "path": "<MidiDevice>/note083",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Roll Clock",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "1ff4456c-0c82-4b2c-8fc6-54d0fffb3c12",
+                    "path": "<MidiDevice>/note039",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Roll Count",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "82206ba7-0981-4a07-99c1-553160ff3816",
+                    "path": "<MidiDevice>/note067",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Roll Count",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "2415f264-884e-48f2-b8e8-bde4f566ee60",
+                    "path": "<MidiDevice>/note084",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Roll Count",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "dc3ee1b8-8106-4fe2-a3eb-2b70797a7d89",
+                    "path": "<MidiDevice>/control010",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Radius",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b80681d0-f58c-4e38-97a9-1f49fa828f2f",
+                    "path": "<MidiDevice>/control018",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "AmbientLight",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "90a6eb1c-414c-4d04-ba40-c979d1d643cd",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Quit",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "0cb5d775-6de8-4ed2-becc-17502944efcd",
+                    "path": "<MidiDevice>/control077",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ColorRange",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "5c31c722-f536-46b8-9786-cec026747206",
+                    "path": "<MidiDevice>/control114",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Feeler Depth",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "39c3077e-4b80-45da-9549-efd3f8ef5fd0",
+                    "path": "<MidiDevice>/note043",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Restart Scene",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "97ef4f3f-2d42-414e-8327-c27cee913b29",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Restart Scene",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "29b5f70a-c4f1-45f8-8590-6e22db235fff",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Test",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "11376ea6-8ac4-4279-b23d-3f873ea6c017",
+                    "path": "<MidiDevice>/control071",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Alpha",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "03c2fafe-f540-4398-b0b0-7bd175a38a19",
+                    "path": "<MidiDevice>/control074",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "CenterLight",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "5cc14eaa-f81d-43c8-84ab-48ed058e7548",
+                    "path": "<MidiDevice>/note051",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "StopStart",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "666ade93-8cc8-4938-b196-c7dee871e7ed",
+                    "path": "<MidiDevice>/control093",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ColorShift",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "3ef836ca-beee-40fc-a966-0da6d559376c",
+                    "path": "<MidiDevice>/control019",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Bloom",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "eb94fee4-9c86-4922-9bfc-b09369e6445f",
+                    "path": "<MidiDevice>/control017",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ColorWidth",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "56a18fc0-4b76-4170-8e93-f10a37fb5511",
+                    "path": "<MidiDevice>/control079",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ShaderSpeed",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "7881b2e3-04f4-4a40-a7b1-5b25dbb474b5",
+                    "path": "<MidiDevice>/control016",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Smootyness",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "55120f78-e8c5-460f-ab11-13076af5775a",
+                    "path": "<MidiDevice>/control091",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Temp",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "142a0cb1-7a30-4f50-bbdd-987af897df1b",
+                    "path": "<MidiDevice>/control073",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Tint",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c204759b-877b-473f-9992-2c35fbcfc0d7",
+                    "path": "<MidiDevice>/control076",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "FogEnd",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "2881c71b-99b6-4c2b-9a82-cfa829699faf",
+                    "path": "<MidiDevice>/note042",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Console",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
