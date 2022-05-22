@@ -4,19 +4,23 @@ using System.Linq;
 using System.Text;
 using UnityEngine;
 
-[RequireComponent (typeof(Boid))]
-public abstract class SteeringBehaviour:MonoBehaviour
+
+
+namespace GE
 {
-    public float weight = 1.0f;
-    public Vector3 force;
-
-    [HideInInspector]
-    public Boid boid;
-
-    public void Awake()
+    public abstract class SteeringBehaviour:MonoBehaviour
     {
-        boid = GetComponent<Boid>();
-    }
+        public float weight = 1.0f;
+        public Vector3 force;
 
-    public abstract Vector3 Calculate();
+        [HideInInspector]
+        public Boid boid;
+
+        public void Awake()
+        {
+            boid = GetComponent<Boid>();
+        }
+
+        public abstract Vector3 Calculate();
+    }
 }

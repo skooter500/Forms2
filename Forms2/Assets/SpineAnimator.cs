@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
+namespace GE
+{
 public class SpineAnimator : MonoBehaviour {
     public List<Vector3> offsets = new List<Vector3>();
     public List<Transform> children = new List<Transform>();
@@ -52,4 +55,5 @@ public class SpineAnimator : MonoBehaviour {
             current.rotation = Quaternion.Slerp(current.rotation, wantedRotation, dt * damping);
         }
     }
+}
 }

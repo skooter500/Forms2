@@ -70,7 +70,7 @@ Material:
     - _DstBlend: 0
     - _Fade: 0.708
     - _GlossMapScale: 1
-    - _Glossiness: 1
+    - _Glossiness: 0.5275591
     - _GlossyReflections: 1
     - _Metallic: 1
     - _Mode: 0
@@ -78,11 +78,11 @@ Material:
     - _Offset: 42440
     - _Palette: 1
     - _Parallax: 0.02
-    - _PositionScale: 99.99995
+    - _PositionScale: 99.50965
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
-    - _TimeMultiplier: 16.468594
+    - _TimeMultiplier: 49.99999
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:

@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+namespace GE
+{
+
 public class Boid : MonoBehaviour
 {
     List<SteeringBehaviour> behaviours = new List<SteeringBehaviour>();
@@ -116,4 +119,6 @@ public class Boid : MonoBehaviour
             velocity *= (1.0f - (damping * Time.deltaTime * NematodeSchool.timeScale));
         }
     }
+}
+
 }

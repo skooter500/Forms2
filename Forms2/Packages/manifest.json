@@ -6,6 +6,14 @@
       "scopes": [
         "jp.keijiro"
       ]
+    },
+    {
+      "name": "Valve",
+      "url": "https://registry.npmjs.org/",
+      "scopes": [
+        "com.valvesoftware",
+        "com.valvesoftware.unity.openvr"
+      ]
     }
   ],
   "dependencies": {
@@ -18,6 +26,7 @@
     "com.unity.textmeshpro": "3.0.6",
     "com.unity.timeline": "1.6.4",
     "com.unity.ugui": "1.0.0",
+    "com.valvesoftware.unity.openvr": "3.0.0",
     "jp.keijiro.minis": "1.0.10",
     "com.unity.modules.ai": "1.0.0",
     "com.unity.modules.androidjni": "1.0.0",
