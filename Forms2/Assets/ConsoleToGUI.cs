@@ -35,13 +35,15 @@ public class ConsoleToGUI : MonoBehaviour
     [Tooltip("Font log size")]
     public int FontLogSize = 25;
 
-    public string path = "/Logs/Infinite Forms";
+    public string path = "/Documents/Infinite Forms Logs";
     public string filePrefix = "Infinite Forms ";
 
     public void Show(InputAction.CallbackContext context)
     {
         //bool b = Mathf.Abs(Time.time - (float) context.time) > 600;
         DisplayInUi = ! DisplayInUi;
+        Cursor.visible = DisplayInUi;
+
     }
 
 
@@ -78,19 +80,19 @@ public class ConsoleToGUI : MonoBehaviour
 
     private void Start()
     {
-        GenerateLogFileName();
+        logFilaName = GenerateLogFileName();
     }
 
     void OnEnable()
     {
         Application.logMessageReceived += Log;
-        Application.logMessageReceivedThreaded += Log;
+        //Application.logMessageReceivedThreaded += Log;
     }
 
     void OnDisable()
     {
         Application.logMessageReceived -= Log;
-        Application.logMessageReceivedThreaded -= Log;
+        //Application.logMessageReceivedThreaded -= Log;
     }
     void Update()
     {
@@ -99,7 +101,6 @@ public class ConsoleToGUI : MonoBehaviour
     }
     public void WriteLog(string logString)
     {
-
         if (logFilaName != "" && SaveLogFile)
         {
             TextWriter tw = new StreamWriter(logFilaName, true);
@@ -110,25 +111,18 @@ public class ConsoleToGUI : MonoBehaviour
     public void Log(string logString, string stackTrace, LogType type)
     {
         output = logString;
-        stack = stackTrace;
-
-        // write a line of text to the file
-
-
-        // close the stream
-
-
+        stack = stackTrace; 
         myLog = output + "\n" + myLog;
         if (stack.Length > 0 && ShowStack)
         {
             myLog = stack + "\n" + myLog;
-            WriteLog(System.DateTime.Now.ToString("yyyyMMddHHmmss") + ": " + output + "\n" + stack + "\n");
+            WriteLog(System.DateTime.Now.ToString("yyyyMMddHHmmss") + ": " + output + "\n" + stack );
 
 
         }
         else
         {
-            WriteLog(System.DateTime.Now.ToString("yyyyMMddHHmmss") + ": " + output + "\n");
+            WriteLog(System.DateTime.Now.ToString("yyyyMMddHHmmss") + ": " + output);
 
         }
         if (myLog.Length > LogBuffer)
@@ -137,12 +131,10 @@ public class ConsoleToGUI : MonoBehaviour
 
         }
 
-
-
-
-
         scrollPosition = new Vector2(scrollPosition.x, 0);
     }
+
+    public float offset = 1000;
 
     void OnGUI()
     {
@@ -150,17 +142,17 @@ public class ConsoleToGUI : MonoBehaviour
         {
             if (!Application.isEditor || !OnlyInEditor) //Do not display in editor ( or you can use the UNITY_EDITOR macro to also disable the rest)
             {
-                if (GUI.Button(new Rect(new Rect(10, Screen.height - LogHeight - 40, 100, 40)), "L"))
+                if (GUI.Button(new Rect(new Rect(10, Screen.height - LogHeight - 40 - offset, 100, 40)), "L"))
                     exitClicked = true;
 
                 if (ShowLog)
                 {
 
-                    if (GUI.Button(new Rect(new Rect(130, Screen.height - LogHeight - 40, 100, 40)), "S"))
+                    if (GUI.Button(new Rect(new Rect(130, Screen.height - LogHeight - 40 - offset, 100, 40)), "S"))
                     {
                         ShowStack = !ShowStack;
                     }
-                    if (GUI.Button(new Rect(new Rect(250, Screen.height - LogHeight - 40, 100, 40)), "C"))
+                    if (GUI.Button(new Rect(new Rect(250, Screen.height - LogHeight - 40 - offset, 100, 40)), "C"))
                     {
                         myLog = "";
                     }
@@ -169,7 +161,7 @@ public class ConsoleToGUI : MonoBehaviour
 
 
                     // we want to place the TextArea in a particular location - use BeginArea and provide Rect
-                    GUILayout.BeginArea(new Rect(10, Screen.height - LogHeight, Screen.width - 40, Screen.height - 10));
+                    GUILayout.BeginArea(new Rect(10, Screen.height - LogHeight - offset, Screen.width - 40, Screen.height - 100));
                     scrollPosition = GUILayout.BeginScrollView(scrollPosition, GUILayout.Width(Screen.width - 40), GUILayout.Height(LogHeight));
                     // We just add a single label to go inside the scroll view. Note how the
                     // scrollbars will work correctly with wordwrap.
@@ -186,7 +178,7 @@ public class ConsoleToGUI : MonoBehaviour
                     if (ShowFPS)
                     {
                         string FPS = string.Format("{0:0.0} ms ({1:0.} fps)", deltaTime * 1000.0f, 1.0f / deltaTime);
-                        GUI.Label(new Rect(new Rect(370, Screen.height - LogHeight - 40, 250, 40)), FPS, textStyle);
+                        GUI.Label(new Rect(new Rect(370, Screen.height - LogHeight - 40 - offset, 250, 40)), FPS, textStyle);
                     }
 
 

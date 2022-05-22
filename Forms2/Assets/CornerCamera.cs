@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -194,6 +195,43 @@ public class CornerCamera : MonoBehaviour
             Debug.Log("Ignoring: " + context);
         }
         return shouldIgnore;
+    }
+
+    public void DisplayValues(InputAction.CallbackContext context)
+    {
+        if (context.phase != InputActionPhase.Started)
+        {
+            return;
+        }
+        Debug.Log("Radius: " + ns.radius);
+        Debug.Log("Probe Length: " + ns.feelerDepth);
+
+        Debug.Log("Center Light: " + ns.material.GetFloat("_CI"));
+        Debug.Log("Directional Light: " + directionalLight.intensity);
+
+        Debug.Log("Alpha: " + ns.material.GetFloat("_Alpha"));
+        Debug.Log("Bloom: " + bloom.intensity);
+
+        Debug.Log("Fog: " + desiredAlpha);
+        Debug.Log("Smoothness: " + ns.material.GetFloat("_Glossiness"));
+        
+        Debug.Log("Metalic: " + ns.material.GetFloat("_Metallic"));
+        Debug.Log("Speed: " + CornerCamera.timeScale);
+        
+
+        Debug.Log("Range: " + ns.material.GetFloat("_PositionScale"));
+        Debug.Log("Color width: " + ns.material.GetFloat("_ColorWidth"));
+        
+        
+        Debug.Log("Shift: " + colorGrading.hueShift.value);
+        Debug.Log("Temperature: " + colorGrading.temperature.value);
+
+        Debug.Log("Tint: " + colorGrading.tint.value);
+        Debug.Log("Shader Time: " + ns.material.GetFloat("_TimeMultiplier"));
+        
+        Debug.Log("Camera Position: " + cam.transform.position);
+        Debug.Log("Camera Rotation: " + cam.transform.rotation);
+        
     }
 
 
