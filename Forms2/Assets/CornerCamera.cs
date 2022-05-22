@@ -221,9 +221,12 @@ public class CornerCamera : MonoBehaviour
         directionalLight.intensity = f;
     }
 
+    private static float distance = -100;
+
     public void RestartScene(InputAction.CallbackContext context)
     {
         CornerCamera.timeScale = ns.ts;
+        CornerCamera.distance = cam.transform.localPosition.z;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
@@ -457,9 +460,9 @@ public class CornerCamera : MonoBehaviour
         desiredRange = f;
     }
 
-    float desiredRange = 0;
+    float desiredRange = 100;
 
-    float desiredShaderTime = 0;
+    float desiredShaderTime = 50;
 
     public void ShaderTime(InputAction.CallbackContext context)
     {
@@ -474,17 +477,20 @@ public class CornerCamera : MonoBehaviour
 
     private static float timeScale = 2.5f;
 
+
     void Awake()
     {
+        Debug.Log("Awake");
         ns = FindObjectOfType<NematodeSchool>();
         ns.ts = 0;
         oldShaderTime = 1;
-        oldTime = CornerCamera.timeScale;                
+        oldTime = CornerCamera.timeScale;                      
     }
             
     // Start is called before the first frame update
     void Start()
     {
+        Debug.Log("Start");
         //float v = 100.0f;
         //RenderSettings.ambientLight = new Color(v,v,v,1);
         elapsed = transitionTime;
@@ -497,6 +503,9 @@ public class CornerCamera : MonoBehaviour
         
         newTime = 0;
 
+        Vector3 lp = cam.transform.localPosition;
+        lp.z = CornerCamera.distance; 
+        cam.transform.localPosition = lp;
         
         //ns.material.SetFloat("_TimeMultiplier", 0);
     }

@@ -40,6 +40,6 @@ public class ConsoleToGUI : MonoBehaviour
          if (!doShow) { return; }
          GUI.matrix = Matrix4x4.TRS(Vector3.zero, Quaternion.identity,
             new Vector3(Screen.width / 1920.0f, Screen.height / 1080.0f, 1.0f));
-         GUI.TextArea(new Rect(10, 10, 540, 435), myLog);
+         GUI.TextArea(new Rect(10, 10, 540, 500), myLog);
      }
  }
