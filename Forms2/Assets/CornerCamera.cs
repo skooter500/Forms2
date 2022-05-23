@@ -210,17 +210,17 @@ public class CornerCamera : MonoBehaviour
         Debug.Log("Center Light: " + ns.material.GetFloat("_CI"));
         Debug.Log("Directional Light: " + directionalLight.intensity);
 
-        Debug.Log("Alpha: " + ns.material.GetFloat("_Alpha"));
-        Debug.Log("Bloom: " + bloom.intensity);
+        Debug.Log("Alpha: " + desiredAlpha);
+        Debug.Log("Bloom: " + desiredBloom);
 
-        Debug.Log("Fog: " + desiredAlpha);
+        Debug.Log("Fog: " + RenderSettings.fogEndDistance);
         Debug.Log("Smoothness: " + ns.material.GetFloat("_Glossiness"));
         
         Debug.Log("Metalic: " + ns.material.GetFloat("_Metallic"));
         Debug.Log("Speed: " + CornerCamera.timeScale);
         
 
-        Debug.Log("Range: " + ns.material.GetFloat("_PositionScale"));
+        Debug.Log("Range: " + desiredRange);
         Debug.Log("Color width: " + ns.material.GetFloat("_ColorWidth"));
         
         
@@ -228,7 +228,7 @@ public class CornerCamera : MonoBehaviour
         Debug.Log("Temperature: " + colorGrading.temperature.value);
 
         Debug.Log("Tint: " + colorGrading.tint.value);
-        Debug.Log("Shader Time: " + ns.material.GetFloat("_TimeMultiplier"));
+        Debug.Log("Shader Time: " + desiredShaderTime);
         
         Debug.Log("Camera Position: " + cam.transform.position);
         Debug.Log("Camera Rotation: " + cam.transform.rotation);
@@ -553,7 +553,8 @@ public class CornerCamera : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {        
+    {       
+
         ns.material.SetFloat("_TimeMultiplier", Mathf.Lerp(ns.material.GetFloat("_TimeMultiplier"), desiredShaderTime, Time.deltaTime));
         ns.material.SetFloat("_PositionScale", Mathf.Lerp(ns.material.GetFloat("_PositionScale"), desiredRange, Time.deltaTime));
         ns.material.SetFloat("_Alpha", Mathf.Lerp(ns.material.GetFloat("_Alpha"), desiredAlpha, Time.deltaTime));
@@ -602,6 +603,6 @@ public class CornerCamera : MonoBehaviour
                     break;                    
                 }                
             }            
-        }        
+        }       
     }
 }

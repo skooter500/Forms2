@@ -6,7 +6,7 @@ Shader "Custom/Boid" {
 		_Metallic ("Metallic", Range(0,1)) = 0.0
 		_PositionScale("PositionScale", Range(0, 100000)) = 250
 		_TimeMultiplier("Time Scale", Range(-1000, 1000)) = 1
-		_Alpha("Alpha", Range(0, 1)) = 1
+		_Alpha("Alpha", Range(0, 1)) = 0.5
 		_Offset("Offset", Range(0, 100000)) = 0
 		_CI("CI", Range(0, 10000000)) = 0
 		_ColorStart("ColorStart", Range(-10, 10)) = 0
@@ -144,8 +144,6 @@ Shader "Custom/Boid" {
 			float w = _ColorWidth * 0.5; 
 			float cs = 0.5f - w;			
 			float ce = 0.5f + w ; // 0.5 + w;
-			_ColorStart = cs;
-			_ColorEnd = ce;
 
 			//cs = clamp(cs, 0, 1);
 			//ce = clamp(ce, 0, 1);
@@ -172,7 +170,7 @@ Shader "Custom/Boid" {
 			//hue = _ColorShift;
 			//hue += ;
 			
-			hue = hue + (_ColorShift / 360.0);
+			//hue = hue + (_ColorShift / 360.0);
 			hue = hue -  floor(hue);
 			
 			float b = map(d, 0, 200, 1, 0);
