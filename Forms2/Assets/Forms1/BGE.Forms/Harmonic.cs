@@ -9,7 +9,6 @@ namespace BGE.Forms
     public class Harmonic : SteeringBehaviour
     {
         [Range(0.0f, 3600.0f)]
-        public float speed = 30;
         public float frequency = 1.0f;
         public float amplitude = 50;
         public Axis direction = Axis.Horizontal;
@@ -24,7 +23,7 @@ namespace BGE.Forms
         protected Vector3 target = Vector3.zero;
 
         [HideInInspector]
-        public float rampedSpeed = 0;
+        public float rampedFrequency = 0;
         [HideInInspector]
         public float rampedAmplitude = 0;
         [Range(0.0f, 500.0f)]
@@ -44,8 +43,6 @@ namespace BGE.Forms
 
         public virtual void OnDrawGizmos()
         {
-            if (isActiveAndEnabled && boid.drawGizmos)
-            {
                 Gizmos.color = Color.blue;
                 Vector3 wanderCircleCenter = Utilities.TransformPointNoScale(Vector3.forward * distance, transform);
                 Gizmos.DrawWireSphere(wanderCircleCenter, radius);
@@ -54,7 +51,7 @@ namespace BGE.Forms
                 {
                     Gizmos.DrawLine(transform.position, worldTarget);
                 }
-            }
+
         }
 
         public override Vector3 Calculate()
@@ -95,8 +92,8 @@ namespace BGE.Forms
         {
             if (auto)
             {
-                rampedSpeed = Mathf.Lerp(rampedSpeed, speed, Time.deltaTime);
-                this.theta += Time.deltaTime * rampedSpeed * Mathf.Deg2Rad;
+                rampedFrequency = Mathf.Lerp(rampedFrequency, frequency, boid.TimeDelta);
+                this.theta += boid.TimeDelta * rampedFrequency * Mathf.PI * 2.0f;
             }
         }
     }

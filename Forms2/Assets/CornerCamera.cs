@@ -6,6 +6,7 @@ using UnityEngine.InputSystem;
 using UnityEngine.Rendering.PostProcessing;
 using UnityEngine.SceneManagement;
 
+
 public class CornerCamera : MonoBehaviour
 {
     public Transform cam;

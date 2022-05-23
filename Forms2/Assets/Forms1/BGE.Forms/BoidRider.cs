@@ -47,7 +47,7 @@ namespace BGE.Forms
                 {
                     hc.enabled = false;
                     boid.GetComponent<Harmonic>().amplitude = hc.initialAmplitude;
-                    boid.GetComponent<Harmonic>().speed = hc.initialSpeed;
+                    //boid.GetComponent<Harmonic>().speed = hc.initialSpeed;
                 }
 
                 VaryTenticles vt = boid.transform.parent.GetComponent<VaryTenticles>();

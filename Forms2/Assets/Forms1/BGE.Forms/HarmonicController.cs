@@ -10,7 +10,7 @@ namespace BGE.Forms
         Boid boid;
 
         [HideInInspector]
-        public float initialSpeed;
+        public float initialFrequency;
         float initialBoidSpeed;
 
         [HideInInspector]
@@ -31,7 +31,7 @@ namespace BGE.Forms
             boid = GetComponent<Boid>();
             initialBoidSpeed = boid.maxSpeed;
             initialAmplitude = harmonic.amplitude;
-            initialSpeed = harmonic.speed;
+            initialFrequency = harmonic.frequency;
         }
 
         public void OnEnable()
@@ -45,31 +45,33 @@ namespace BGE.Forms
             running = false;
         }
 
+
         System.Collections.IEnumerator VaryWiggleInterval()
         {
             running = true;
             yield return new WaitForSeconds(Random.Range(0.5f, 1.0f));
             while (running)
             {
+
                 //Debug.Log("Accelerated");
                 harmonic.enabled = true;
                 harmonic.amplitude = Random.Range(initialAmplitude - (initialAmplitude * amplitudeVariation), initialAmplitude + (initialAmplitude * amplitudeVariation));
-                harmonic.speed = Random.Range(initialSpeed - (initialSpeed * speedVariation), initialSpeed + (initialSpeed * speedVariation));
+                harmonic.frequency = Random.Range(initialFrequency - (initialFrequency * speedVariation), initialFrequency + (initialFrequency * speedVariation));
 
 
                 if (modifySpeed)
                 {
-                    float variationThisTime = harmonic.speed / initialSpeed;
+                    float variationThisTime = harmonic.frequency / initialFrequency;
                     boid.maxSpeed = initialBoidSpeed * variationThisTime;
                 }
                 yield return new WaitForSeconds(Random.Range(3, 7));
                 if (glide)
                 {
                     harmonic.amplitude = initialAmplitude * 0.2f;
-                    harmonic.speed = initialSpeed;
+                    harmonic.frequency = initialFrequency;
                     yield return new WaitForSeconds(Random.Range(3, 7));
                 }                
             }
-        }
+        }        
     }
 }

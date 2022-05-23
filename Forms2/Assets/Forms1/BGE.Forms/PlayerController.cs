@@ -93,17 +93,6 @@ namespace BGE.Forms
             {
                 p.y = y + 50;
             }
-
-            /*Debug.Log("Angle: " + angle);
-            Debug.Log("lp: " + lp);
-            Debug.Log("Desired position: " + p);
-            Debug.Log("Viewing distance: " + sp.viewingDistance);
-            Debug.Log("Boid pos: " + pc.creature.GetComponent<Boid>().position);
-            Debug.Log("Camera pos: " + p);
-            Debug.Log("leader: " + pc.creature);
-            */
-
-            //
             pc.playerBoid.enabled = true;
             pc.playerBoid.maxSpeed = pc.species.GetComponent<SpawnParameters>().followCameraSpeed;
             pc.playerBoid.desiredPosition = p;

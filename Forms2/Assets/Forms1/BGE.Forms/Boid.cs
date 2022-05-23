@@ -177,6 +177,8 @@ namespace BGE.Forms
             playerForward = player.forward;        
             inFrontOfPlayer = Vector3.Dot(position - playerPosition, playerForward) > 0;
             distanceToPlayer = Vector3.Distance(position, playerPosition);
+
+            /*
             if (autoSuspendWhenInvisible)
             {
                 suspended = !inFrontOfPlayer;
@@ -191,6 +193,7 @@ namespace BGE.Forms
                 skippedFrames++;
                 return;
             }
+            */
             if (skippedFrames == 10)
             {
 
@@ -199,8 +202,10 @@ namespace BGE.Forms
             }
             else
             {
-                time = Time.deltaTime;
+                time = Time.deltaTime;    
             }
+            
+            
 
             float smoothRate;
 
