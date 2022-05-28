@@ -8,7 +8,7 @@ namespace BGE.Forms
 {
     public class Hover:Harmonic
     {
-        public override void OnDrawGizmos()
+        /*public override void OnDrawGizmos()
         {
             if (boid.drawGizmos)
             {
@@ -19,6 +19,7 @@ namespace BGE.Forms
                 }
             }
         }
+        */
 
         float oldTheta = 0.0f;
 

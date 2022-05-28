@@ -41,8 +41,9 @@ namespace BGE.Forms
             theta = UnityEngine.Random.Range(0, Mathf.PI);
         }
 
-        public virtual void OnDrawGizmos()
+        public void OnDrawGizmos()
         {
+            Debug.Log("In ixlkfjvhdkfs");
                 Gizmos.color = Color.blue;
                 Vector3 wanderCircleCenter = Utilities.TransformPointNoScale(Vector3.forward * distance, transform);
                 Gizmos.DrawWireSphere(wanderCircleCenter, radius);
@@ -56,6 +57,7 @@ namespace BGE.Forms
 
         public override Vector3 Calculate()
         {
+            //Debug.Log("In ixlkfjvhdkfs");
             float n = Mathf.Sin(this.theta);
             rampedAmplitude = Mathf.Lerp(rampedAmplitude, amplitude, boid.TimeDelta);
 
