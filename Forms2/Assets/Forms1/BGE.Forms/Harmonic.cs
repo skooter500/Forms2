@@ -43,15 +43,14 @@ namespace BGE.Forms
 
         public void OnDrawGizmos()
         {
-            Debug.Log("In ixlkfjvhdkfs");
-                Gizmos.color = Color.blue;
-                Vector3 wanderCircleCenter = Utilities.TransformPointNoScale(Vector3.forward * distance, transform);
-                Gizmos.DrawWireSphere(wanderCircleCenter, radius);
+            Gizmos.color = Color.blue;
+            Vector3 wanderCircleCenter = Utilities.TransformPointNoScale(Vector3.forward * distance, transform);
+            Gizmos.DrawWireSphere(wanderCircleCenter, radius);
 
-                if (worldTarget != Vector3.zero)
-                {
-                    Gizmos.DrawLine(transform.position, worldTarget);
-                }
+            if (worldTarget != Vector3.zero)
+            {
+                Gizmos.DrawLine(transform.position, worldTarget);
+            }
 
         }
 
@@ -92,11 +91,14 @@ namespace BGE.Forms
         }
         public override void Update()
         {
+            this.theta += Time.deltaTime * frequency * Mathf.PI * 2.0f;
+            /*
             if (auto)
             {
-                rampedFrequency = Mathf.Lerp(rampedFrequency, frequency, boid.TimeDelta);
+                rampedFreqsuency = Mathf.Lerp(rampedFrequency, frequency, boid.TimeDelta);
                 this.theta += boid.TimeDelta * rampedFrequency * Mathf.PI * 2.0f;
             }
+            */
         }
     }
 }
