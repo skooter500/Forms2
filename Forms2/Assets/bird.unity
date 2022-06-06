@@ -385,8 +385,6 @@ MonoBehaviour:
   gravity: {x: 0, y: -9, z: 0}
   multiThreaded: 0
   behaviours: []
-  inFrontOfPlayer: 0
-  distanceToPlayer: 0
   drawGizmos: 0
   desiredPosition: {x: 0, y: 0, z: 0}
   gravityAcceleration: 0
@@ -789,8 +787,6 @@ MonoBehaviour:
   gravity: {x: 0, y: -9, z: 0}
   multiThreaded: 0
   behaviours: []
-  inFrontOfPlayer: 0
-  distanceToPlayer: 0
   drawGizmos: 0
   desiredPosition: {x: 0, y: 0, z: 0}
   gravityAcceleration: 0
@@ -1571,8 +1567,6 @@ MonoBehaviour:
   gravity: {x: 0, y: -9, z: 0}
   multiThreaded: 0
   behaviours: []
-  inFrontOfPlayer: 0
-  distanceToPlayer: 0
   drawGizmos: 0
   desiredPosition: {x: 0, y: 0, z: 0}
   gravityAcceleration: 0
@@ -2453,7 +2447,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0baa0115b14615842a47e7936901fc7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 278026180}
+  player: {fileID: 0}
 --- !u!114 &112302027
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3001,8 +2995,6 @@ MonoBehaviour:
   gravity: {x: 0, y: -9, z: 0}
   multiThreaded: 0
   behaviours: []
-  inFrontOfPlayer: 0
-  distanceToPlayer: 0
   drawGizmos: 0
   desiredPosition: {x: 0, y: 0, z: 0}
   gravityAcceleration: 0
@@ -3834,7 +3826,7 @@ MonoBehaviour:
   boid: {fileID: 0}
   fleeRange: 50
   target: {x: 0, y: 0, z: 0}
-  targetGameObject: {fileID: 278026180}
+  targetGameObject: {fileID: 0}
 --- !u!114 &164236045
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3882,8 +3874,6 @@ MonoBehaviour:
   gravity: {x: 0, y: -9, z: 0}
   multiThreaded: 0
   behaviours: []
-  inFrontOfPlayer: 0
-  distanceToPlayer: 0
   drawGizmos: 0
   desiredPosition: {x: 0, y: 0, z: 0}
   gravityAcceleration: 0
@@ -4572,8 +4562,6 @@ MonoBehaviour:
   gravity: {x: 0, y: -9, z: 0}
   multiThreaded: 0
   behaviours: []
-  inFrontOfPlayer: 0
-  distanceToPlayer: 0
   drawGizmos: 0
   desiredPosition: {x: 0, y: 0, z: 0}
   gravityAcceleration: 0
@@ -4882,8 +4870,6 @@ MonoBehaviour:
   gravity: {x: 0, y: -100, z: 0}
   multiThreaded: 0
   behaviours: []
-  inFrontOfPlayer: 0
-  distanceToPlayer: 0
   drawGizmos: 0
   desiredPosition: {x: 0, y: 0, z: 0}
   gravityAcceleration: 0
@@ -5478,8 +5464,6 @@ MonoBehaviour:
   gravity: {x: 0, y: -9, z: 0}
   multiThreaded: 0
   behaviours: []
-  inFrontOfPlayer: 0
-  distanceToPlayer: 0
   drawGizmos: 0
   desiredPosition: {x: 0, y: 0, z: 0}
   gravityAcceleration: 0
@@ -7007,8 +6991,6 @@ MonoBehaviour:
   gravity: {x: 0, y: -9, z: 0}
   multiThreaded: 0
   behaviours: []
-  inFrontOfPlayer: 0
-  distanceToPlayer: 0
   drawGizmos: 0
   desiredPosition: {x: 0, y: 0, z: 0}
   gravityAcceleration: 0
@@ -7598,97 +7580,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 601c6fa60aeda854ab9fbf67bf61ccdf, type: 3}
   m_PrefabInstance: {fileID: 277716099}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &278026180
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 1000013268753600, guid: 74925faad6067ce49a39feb6c92efb44, type: 3}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 278026185}
-  - component: {fileID: 278026189}
-  - component: {fileID: 278026188}
-  - component: {fileID: 278026191}
-  - component: {fileID: 278026192}
-  m_Layer: 11
-  m_Name: player
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &278026185
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 4000013209578212, guid: 74925faad6067ce49a39feb6c92efb44, type: 3}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 278026180}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2136546403}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &278026188
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 54000011295413418, guid: 74925faad6067ce49a39feb6c92efb44, type: 3}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 278026180}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0.5
-  m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 112
-  m_CollisionDetection: 2
---- !u!135 &278026189
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 135000012182112076, guid: 74925faad6067ce49a39feb6c92efb44, type: 3}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 278026180}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 20
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &278026191
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 114000014061944652, guid: 74925faad6067ce49a39feb6c92efb44, type: 3}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 278026180}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 06cdd9ea1c0acc740b33f646cfb8c342, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &278026192
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 114000012491224960, guid: 74925faad6067ce49a39feb6c92efb44, type: 3}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 278026180}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e5b49821dc74e6346a7f320edcead006, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mainCamera: {fileID: 278026180}
-  speed: 1000
-  vrMode: 1
 --- !u!1 &287049379
 GameObject:
   m_ObjectHideFlags: 0
@@ -8889,8 +8780,6 @@ MonoBehaviour:
   gravity: {x: 0, y: -9, z: 0}
   multiThreaded: 0
   behaviours: []
-  inFrontOfPlayer: 0
-  distanceToPlayer: 0
   drawGizmos: 0
   desiredPosition: {x: 0, y: 0, z: 0}
   gravityAcceleration: 0
@@ -9186,7 +9075,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0baa0115b14615842a47e7936901fc7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 278026180}
+  player: {fileID: 0}
 --- !u!114 &353406253
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10223,6 +10112,7 @@ GameObject:
   - component: {fileID: 398281443}
   - component: {fileID: 398281445}
   - component: {fileID: 398281444}
+  - component: {fileID: 398281446}
   m_Layer: 11
   m_Name: Camera
   m_TagString: Untagged
@@ -10243,7 +10133,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2136546403}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!81 &398281444
 AudioListener:
@@ -10296,6 +10186,19 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!114 &398281446
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 398281442}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ce0577091f517a46971e175780aa4a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 1828728313}
 --- !u!1 &404617840
 GameObject:
   m_ObjectHideFlags: 0
@@ -10732,7 +10635,7 @@ MonoBehaviour:
   boid: {fileID: 0}
   fleeRange: 50
   target: {x: 0, y: 0, z: 0}
-  targetGameObject: {fileID: 278026180}
+  targetGameObject: {fileID: 0}
 --- !u!114 &411929744
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10780,8 +10683,6 @@ MonoBehaviour:
   gravity: {x: 0, y: -9, z: 0}
   multiThreaded: 0
   behaviours: []
-  inFrontOfPlayer: 0
-  distanceToPlayer: 0
   drawGizmos: 0
   desiredPosition: {x: 0, y: 0, z: 0}
   gravityAcceleration: 0
@@ -11066,7 +10967,7 @@ MonoBehaviour:
   environmentLM:
     serializedVersion: 2
     m_Bits: 256
-  player: {fileID: 278026180}
+  player: {fileID: 0}
   positioning: 0
 --- !u!4 &426837793
 Transform:
@@ -12081,8 +11982,6 @@ MonoBehaviour:
   gravity: {x: 0, y: 1, z: 0}
   multiThreaded: 0
   behaviours: []
-  inFrontOfPlayer: 0
-  distanceToPlayer: 0
   drawGizmos: 0
   desiredPosition: {x: 0, y: 0, z: 0}
   gravityAcceleration: 0
@@ -12227,7 +12126,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0baa0115b14615842a47e7936901fc7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 278026180}
+  player: {fileID: 0}
 --- !u!114 &480279494
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12756,7 +12655,7 @@ MonoBehaviour:
   boid: {fileID: 0}
   fleeRange: 50
   target: {x: 0, y: 0, z: 0}
-  targetGameObject: {fileID: 278026180}
+  targetGameObject: {fileID: 0}
 --- !u!114 &493998853
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12804,8 +12703,6 @@ MonoBehaviour:
   gravity: {x: 0, y: -9, z: 0}
   multiThreaded: 0
   behaviours: []
-  inFrontOfPlayer: 0
-  distanceToPlayer: 0
   drawGizmos: 0
   desiredPosition: {x: 0, y: 0, z: 0}
   gravityAcceleration: 0
@@ -13935,8 +13832,6 @@ MonoBehaviour:
   gravity: {x: 0, y: -9, z: 0}
   multiThreaded: 0
   behaviours: []
-  inFrontOfPlayer: 0
-  distanceToPlayer: 0
   drawGizmos: 0
   desiredPosition: {x: 0, y: 0, z: 0}
   gravityAcceleration: 0
@@ -14884,8 +14779,6 @@ MonoBehaviour:
   gravity: {x: 0, y: -9, z: 0}
   multiThreaded: 0
   behaviours: []
-  inFrontOfPlayer: 0
-  distanceToPlayer: 0
   drawGizmos: 0
   desiredPosition: {x: 0, y: 0, z: 0}
   gravityAcceleration: 0
@@ -15598,8 +15491,6 @@ MonoBehaviour:
   gravity: {x: 0, y: -9, z: 0}
   multiThreaded: 0
   behaviours: []
-  inFrontOfPlayer: 0
-  distanceToPlayer: 0
   drawGizmos: 0
   desiredPosition: {x: 0, y: 0, z: 0}
   gravityAcceleration: 0
@@ -15826,7 +15717,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0baa0115b14615842a47e7936901fc7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 278026180}
+  player: {fileID: 0}
 --- !u!114 &621572100
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17776,8 +17667,6 @@ MonoBehaviour:
   gravity: {x: 0, y: -100, z: 0}
   multiThreaded: 0
   behaviours: []
-  inFrontOfPlayer: 0
-  distanceToPlayer: 0
   drawGizmos: 0
   desiredPosition: {x: 0, y: 0, z: 0}
   gravityAcceleration: 0
@@ -18334,7 +18223,7 @@ MonoBehaviour:
   boid: {fileID: 0}
   fleeRange: 50
   target: {x: 0, y: 0, z: 0}
-  targetGameObject: {fileID: 278026180}
+  targetGameObject: {fileID: 0}
 --- !u!114 &687924982
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18382,8 +18271,6 @@ MonoBehaviour:
   gravity: {x: 0, y: -9, z: 0}
   multiThreaded: 0
   behaviours: []
-  inFrontOfPlayer: 0
-  distanceToPlayer: 0
   drawGizmos: 0
   desiredPosition: {x: 0, y: 0, z: 0}
   gravityAcceleration: 0
@@ -18636,7 +18523,7 @@ MonoBehaviour:
   environmentLM:
     serializedVersion: 2
     m_Bits: 256
-  player: {fileID: 278026180}
+  player: {fileID: 0}
   positioning: 1
 --- !u!4 &699800334
 Transform:
@@ -20433,8 +20320,6 @@ MonoBehaviour:
   gravity: {x: 0, y: -9, z: 0}
   multiThreaded: 0
   behaviours: []
-  inFrontOfPlayer: 0
-  distanceToPlayer: 0
   drawGizmos: 0
   desiredPosition: {x: 0, y: 0, z: 0}
   gravityAcceleration: 0
@@ -21027,8 +20912,6 @@ MonoBehaviour:
   gravity: {x: 0, y: -9, z: 0}
   multiThreaded: 0
   behaviours: []
-  inFrontOfPlayer: 0
-  distanceToPlayer: 0
   drawGizmos: 0
   desiredPosition: {x: 0, y: 0, z: 0}
   gravityAcceleration: 0
@@ -23919,8 +23802,6 @@ MonoBehaviour:
   gravity: {x: 0, y: -9, z: 0}
   multiThreaded: 0
   behaviours: []
-  inFrontOfPlayer: 0
-  distanceToPlayer: 0
   drawGizmos: 0
   desiredPosition: {x: 0, y: 0, z: 0}
   gravityAcceleration: 0
@@ -24511,8 +24392,6 @@ MonoBehaviour:
   gravity: {x: 0, y: -9, z: 0}
   multiThreaded: 0
   behaviours: []
-  inFrontOfPlayer: 0
-  distanceToPlayer: 0
   drawGizmos: 0
   desiredPosition: {x: 0, y: 0, z: 0}
   gravityAcceleration: 0
@@ -25344,8 +25223,6 @@ MonoBehaviour:
   gravity: {x: 0, y: -9, z: 0}
   multiThreaded: 0
   behaviours: []
-  inFrontOfPlayer: 0
-  distanceToPlayer: 0
   drawGizmos: 0
   desiredPosition: {x: 0, y: 0, z: 0}
   gravityAcceleration: 0
@@ -25873,8 +25750,6 @@ MonoBehaviour:
   gravity: {x: 0, y: -9, z: 0}
   multiThreaded: 0
   behaviours: []
-  inFrontOfPlayer: 0
-  distanceToPlayer: 0
   drawGizmos: 0
   desiredPosition: {x: 0, y: 0, z: 0}
   gravityAcceleration: 0
@@ -26644,8 +26519,6 @@ MonoBehaviour:
   gravity: {x: 0, y: -9, z: 0}
   multiThreaded: 0
   behaviours: []
-  inFrontOfPlayer: 0
-  distanceToPlayer: 0
   drawGizmos: 0
   desiredPosition: {x: 0, y: 0, z: 0}
   gravityAcceleration: 0
@@ -27584,8 +27457,6 @@ MonoBehaviour:
   gravity: {x: 0, y: -1, z: 0}
   multiThreaded: 0
   behaviours: []
-  inFrontOfPlayer: 0
-  distanceToPlayer: 0
   drawGizmos: 0
   desiredPosition: {x: 0, y: 0, z: 0}
   gravityAcceleration: 0
@@ -28272,8 +28143,6 @@ MonoBehaviour:
   gravity: {x: 0, y: -9, z: 0}
   multiThreaded: 0
   behaviours: []
-  inFrontOfPlayer: 0
-  distanceToPlayer: 0
   drawGizmos: 0
   desiredPosition: {x: 0, y: 0, z: 0}
   gravityAcceleration: 0
@@ -28713,7 +28582,7 @@ MonoBehaviour:
   boid: {fileID: 0}
   fleeRange: 50
   target: {x: 0, y: 0, z: 0}
-  targetGameObject: {fileID: 278026180}
+  targetGameObject: {fileID: 0}
 --- !u!114 &1122705503
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28761,8 +28630,6 @@ MonoBehaviour:
   gravity: {x: 0, y: -9, z: 0}
   multiThreaded: 0
   behaviours: []
-  inFrontOfPlayer: 0
-  distanceToPlayer: 0
   drawGizmos: 0
   desiredPosition: {x: 0, y: 0, z: 0}
   gravityAcceleration: 0
@@ -29714,7 +29581,7 @@ MonoBehaviour:
   boid: {fileID: 0}
   fleeRange: 50
   target: {x: 0, y: 0, z: 0}
-  targetGameObject: {fileID: 278026180}
+  targetGameObject: {fileID: 0}
 --- !u!114 &1184775750
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29762,8 +29629,6 @@ MonoBehaviour:
   gravity: {x: 0, y: -9, z: 0}
   multiThreaded: 0
   behaviours: []
-  inFrontOfPlayer: 0
-  distanceToPlayer: 0
   drawGizmos: 0
   desiredPosition: {x: 0, y: 0, z: 0}
   gravityAcceleration: 0
@@ -30073,8 +29938,6 @@ MonoBehaviour:
   gravity: {x: 0, y: -9, z: 0}
   multiThreaded: 0
   behaviours: []
-  inFrontOfPlayer: 0
-  distanceToPlayer: 0
   drawGizmos: 0
   desiredPosition: {x: 0, y: 0, z: 0}
   gravityAcceleration: 0
@@ -30866,8 +30729,6 @@ MonoBehaviour:
   gravity: {x: 0, y: -9, z: 0}
   multiThreaded: 0
   behaviours: []
-  inFrontOfPlayer: 0
-  distanceToPlayer: 0
   drawGizmos: 0
   desiredPosition: {x: 0, y: 0, z: 0}
   gravityAcceleration: 0
@@ -31446,7 +31307,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0baa0115b14615842a47e7936901fc7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 278026180}
+  player: {fileID: 0}
 --- !u!114 &1291080358
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -31591,7 +31452,7 @@ MonoBehaviour:
   genesisSpawnDistance: 100
   spawnInFront: 1
   fov: 20
-  player: {fileID: 278026180}
+  player: {fileID: 0}
 --- !u!4 &1294632011
 Transform:
   m_ObjectHideFlags: 0
@@ -31822,8 +31683,6 @@ MonoBehaviour:
   gravity: {x: 0, y: -1, z: 0}
   multiThreaded: 0
   behaviours: []
-  inFrontOfPlayer: 0
-  distanceToPlayer: 0
   drawGizmos: 0
   desiredPosition: {x: 0, y: 0, z: 0}
   gravityAcceleration: 0
@@ -32403,8 +32262,6 @@ MonoBehaviour:
   gravity: {x: 0, y: -9, z: 0}
   multiThreaded: 0
   behaviours: []
-  inFrontOfPlayer: 0
-  distanceToPlayer: 0
   drawGizmos: 0
   desiredPosition: {x: 0, y: 0, z: 0}
   gravityAcceleration: 0
@@ -33733,7 +33590,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0baa0115b14615842a47e7936901fc7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 278026180}
+  player: {fileID: 0}
 --- !u!114 &1422914721
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35155,7 +35012,7 @@ MonoBehaviour:
   boid: {fileID: 0}
   fleeRange: 50
   target: {x: 0, y: 0, z: 0}
-  targetGameObject: {fileID: 278026180}
+  targetGameObject: {fileID: 0}
 --- !u!114 &1488155606
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35203,8 +35060,6 @@ MonoBehaviour:
   gravity: {x: 0, y: -9, z: 0}
   multiThreaded: 0
   behaviours: []
-  inFrontOfPlayer: 0
-  distanceToPlayer: 0
   drawGizmos: 0
   desiredPosition: {x: 0, y: 0, z: 0}
   gravityAcceleration: 0
@@ -35546,8 +35401,6 @@ MonoBehaviour:
   gravity: {x: 0, y: -9, z: 0}
   multiThreaded: 0
   behaviours: []
-  inFrontOfPlayer: 0
-  distanceToPlayer: 0
   drawGizmos: 0
   desiredPosition: {x: 0, y: 0, z: 0}
   gravityAcceleration: 0
@@ -35883,7 +35736,7 @@ PrefabInstance:
     - target: {fileID: 306757822347775716, guid: cd00efd2a0e963e46ad84231a3440b4d, type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 278026180}
+      objectReference: {fileID: 0}
     - target: {fileID: 306757822347775716, guid: cd00efd2a0e963e46ad84231a3440b4d, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -37678,8 +37531,6 @@ MonoBehaviour:
   gravity: {x: 0, y: -100, z: 0}
   multiThreaded: 0
   behaviours: []
-  inFrontOfPlayer: 0
-  distanceToPlayer: 0
   drawGizmos: 0
   desiredPosition: {x: 0, y: 0, z: 0}
   gravityAcceleration: 0
@@ -38882,8 +38733,6 @@ MonoBehaviour:
   gravity: {x: 0, y: -9, z: 0}
   multiThreaded: 0
   behaviours: []
-  inFrontOfPlayer: 0
-  distanceToPlayer: 0
   drawGizmos: 0
   desiredPosition: {x: 0, y: 0, z: 0}
   gravityAcceleration: 0
@@ -38997,8 +38846,6 @@ MonoBehaviour:
   gravity: {x: 0, y: -100, z: 0}
   multiThreaded: 0
   behaviours: []
-  inFrontOfPlayer: 0
-  distanceToPlayer: 0
   drawGizmos: 0
   desiredPosition: {x: 0, y: 0, z: 0}
   gravityAcceleration: 0
@@ -39258,8 +39105,6 @@ MonoBehaviour:
   gravity: {x: 0, y: -9, z: 0}
   multiThreaded: 0
   behaviours: []
-  inFrontOfPlayer: 0
-  distanceToPlayer: 0
   drawGizmos: 0
   desiredPosition: {x: 0, y: 0, z: 0}
   gravityAcceleration: 0
@@ -39777,7 +39622,7 @@ MonoBehaviour:
   boid: {fileID: 0}
   fleeRange: 50
   target: {x: 0, y: 0, z: 0}
-  targetGameObject: {fileID: 278026180}
+  targetGameObject: {fileID: 0}
 --- !u!114 &1642681588
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -39825,8 +39670,6 @@ MonoBehaviour:
   gravity: {x: 0, y: -9, z: 0}
   multiThreaded: 0
   behaviours: []
-  inFrontOfPlayer: 0
-  distanceToPlayer: 0
   drawGizmos: 0
   desiredPosition: {x: 0, y: 0, z: 0}
   gravityAcceleration: 0
@@ -42832,8 +42675,6 @@ MonoBehaviour:
   gravity: {x: 0, y: -9, z: 0}
   multiThreaded: 0
   behaviours: []
-  inFrontOfPlayer: 0
-  distanceToPlayer: 0
   drawGizmos: 0
   desiredPosition: {x: 0, y: 0, z: 0}
   gravityAcceleration: 0
@@ -43889,8 +43730,6 @@ MonoBehaviour:
   gravity: {x: 0, y: -9, z: 0}
   multiThreaded: 0
   behaviours: []
-  inFrontOfPlayer: 0
-  distanceToPlayer: 0
   drawGizmos: 0
   desiredPosition: {x: 0, y: 0, z: 0}
   gravityAcceleration: 0
@@ -45134,7 +44973,7 @@ MonoBehaviour:
   boid: {fileID: 0}
   fleeRange: 50
   target: {x: 0, y: 0, z: 0}
-  targetGameObject: {fileID: 278026180}
+  targetGameObject: {fileID: 0}
 --- !u!114 &1831306096
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45182,8 +45021,6 @@ MonoBehaviour:
   gravity: {x: 0, y: -9, z: 0}
   multiThreaded: 0
   behaviours: []
-  inFrontOfPlayer: 0
-  distanceToPlayer: 0
   drawGizmos: 0
   desiredPosition: {x: 0, y: 0, z: 0}
   gravityAcceleration: 0
@@ -45637,7 +45474,7 @@ MonoBehaviour:
   boid: {fileID: 0}
   fleeRange: 50
   target: {x: 0, y: 0, z: 0}
-  targetGameObject: {fileID: 278026180}
+  targetGameObject: {fileID: 0}
 --- !u!114 &1847273493
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45685,8 +45522,6 @@ MonoBehaviour:
   gravity: {x: 0, y: -9, z: 0}
   multiThreaded: 0
   behaviours: []
-  inFrontOfPlayer: 0
-  distanceToPlayer: 0
   drawGizmos: 0
   desiredPosition: {x: 0, y: 0, z: 0}
   gravityAcceleration: 0
@@ -45925,8 +45760,6 @@ MonoBehaviour:
   gravity: {x: 0, y: -9, z: 0}
   multiThreaded: 0
   behaviours: []
-  inFrontOfPlayer: 0
-  distanceToPlayer: 0
   drawGizmos: 0
   desiredPosition: {x: 0, y: 0, z: 0}
   gravityAcceleration: 0
@@ -46316,8 +46149,6 @@ MonoBehaviour:
   gravity: {x: 0, y: -9, z: 0}
   multiThreaded: 0
   behaviours: []
-  inFrontOfPlayer: 0
-  distanceToPlayer: 0
   drawGizmos: 0
   desiredPosition: {x: 0, y: 0, z: 0}
   gravityAcceleration: 0
@@ -46851,8 +46682,6 @@ MonoBehaviour:
   gravity: {x: 0, y: -9, z: 0}
   multiThreaded: 0
   behaviours: []
-  inFrontOfPlayer: 0
-  distanceToPlayer: 0
   drawGizmos: 0
   desiredPosition: {x: 0, y: 0, z: 0}
   gravityAcceleration: 0
@@ -48751,7 +48580,7 @@ MonoBehaviour:
   boid: {fileID: 0}
   fleeRange: 50
   target: {x: 0, y: 0, z: 0}
-  targetGameObject: {fileID: 278026180}
+  targetGameObject: {fileID: 0}
 --- !u!114 &1975941239
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -48799,8 +48628,6 @@ MonoBehaviour:
   gravity: {x: 0, y: -9, z: 0}
   multiThreaded: 0
   behaviours: []
-  inFrontOfPlayer: 0
-  distanceToPlayer: 0
   drawGizmos: 0
   desiredPosition: {x: 0, y: 0, z: 0}
   gravityAcceleration: 0
@@ -49533,7 +49360,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01e52ca317cab8e4492cc0fe80ad7b48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 278026180}
+  player: {fileID: 0}
   quadsPerTile: 10
   halfTile: 5
   cellSize: 400
@@ -50942,7 +50769,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0baa0115b14615842a47e7936901fc7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 278026180}
+  player: {fileID: 0}
 --- !u!114 &2088443508
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -52453,8 +52280,6 @@ MonoBehaviour:
   gravity: {x: 0, y: -9, z: 0}
   multiThreaded: 0
   behaviours: []
-  inFrontOfPlayer: 0
-  distanceToPlayer: 0
   drawGizmos: 0
   desiredPosition: {x: 0, y: 0, z: 0}
   gravityAcceleration: 0
@@ -52666,7 +52491,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 278026185}
   - {fileID: 398281443}
   m_Father: {fileID: 0}
   m_RootOrder: 3
@@ -52737,8 +52561,6 @@ MonoBehaviour:
   gravity: {x: 0, y: -9, z: 0}
   multiThreaded: 0
   behaviours: []
-  inFrontOfPlayer: 0
-  distanceToPlayer: 0
   drawGizmos: 0
   desiredPosition: {x: 0, y: 0, z: 0}
   gravityAcceleration: 0
