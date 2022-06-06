@@ -26,11 +26,11 @@ public class ResetPositionAfter : MonoBehaviour {
     {
         while (true)
         {
-            boid.suspended = false;
+            //boid.suspended = false;
             tr.enabled = true;
             tr.Clear();
             yield return new WaitForSeconds(Random.Range(timeToWaitStart, timeToWaitEnd));
-            boid.suspended = true;
+            //boid.suspended = true;
             tr.Clear();
             tr.enabled = false;
             boid.desiredPosition = orig;

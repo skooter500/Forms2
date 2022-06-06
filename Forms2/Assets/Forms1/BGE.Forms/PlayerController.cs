@@ -62,11 +62,14 @@ namespace BGE.Forms
 
         public void StartFollowing()
         {
-            StartCoroutine(FollowCoRoutine());
+            //StartCoroutine(FollowCoRoutine());
         }
 
-        System.Collections.IEnumerator FollowCoRoutine()
-        {
+
+
+        //System.Collections.IEnumerator FollowCoRoutine()
+        //{
+            /*
             PlayerController pc;
             pc = this;
             pc.PickNewSpecies();
@@ -111,7 +114,8 @@ namespace BGE.Forms
             Utilities.SetActive(pc.op, true);
             Utilities.SetActive(pc.seek, false);
             Utilities.SetActive(pc.sceneAvoidance, true);
-        }
+            */
+        //}
 
         class FollowState : State
         {
@@ -141,6 +145,7 @@ namespace BGE.Forms
 
             public override void Exit()
             {
+                /*
                 Quaternion q = Quaternion.LookRotation(pc.op.leaderBoid.transform.position - pc.player.transform.position);
                 Vector3 euler = q.eulerAngles;
                 q = Quaternion.Euler(euler.x, euler.y, 0);
@@ -151,6 +156,7 @@ namespace BGE.Forms
                 pc.player.GetComponent<Rigidbody>().isKinematic = false;
                 pc.vrController.enabled = true;
                 pc.fc.enabled = true;
+                */
 
 
                 //pc.sm.CancelDelayedStateChange();
@@ -245,6 +251,7 @@ namespace BGE.Forms
 
         // Use this for initialization
         void Start() {
+            /*
             //AudioListener.pause = true;
             player = GameObject.FindGameObjectWithTag("Player");
             playerCruise = GameObject.FindGameObjectWithTag("PlayerCruise");
@@ -269,6 +276,7 @@ namespace BGE.Forms
             newToad = GetComponent<NewToad>();
 
             //Invoke("LateStart", 5);
+            */
 
         }
 

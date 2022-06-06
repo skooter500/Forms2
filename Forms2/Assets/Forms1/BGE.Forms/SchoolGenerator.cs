@@ -132,7 +132,7 @@ namespace BGE.Forms
                     Boid b = creature.GetComponentInChildren<Boid>();
                     if (b != null)
                     {
-                        b.suspended = true;
+                        //b.suspended = true;
                     }
                     suspended.Add(creature);
                     alive.RemoveAt(alive.Count - 1);

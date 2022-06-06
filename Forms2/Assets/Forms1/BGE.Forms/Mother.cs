@@ -148,7 +148,7 @@ namespace BGE.Forms
             Boid[] boids = creature.GetComponentsInChildren<Boid>();
             foreach (Boid b in boids)
             {
-                b.suspended = true;
+                //b.suspended = true;
             }
             SchoolGenerator[] sgs = creature.GetComponentsInChildren<SchoolGenerator>();
             foreach (SchoolGenerator sg in sgs)

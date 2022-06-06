@@ -164,11 +164,7 @@ namespace BGE.Forms
             // Replace this with a Boid system at some stage
             //FishAnimatorManager.Instance.speed[jobIndex] = boid.speed;
             
-            if (boid.distanceToPlayer > closeness)
-            {
-                return;
-            }
-
+            
             // Animate the head            
             float headRot = Mathf.Sin(theta) * headField;
             head.transform.localRotation = Quaternion.AngleAxis(headRot, Vector3.up);

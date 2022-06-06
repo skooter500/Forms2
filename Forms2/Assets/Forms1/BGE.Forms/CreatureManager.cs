@@ -191,11 +191,13 @@ namespace BGE.Forms
                     {
                         continue;
                     }
+                    /*
                     if (boid.suspended)
                     {
                         suspended++;
                     }
                     else
+                    */
                     {
                         boid.force = boid.CalculateForce();
                     }

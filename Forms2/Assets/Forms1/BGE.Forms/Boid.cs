@@ -73,13 +73,6 @@ namespace BGE.Forms
         [HideInInspector]
         public SteeringBehaviour[] behaviours;
 
-        public bool inFrontOfPlayer = false;
-        public float distanceToPlayer = 0;
-
-        [HideInInspector] Vector3 playerPosition;
-        [HideInInspector] Vector3 playerForward;
-        Transform player;
-
         public bool drawGizmos = false;
 
         public float TimeDelta
@@ -94,7 +87,7 @@ namespace BGE.Forms
 
         public void Awake()
         {
-            player = GameObject.FindGameObjectWithTag("MainCamera").transform;
+            //player = GameObject.FindGameObjectWithTag("Player").transform;
             CreatureManager.Instance.boids.Add(this);
         }
 
@@ -125,9 +118,6 @@ namespace BGE.Forms
             right = transform.right;
             forward = transform.forward;
             rotation = transform.rotation;
-
-            playerPosition = player.position;
-            playerForward = player.forward;
         }
 
         public Vector3 TransformDirection(Vector3 direction)
@@ -143,70 +133,18 @@ namespace BGE.Forms
         }
 
         float timeAcc = 0;
-
-        [HideInInspector]
         public Vector3 desiredPosition = Vector3.zero;
 
-        [HideInInspector]
         public float gravityAcceleration = 0;
-
-        public bool autoSuspendWhenInvisible = false;
-
         private Renderer renderer = null;
-        public bool isVisible()
-        {
-            if (renderer == null)
-            {
-                renderer = GetComponent<Renderer>();
-                if (renderer == null)
-                {
-                    renderer = GetComponentInChildren<Renderer>();
-                }
-            }
-            return (renderer == null) ? false : renderer.isVisible;
-        }
-
-        public bool suspended = false;
 
         float skippedFrames = 0;
-        public int toSkip = 10;
-        float time = 0;
+
+        public bool suspended;
+
         void FixedUpdate()
         {
-            playerPosition = player.position;
-            playerForward = player.forward;        
-            inFrontOfPlayer = Vector3.Dot(position - playerPosition, playerForward) > 0;
-            distanceToPlayer = Vector3.Distance(position, playerPosition);
-
-            /*
-            if (autoSuspendWhenInvisible)
-            {
-                suspended = !inFrontOfPlayer;
-            }
-            if (suspended)
-            {
-                return;
-            }
-
-            if (!inFrontOfPlayer && distanceToPlayer > 1000 && skippedFrames < toSkip)
-            {
-                skippedFrames++;
-                return;
-            }
-            */
-            if (skippedFrames == 10)
-            {
-
-                skippedFrames = 0;
-                time = Time.deltaTime * 10.0f;
-            }
-            else
-            {
-                time = Time.deltaTime;    
-            }
-            
-            
-
+        
             float smoothRate;
 
             if (school != null)
@@ -220,103 +158,73 @@ namespace BGE.Forms
                 force = CalculateForce();                
             }
 
-            timeAcc += time;
 
-            if (timeAcc > preferredTimeDelta)
+            
+            Vector3 newAcceleration = force / mass;
+            smoothRate = Utilities.Clip(9.0f * Time.deltaTime, 0.15f, 0.4f) / 2.0f;
+            Utilities.BlendIntoAccumulator(smoothRate, newAcceleration, ref acceleration);
+            
+            if (applyGravity)
             {
-                float timeAccMult = timeAcc * timeMultiplier;
-                if (school != null)
-                {
-                    timeAccMult *= school.timeMultiplier;
-                }
-                Vector3 newAcceleration = force / mass;
-                if (timeAcc > 0.0f)
-                {
-                    smoothRate = Utilities.Clip(9.0f * timeAccMult, 0.15f, 0.4f) / 2.0f;
-                    Utilities.BlendIntoAccumulator(smoothRate, newAcceleration, ref acceleration);
-                }
+                velocity += gravity * Time.deltaTime;
+            }
 
-                if (applyGravity)
-                {
-                    velocity += gravity * timeAccMult;
-                }
+            velocity += acceleration * Time.deltaTime;
 
-                velocity += acceleration * timeAccMult;
+            desiredPosition = desiredPosition + (velocity * Time.deltaTime);
+            
+            // the length of this global-upward-pointing vector controls the vehicle's
+            // tendency to right itself as it is rolled over from turning acceleration
+            Vector3 globalUp = new Vector3(0, straighteningTendancy, 0);
+            // acceleration points toward the center of local path curvature, the
+            // length determines how much the vehicle will roll while turning
+            Vector3 accelUp = acceleration * rollingTendancy;
+            accelUp.y = 0; // Cancel out the up down
+            // combined banking, sum of UP due to turning and global UP
+            Vector3 bankUp = accelUp + globalUp;
+            // blend bankUp into vehicle's UP basis vector
+            smoothRate = Time.deltaTime;// * 3.0f;
+            Vector3 tempUp = transform.up;
+            Utilities.BlendIntoAccumulator(smoothRate, bankUp, ref tempUp);
 
-                if (integrateForces)
-                {
-                    desiredPosition = desiredPosition + (velocity * timeAccMult);
-                }
+            
 
-                // the length of this global-upward-pointing vector controls the vehicle's
-                // tendency to right itself as it is rolled over from turning acceleration
-                Vector3 globalUp = new Vector3(0, straighteningTendancy, 0);
-                // acceleration points toward the center of local path curvature, the
-                // length determines how much the vehicle will roll while turning
-                Vector3 accelUp = acceleration * rollingTendancy;
-                accelUp.y = 0; // Cancel out the up down
-                // combined banking, sum of UP due to turning and global UP
-                Vector3 bankUp = accelUp + globalUp;
-                // blend bankUp into vehicle's UP basis vector
-                smoothRate = timeAccMult;// * 3.0f;
-                Vector3 tempUp = transform.up;
-                Utilities.BlendIntoAccumulator(smoothRate, bankUp, ref tempUp);
-
+            speed = velocity.magnitude;
+            if (speed > maxSpeed)
+            {
+                velocity.Normalize();
+                velocity *= maxSpeed;
                 speed = velocity.magnitude;
-                if (speed > maxSpeed)
-                {
-                    velocity.Normalize();
-                    velocity *= maxSpeed;
-                    speed = velocity.magnitude;
-                }
-                Utilities.checkNaN(velocity);
+            }
+            Utilities.checkNaN(velocity);
 
-                if (speed > 0.01f)
+            if (speed > 0.01f)
+            {
+                if (preferredTimeDelta > 0)
                 {
-                    if (preferredTimeDelta > 0)
-                    {
-                        transform.forward = velocity;
-                    }
-                    else
-                    {
-                        transform.forward = Vector3.RotateTowards(transform.forward, velocity, Mathf.Deg2Rad * maxTurnDegrees * Time.deltaTime, float.MaxValue);
-                    }
-                    if (keepUpright)
-                    {
-                        Vector3 uprightForward = transform.forward;
-                        uprightForward.y = 0;
-                        transform.forward = uprightForward;
-                    }
+                    transform.forward = velocity;
                 }
-                
+                else
+                {
+                    transform.forward = Vector3.RotateTowards(transform.forward, velocity, Mathf.Deg2Rad * maxTurnDegrees * Time.deltaTime, float.MaxValue);
+                }
+                if (keepUpright)
+                {
+                    Vector3 uprightForward = transform.forward;
+                    uprightForward.y = 0;
+                    transform.forward = uprightForward;
+                }
 
                 if (applyBanking) 
                 {
                     Quaternion q = Quaternion.LookRotation(transform.forward, tempUp);
                     transform.rotation = q;
                 }
-                velocity *= (1.0f - (damping * timeAccMult));
-                timeAcc = 0.0f;
-
-
+                velocity *= (1.0f - (damping * Time.deltaTime));
                 UpdateLocalFromTransform();
             }
 
-            if (preferredTimeDelta != 0.0f && integrateForces)
-            {
-                /*
-                float timeDelta = Time.deltaTime * timeMultiplier;
-                timeDelta *= (school == null) ? 1 : school.timeMultiplier;
-                float dist = Vector3.Distance(transform.position, desiredPosition);
-                float distThisFrame = dist * (timeDelta / preferredTimeDelta);
-                */
-                //transform.position = Vector3.MoveTowards(transform.position, desiredPosition, 50 * Time.deltaTime);
-                transform.position = Vector3.Lerp(transform.position, desiredPosition, Time.deltaTime * 3);
-            }
-            else
-            {
-                if (integrateForces) transform.position = desiredPosition;
-            }
+            if (integrateForces) transform.position = desiredPosition;
         }
 
         private bool AccumulateForce(ref Vector3 runningTotal, ref Vector3 clampedForce, Vector3 force)

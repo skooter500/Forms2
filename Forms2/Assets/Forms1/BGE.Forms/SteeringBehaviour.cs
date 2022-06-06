@@ -12,13 +12,11 @@ namespace BGE.Forms
         [HideInInspector]
         public bool active = true;
 
-        [Range(0.0f, 200.0f)]
         public float weight = 1.0f;
 
         [HideInInspector]
         public Vector3 force;
 
-        [Range(0.0f, 1.0f)]
         public float forceMagnitude;
 
 

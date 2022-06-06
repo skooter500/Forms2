@@ -85,21 +85,7 @@ namespace BGE.Forms
             {
                 return;
             }
-            if (! boid.inFrontOfPlayer && boid.distanceToPlayer > 1000 && skippedFrames < 10)
-            {
-                skippedFrames++;
-                return;
-            }
-            if (skippedFrames == 10)
-            {
-                
-                skippedFrames = 0;
-                time = Time.deltaTime * 10.0f;
-            }
-            else
-            {
-                time = Time.deltaTime;
-            }
+            time = Time.deltaTime;
             Transform previous;
             for (int i = 0 ; i < bones.Count; i++)
             {

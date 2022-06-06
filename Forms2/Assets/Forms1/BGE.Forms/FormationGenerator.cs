@@ -87,7 +87,7 @@ namespace BGE.Forms
         {
             leader.transform.position = positions[0];
             Boid b = Utilities.FindBoidInHierarchy(leader);
-            b.suspended = false;
+
             b.position = positions[0];
             /* float y = WorldGenerator.Instance.SamplePos(b.position.x, b.position.z);
             if (b.position.y < y + height)
@@ -102,7 +102,6 @@ namespace BGE.Forms
             {
                 follower.transform.position = positions[i];
                 Boid bb = Utilities.FindBoidInHierarchy(follower);
-                bb.suspended = false;
                 bb.position = positions[i];
                 /* float y = WorldGenerator.Instance.SamplePos(b.position.x, b.position.z);
                 if (b.position.y < y + height)
