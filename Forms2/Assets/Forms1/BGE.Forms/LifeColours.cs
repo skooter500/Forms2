@@ -102,8 +102,14 @@ namespace BGE.Forms
         {
             //tg = GetComponent<TextureGenerator>();
             InitializeProgrammableTexture();
+
+            children = GetComponentsInChildren<Renderer>();            
+            foreach (Renderer child in children)
+            {
+                child.material = transMaterial;
+            }
          
-            FadeIn();
+            //FadeIn();
         }
 
 

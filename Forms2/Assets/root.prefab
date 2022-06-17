@@ -1,0 +1,751 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6496192525376674921
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6496192525376674920}
+  - component: {fileID: 6496192525376674923}
+  - component: {fileID: 6496192525376674925}
+  - component: {fileID: 6496192525376674924}
+  m_Layer: 0
+  m_Name: root
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6496192525376674920
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6496192525376674921}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 6496192525389423821}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6496192525376674923
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6496192525376674921}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35d5ff24accd40541bf41b01a9c55077, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cam: {fileID: 6496192525389423821}
+  target: {x: 0, y: 0, z: 0}
+  from: {x: 0, y: 0, z: 0, w: 0}
+  fromDistance: 0
+  toDistance: 0
+  to: {x: 0, y: 0, z: 0, w: 0}
+  angle: 90
+  transitionTime: 10
+  elapsed: 0
+  step: 50
+  min: 0
+  max: 200
+  transition: 0
+  ease: 1
+  directionalLight: {fileID: 0}
+  volume: {fileID: 6496192525389423822}
+--- !u!114 &6496192525376674925
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6496192525376674921}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: 56d4369837500644d886b514493036b5, type: 3}
+  m_NotificationBehavior: 2
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6496192525376674923}
+        m_TargetAssemblyTypeName: CornerCamera, Assembly-CSharp
+        m_MethodName: TimeChanged
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
+    m_ActionId: 44cf3524-2496-400d-ada4-8f2635abc4c2
+    m_ActionName: MIDI Controls/Change Speed
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6496192525376674923}
+        m_TargetAssemblyTypeName: CornerCamera, Assembly-CSharp
+        m_MethodName: Forwards
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
+    m_ActionId: 74aff319-5d7c-49cf-b986-407bb0366034
+    m_ActionName: MIDI Controls/New action
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6496192525376674923}
+        m_TargetAssemblyTypeName: CornerCamera, Assembly-CSharp
+        m_MethodName: Backwards
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
+    m_ActionId: a8ebe27e-9825-473f-9ed2-41def4761c75
+    m_ActionName: MIDI Controls/New action
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6496192525376674923}
+        m_TargetAssemblyTypeName: CornerCamera, Assembly-CSharp
+        m_MethodName: YawClock
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: dc27f454-333f-4a80-8fc5-c8fec77612ad
+    m_ActionName: MIDI Controls/Yaw Clock
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6496192525376674923}
+        m_TargetAssemblyTypeName: CornerCamera, Assembly-CSharp
+        m_MethodName: YawCount
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: e26990d5-845e-4d9b-8c95-978f963cc5bc
+    m_ActionName: MIDI Controls/Yaw Counter
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6496192525376674923}
+        m_TargetAssemblyTypeName: CornerCamera, Assembly-CSharp
+        m_MethodName: PitchClock
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 4e1c1724-02a5-4429-8be7-78dadf636e5d
+    m_ActionName: MIDI Controls/Pitch Clock
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6496192525376674923}
+        m_TargetAssemblyTypeName: CornerCamera, Assembly-CSharp
+        m_MethodName: PitchCount
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 24cf8cdd-33fc-4b75-a4c0-129e422262d8
+    m_ActionName: MIDI Controls/Pitch Counter
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6496192525376674923}
+        m_TargetAssemblyTypeName: CornerCamera, Assembly-CSharp
+        m_MethodName: RollClock
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 4ce96bec-4ecd-40c0-a161-96ddf5a431d5
+    m_ActionName: MIDI Controls/Roll Clock
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6496192525376674923}
+        m_TargetAssemblyTypeName: CornerCamera, Assembly-CSharp
+        m_MethodName: RollCount
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 639f586e-e01a-440a-8581-4d1dd3187f46
+    m_ActionName: MIDI Controls/Roll Count
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6496192525376674923}
+        m_TargetAssemblyTypeName: CornerCamera, Assembly-CSharp
+        m_MethodName: Radius
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: c10ae3b6-f2fe-47b3-bcec-4e56f1e8f889
+    m_ActionName: MIDI Controls/Radius
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6496192525376674923}
+        m_TargetAssemblyTypeName: CornerCamera, Assembly-CSharp
+        m_MethodName: Light
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: b8ffc3fc-d8b4-45bc-aa80-97bb64e56b25
+    m_ActionName: MIDI Controls/Light[/MidiDevice/control018]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6496192525376674923}
+        m_TargetAssemblyTypeName: CornerCamera, Assembly-CSharp
+        m_MethodName: AmbientLight
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 13c264c7-40db-437c-8380-ae3f87227105
+    m_ActionName: MIDI Controls/New action
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6496192525376674923}
+        m_TargetAssemblyTypeName: CornerCamera, Assembly-CSharp
+        m_MethodName: Quit
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 7d65c2c0-0d25-4f4d-ad55-39349371b35b
+    m_ActionName: MIDI Controls/New action
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6496192525376674923}
+        m_TargetAssemblyTypeName: CornerCamera, Assembly-CSharp
+        m_MethodName: ColorRange
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 819d0f7a-7247-4c06-accc-35c3bbaede6d
+    m_ActionName: MIDI Controls/New action
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6496192525376674923}
+        m_TargetAssemblyTypeName: CornerCamera, Assembly-CSharp
+        m_MethodName: FeelerLength
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 15211e8b-2867-40cd-a7b3-df82a8025477
+    m_ActionName: MIDI Controls/Feeler Depth[/MidiDevice/control114]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6496192525376674923}
+        m_TargetAssemblyTypeName: CornerCamera, Assembly-CSharp
+        m_MethodName: RestartScene
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: a92d57c5-05fb-4281-bae8-1c06207149c7
+    m_ActionName: MIDI Controls/New action
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6496192525376674923}
+        m_TargetAssemblyTypeName: CornerCamera, Assembly-CSharp
+        m_MethodName: StopStart
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 07873dce-11ef-4153-ad57-a6bad1811e5a
+    m_ActionName: MIDI Controls/New action
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 5bfdbc37-dec6-4c28-8a9c-c0b8c7c929df
+    m_ActionName: MIDI Controls/Test
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6496192525376674923}
+        m_TargetAssemblyTypeName: CornerCamera, Assembly-CSharp
+        m_MethodName: Alpha
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: bf2fe92b-332c-4c12-9377-48f148d55944
+    m_ActionName: MIDI Controls/New action
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6496192525376674923}
+        m_TargetAssemblyTypeName: CornerCamera, Assembly-CSharp
+        m_MethodName: ColorShift
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 563ec407-07a8-4871-8700-5c9fcb35d298
+    m_ActionName: MIDI Controls/ColorShift
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6496192525376674923}
+        m_TargetAssemblyTypeName: CornerCamera, Assembly-CSharp
+        m_MethodName: Bloom
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 180a87ea-c524-467d-b589-f273a93044f8
+    m_ActionName: MIDI Controls/Bloom[/MidiDevice/control093]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6496192525376674923}
+        m_TargetAssemblyTypeName: CornerCamera, Assembly-CSharp
+        m_MethodName: ShaderTime
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: b8ec0e20-a6fc-4200-af52-2659598a85db
+    m_ActionName: MIDI Controls/New action
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6496192525376674923}
+        m_TargetAssemblyTypeName: CornerCamera, Assembly-CSharp
+        m_MethodName: ColorWidth
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: d9116ac5-5270-406b-b4a9-fb6fb79ade50
+    m_ActionName: MIDI Controls/ColorWidth
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6496192525376674923}
+        m_TargetAssemblyTypeName: CornerCamera, Assembly-CSharp
+        m_MethodName: FogEnd
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: f5ed9124-7ef1-4638-9b69-82fa12229ba3
+    m_ActionName: MIDI Controls/FogEnd[/MidiDevice/control019]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6496192525376674923}
+        m_TargetAssemblyTypeName: CornerCamera, Assembly-CSharp
+        m_MethodName: Smoothness
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 03633395-216b-428b-9276-6c09fb143b02
+    m_ActionName: MIDI Controls/New action
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6496192525376674923}
+        m_TargetAssemblyTypeName: CornerCamera, Assembly-CSharp
+        m_MethodName: Metalic
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 616eb8eb-1a01-428b-8076-2d0189630bda
+    m_ActionName: MIDI Controls/New action
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6496192525376674923}
+        m_TargetAssemblyTypeName: CornerCamera, Assembly-CSharp
+        m_MethodName: Temp
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 3db9e6a6-0a92-4290-99e9-2afbdec90b29
+    m_ActionName: MIDI Controls/Temp[/MidiDevice/control075]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6496192525376674923}
+        m_TargetAssemblyTypeName: CornerCamera, Assembly-CSharp
+        m_MethodName: Tint
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: d77f76f5-c2eb-4979-9f18-33cbb0c41d44
+    m_ActionName: MIDI Controls/Tint[/MidiDevice/control075,/MidiDevice/control072]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6496192525376674924}
+        m_TargetAssemblyTypeName: ConsoleToGUI, Assembly-CSharp
+        m_MethodName: Show
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: bb5b105f-16bd-452e-9288-bdd4f6865971
+    m_ActionName: MIDI Controls/New action
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6496192525376674923}
+        m_TargetAssemblyTypeName: CornerCamera, Assembly-CSharp
+        m_MethodName: DisplayValues
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 60aa23b3-0b07-4276-8259-8d198f653d21
+    m_ActionName: MIDI Controls/Display Values
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: MIDI Controls
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 6496192525389423818}
+--- !u!114 &6496192525376674924
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6496192525376674921}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a037d5e5707075439e233e81de6d414, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShowStack: 0
+  ShowFPS: 1
+  LogBuffer: 5000
+  LogHeight: 250
+  OnlyInEditor: 0
+  SaveLogFile: 1
+  DisplayInUi: 0
+  ShowLog: 1
+  logFilaName: 
+  FontLogSize: 25
+  path: /Logs/Infinite Forms
+  filePrefix: 'Infinite Forms '
+  offset: 100
+--- !u!1 &6496192525389423816
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6496192525389423821}
+  - component: {fileID: 6496192525389423818}
+  - component: {fileID: 6496192525389423819}
+  - component: {fileID: 6496192525389423822}
+  - component: {fileID: 6496192525389423809}
+  m_Layer: 0
+  m_Name: camera
+  m_TagString: MainCamera
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6496192525389423821
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6496192525389423816}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -150}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6496192525376674920}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!20 &6496192525389423818
+Camera:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6496192525389423816}
+  m_Enabled: 1
+  serializedVersion: 2
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
+  m_projectionMatrixMode: 1
+  m_GateFitMode: 2
+  m_FOVAxisMode: 0
+  m_SensorSize: {x: 36, y: 24}
+  m_LensShift: {x: 0, y: 0}
+  m_FocalLength: 50
+  m_NormalizedViewPortRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+  near clip plane: 0.3
+  far clip plane: 1000
+  field of view: 60
+  orthographic: 0
+  orthographic size: 5
+  m_Depth: -1
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RenderingPath: -1
+  m_TargetTexture: {fileID: 0}
+  m_TargetDisplay: 0
+  m_TargetEye: 3
+  m_HDR: 1
+  m_AllowMSAA: 1
+  m_AllowDynamicResolution: 0
+  m_ForceIntoRT: 0
+  m_OcclusionCulling: 1
+  m_StereoConvergence: 10
+  m_StereoSeparation: 0.022
+--- !u!81 &6496192525389423819
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6496192525389423816}
+  m_Enabled: 1
+--- !u!114 &6496192525389423822
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6496192525389423816}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b9a305e18de0c04dbd257a21cd47087, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sharedProfile: {fileID: 11400000, guid: ebda6f16cc70aaf4cb3786702e7d5f90, type: 2}
+  isGlobal: 1
+  blendDistance: 0
+  weight: 1
+  priority: 0
+--- !u!114 &6496192525389423809
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6496192525389423816}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 948f4100a11a5c24981795d21301da5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  volumeTrigger: {fileID: 6496192525389423821}
+  volumeLayer:
+    serializedVersion: 2
+    m_Bits: 2147483647
+  stopNaNPropagation: 1
+  finalBlitToCameraTarget: 0
+  antialiasingMode: 1
+  temporalAntialiasing:
+    jitterSpread: 0.75
+    sharpness: 0.25
+    stationaryBlending: 0.95
+    motionBlending: 0.85
+  subpixelMorphologicalAntialiasing:
+    quality: 2
+  fastApproximateAntialiasing:
+    fastMode: 0
+    keepAlpha: 0
+  fog:
+    enabled: 1
+    excludeSkybox: 1
+  debugLayer:
+    lightMeter:
+      width: 512
+      height: 256
+      showCurves: 1
+    histogram:
+      width: 512
+      height: 256
+      channel: 3
+    waveform:
+      exposure: 0.12
+      height: 256
+    vectorscope:
+      size: 256
+      exposure: 0.12
+    overlaySettings:
+      linearDepth: 0
+      motionColorIntensity: 4
+      motionGridSize: 64
+      colorBlindnessType: 0
+      colorBlindnessStrength: 1
+  m_Resources: {fileID: 11400000, guid: d82512f9c8e5d4a4d938b575d47f88d4, type: 2}
+  m_ShowToolkit: 0
+  m_ShowCustomSorter: 0
+  breakBeforeColorGrading: 0
+  m_BeforeTransparentBundles: []
+  m_BeforeStackBundles: []
+  m_AfterStackBundles: []

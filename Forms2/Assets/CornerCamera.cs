@@ -49,6 +49,10 @@ public class CornerCamera : MonoBehaviour
 
     public Light directionalLight;
 
+    public Material material;
+
+    public float fogMax = 500;
+
     void OnDestroy()
     {
         Debug.Log("On Destroy Called");
@@ -85,8 +89,8 @@ public class CornerCamera : MonoBehaviour
             newTime = 0;
             oldTime = ns.ts;            
             newShaderTime = 0;
-            oldShaderTime = ns.material.GetFloat("_TimeMultiplier");       
-            //ns.material.SetFloat("_TimeMultiplier", 0);
+            oldShaderTime = material.GetFloat("_TimeMultiplier");       
+            //material.SetFloat("_TimeMultiplier", 0);
             elapsed = 0.0f;
             transition = Transition.time;
             oldTransitionTime = transitionTime;
@@ -108,7 +112,7 @@ public class CornerCamera : MonoBehaviour
         }
         float f = context.ReadValue<float>() * 200;    
         Debug.Log("Center Light: " + f);    
-        ns.material.SetFloat("_CI", f);
+        material.SetFloat("_CI", f);
     }
 
     public void Smoothness(InputAction.CallbackContext context)
@@ -119,7 +123,7 @@ public class CornerCamera : MonoBehaviour
         }
         float f = context.ReadValue<float>();    
         Debug.Log("Smoothness: " + f);    
-        ns.material.SetFloat("_Glossiness", f);
+        material.SetFloat("_Glossiness", f);
     }
     
     public void Temp(InputAction.CallbackContext context)
@@ -152,7 +156,7 @@ public class CornerCamera : MonoBehaviour
         }
         float f = context.ReadValue<float>();    
         Debug.Log("Metalic: " + f);    
-        ns.material.SetFloat("_Metallic", f);
+        material.SetFloat("_Metallic", f);
     }
 
     /*public void FogStart(InputAction.CallbackContext context)
@@ -164,7 +168,7 @@ public class CornerCamera : MonoBehaviour
         float f = context.ReadValue<float>() * 200;    
         Debug.Log("Fog STart: " + f);    
         RenderSettings.fogStartDistance = f;
-        //ns.material.SetFloat("_CI", f);
+        //material.SetFloat("_CI", f);
     }
     */
 
@@ -174,10 +178,10 @@ public class CornerCamera : MonoBehaviour
         {
             return;
         }
-        float f = context.ReadValue<float>() * 200;    
+        float f = context.ReadValue<float>() * fogMax;    
         Debug.Log("Fog End: " + f);    
         RenderSettings.fogEndDistance = f;
-        //ns.material.SetFloat("_CI", f);
+        //material.SetFloat("_CI", f);
     }
 
 
@@ -207,21 +211,21 @@ public class CornerCamera : MonoBehaviour
         Debug.Log("Radius: " + ns.radius);
         Debug.Log("Probe Length: " + ns.feelerDepth);
 
-        Debug.Log("Center Light: " + ns.material.GetFloat("_CI"));
+        Debug.Log("Center Light: " + material.GetFloat("_CI"));
         Debug.Log("Directional Light: " + directionalLight.intensity);
 
         Debug.Log("Alpha: " + desiredAlpha);
         Debug.Log("Bloom: " + desiredBloom);
 
         Debug.Log("Fog: " + RenderSettings.fogEndDistance);
-        Debug.Log("Smoothness: " + ns.material.GetFloat("_Glossiness"));
+        Debug.Log("Smoothness: " + material.GetFloat("_Glossiness"));
         
-        Debug.Log("Metalic: " + ns.material.GetFloat("_Metallic"));
+        Debug.Log("Metalic: " + material.GetFloat("_Metallic"));
         Debug.Log("Speed: " + CornerCamera.timeScale);
         
 
         Debug.Log("Range: " + desiredRange);
-        Debug.Log("Color width: " + ns.material.GetFloat("_ColorWidth"));
+        Debug.Log("Color width: " + material.GetFloat("_ColorWidth"));
         
         
         Debug.Log("Shift: " + colorGrading.hueShift.value);
@@ -260,7 +264,7 @@ public class CornerCamera : MonoBehaviour
         directionalLight.intensity = f;
     }
 
-    private static float distance = -150;
+    private static float distance = 400;
 
     public void RestartScene(InputAction.CallbackContext context)
     {
@@ -313,7 +317,7 @@ public class CornerCamera : MonoBehaviour
         }
         float f = context.ReadValue<float>();        
         Debug.Log("Color Width : " + f);
-        ns.material.SetFloat("_ColorWidth", f);
+        material.SetFloat("_ColorWidth", f);
         
     }
 
@@ -327,7 +331,7 @@ public class CornerCamera : MonoBehaviour
         float f = context.ReadValue<float>();        
 ;
         Debug.Log("Color Start : " + f);
-        ns.material.SetFloat("_ColorStart", f);
+        material.SetFloat("_ColorStart", f);
         
     }
     public void ColorEnd(InputAction.CallbackContext context)
@@ -338,7 +342,7 @@ public class CornerCamera : MonoBehaviour
         }
         float f = context.ReadValue<float>();       
         Debug.Log("Color End : " + f);
-        ns.material.SetFloat("_ColorEnd", f);
+        material.SetFloat("_ColorEnd", f);
         
     }
 
@@ -356,7 +360,7 @@ public class CornerCamera : MonoBehaviour
         
         Debug.Log("Color Shift: " + f);
         colorGrading.hueShift.Override(f);
-        //ns.material.SetFloat("_ColorShift", f);
+        //material.SetFloat("_ColorShift", f);
 
     }
 
@@ -521,8 +525,8 @@ public class CornerCamera : MonoBehaviour
     void Awake()
     {
         Debug.Log("Awake");
-        ns = FindObjectOfType<NematodeSchool>();
-        ns.ts = 0;
+        //ns = FindObjectOfType<NematodeSchool>();
+        //ns.ts = 0;
         oldShaderTime = 1;
         oldTime = CornerCamera.timeScale;                      
     }
@@ -547,7 +551,7 @@ public class CornerCamera : MonoBehaviour
         lp.z = CornerCamera.distance; 
         cam.transform.localPosition = lp;
         
-        //ns.material.SetFloat("_TimeMultiplier", 0);
+        //material.SetFloat("_TimeMultiplier", 0);
     }
 
 
@@ -555,9 +559,9 @@ public class CornerCamera : MonoBehaviour
     void Update()
     {       
 
-        ns.material.SetFloat("_TimeMultiplier", Mathf.Lerp(ns.material.GetFloat("_TimeMultiplier"), desiredShaderTime, Time.deltaTime));
-        ns.material.SetFloat("_PositionScale", Mathf.Lerp(ns.material.GetFloat("_PositionScale"), desiredRange, Time.deltaTime));
-        ns.material.SetFloat("_Alpha", Mathf.Lerp(ns.material.GetFloat("_Alpha"), desiredAlpha, Time.deltaTime));
+        material.SetFloat("_TimeMultiplier", Mathf.Lerp(material.GetFloat("_TimeMultiplier"), desiredShaderTime, Time.deltaTime));
+        material.SetFloat("_PositionScale", Mathf.Lerp(material.GetFloat("_PositionScale"), desiredRange, Time.deltaTime));
+        material.SetFloat("_Alpha", Mathf.Lerp(material.GetFloat("_Alpha"), desiredAlpha, Time.deltaTime));
 
 
         float oldBloom = bloom.intensity.GetValue<float>();
@@ -595,7 +599,7 @@ public class CornerCamera : MonoBehaviour
                     Debug.Log("New Time: " + newTime);
                     ns.ts = Mathf.Lerp(oldTime, newTime, t);         
                     //float timeM = Mathf.Lerp(oldShaderTime, newShaderTime, t);                     
-                    //ns.material.SetFloat("_TimeMultiplier", timeM);      
+                    //material.SetFloat("_TimeMultiplier", timeM);      
                     if (elapsed == transitionTime)
                     {
                         stopped = ! stopped;
