@@ -109,7 +109,7 @@ namespace BGE.Forms
                 child.material = transMaterial;
             }
          
-            //FadeIn();
+            FadeIn();
         }
 
 
