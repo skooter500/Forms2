@@ -58,7 +58,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Alpha: 0.9860499
+    - _Alpha: 0.5000031
     - _BumpScale: 1
     - _CI: 0
     - _ColorEnd: 0
@@ -78,11 +78,11 @@ Material:
     - _Offset: 42440
     - _Palette: 1
     - _Parallax: 0.02
-    - _PositionScale: 1.0000012
+    - _PositionScale: 99.999596
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
-    - _TimeMultiplier: 8e-44
+    - _TimeMultiplier: 49.999798
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
