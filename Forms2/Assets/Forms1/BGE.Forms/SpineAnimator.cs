@@ -3,78 +3,67 @@ using System.Collections.Generic;
 
 namespace BGE.Forms
 {
-    public class SpineAnimator : MonoBehaviour {
+    public class SpineAnimator : MonoBehaviour
+    {
 
-        public bool autoAssignBones = true;
-
-        public enum AlignmentStrategy { LookAt, AlignToHead, LocalAlignToHead }
-        public AlignmentStrategy alignmentStrategy = AlignmentStrategy.LookAt;
-
-        public List<GameObject> bones = new List<GameObject>();
-        public List<Transform> boneTransforms = new List<Transform>();
+        
 
         public List<Vector3> offsets = new List<Vector3>();
-                
-        public float bondDamping = 10;
-        public float angularBondDamping = 12;
-        
-        public bool suspended = false;
+        public List<Transform> children = new List<Transform>();
+        public float damping = 10.0f;
 
-        public Boid boid;
-        private float time = 0;
+    // Use this for initialization
+    void Start()
+    {
+        Cursor.visible = false;
+        // This iterates through all the children transforms
 
-        public bool useSpineAnimatorSystem = true;
-        public int spineAnimatorSystemToUse = 0;
+        Transform parent;
+        parent = (transform.parent.childCount > 1) ? transform.parent : transform.parent.parent;
 
-        void Start()
+        for (int i = 0; i < parent.childCount; i++)
         {
-            Transform prevFollower;
-            offsets.Clear();
-
-            if (autoAssignBones)
+            Transform current = parent.GetChild(i);
+            if (i > 0)
             {
-                bones.Clear();
-                Transform parent;
-                parent = (transform.parent.childCount > 1) ? transform.parent : transform.parent.parent;
-                for (int i = 0; i < parent.childCount; i++)
-                {
-                    GameObject child = parent.GetChild(i).gameObject;
-                    if (child != this.gameObject)
-                    {
-                        bones.Add(child);
-                        boneTransforms.Add(child.transform);
-                    }
-                }
-            }
+                Transform prev = parent.GetChild(i - 1);
+                // Offset from previous to current
+                Vector3 offset = current.transform.position - prev.transform.position; 
+                
+                // Rotating from world back to local
+                offset = Quaternion.Inverse(prev.transform.rotation) * offset;
+                offsets.Add(offset);                
+            }            
+            children.Add(current);
+        }
+    }
 
-            for (int i = 0; i < bones.Count; i++)
+        int skippedFrames = 0;
+
+        void Update()
+        {
+            float dt = Time.deltaTime * NematodeSchool.timeScale;
+            for (int i = 1; i < children.Count; i++)
             {
-                if (i == 0)
-                {
-                    prevFollower = this.transform;
-                }
-                else
-                {
-                    prevFollower = boneTransforms[i - 1];
-                }
+                Transform prev = children[i - 1];
+                Transform current = children[i];
+                Vector3 wantedPosition = prev.position + ((prev.rotation * offsets[i - 1]));
+                Quaternion wantedRotation = Quaternion.LookRotation(prev.transform.position - current.position, prev.transform.up);
 
-                Transform follower = boneTransforms[i];
-                Vector3 offset = follower.position - prevFollower.position;
-                offset = Quaternion.Inverse(prevFollower.rotation) * offset;
-                offsets.Add(offset);
-            }
+                Vector3 lerpedPosition = Vector3.Lerp(current.position, wantedPosition, dt * damping);
 
-            boid = Utilities.FindBoidInHierarchy(this.gameObject);
+                // Dont move the segments too far apart
+                Vector3 clampedOffset = lerpedPosition - prev.position;
+                clampedOffset = Vector3.ClampMagnitude(clampedOffset, offsets[i - 1].magnitude);
+                current.position = prev.position + clampedOffset;
 
-            if (useSpineAnimatorSystem)
-            {
-                SpineAnimatorManager.Instance.AddSpine(this, spineAnimatorSystemToUse);
+
+                current.rotation = Quaternion.Slerp(current.rotation, wantedRotation, dt * damping);
             }
         }
 
-        int skippedFrames = 0;
-        
-        
+
+        /*
         public void FixedUpdate()
         {
             if (useSpineAnimatorSystem)
@@ -87,7 +76,7 @@ namespace BGE.Forms
             }
             time = Time.deltaTime;
             Transform previous;
-            for (int i = 0 ; i < bones.Count; i++)
+            for (int i = 0; i < bones.Count; i++)
             {
                 if (i == 0)
                 {
@@ -95,17 +84,17 @@ namespace BGE.Forms
                 }
                 else
                 {
-                    previous = boneTransforms[i - 1];
+                    previous = children[i - 1];
                 }
 
-                Transform current = boneTransforms[i];
+                Transform current = children[i];
 
                 DelayedMovement(previous, current, offsets[i], i);
             }
-            
+
         }
-        
-    
+
+
         void DelayedMovement(Transform previous, Transform current, Vector3 bondOffset, int i)
         {
             Vector3 wantedPosition = previous.TransformPointUnscaled(bondOffset);
@@ -126,5 +115,6 @@ namespace BGE.Forms
                     break;
             }
         }
+        */
     }
 }

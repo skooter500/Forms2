@@ -53,11 +53,6 @@ public class CornerCamera : MonoBehaviour
 
     public float fogMax = 500;
 
-    void OnDestroy()
-    {
-        Debug.Log("On Destroy Called");
-    }
-
 
     public void StopStart(InputAction.CallbackContext context)
     {
@@ -264,7 +259,7 @@ public class CornerCamera : MonoBehaviour
         directionalLight.intensity = f;
     }
 
-    private static float distance = 400;
+    private static float distance = -150;
 
     public void RestartScene(InputAction.CallbackContext context)
     {
@@ -292,7 +287,6 @@ public class CornerCamera : MonoBehaviour
 
     void OnApplicationQuit()
     {
-        Debug.Log("Quit");
         shouldIgnore = true;
     }
 
@@ -419,63 +413,75 @@ public class CornerCamera : MonoBehaviour
         {
             return;
         }
-        from = transform.rotation;
-        to = Quaternion.AngleAxis(angle, transform.right) * transform.rotation;
+        from = transform.localRotation;
+        Vector3 localRight = from * Vector3.right;
+        to = Quaternion.AngleAxis(angle, localRight) * transform.localRotation;
         elapsed = 0;
         transition = Transition.rotation;
     }
+    
     public void PitchCount(InputAction.CallbackContext context)
     {
         if (elapsed < transitionTime || context.phase != InputActionPhase.Performed)
         {
             return;
         }
-        from = transform.rotation;
-        to = Quaternion.AngleAxis(-angle, transform.right) * transform.rotation;
+        from = transform.localRotation;
+        Vector3 localRight = from * Vector3.right;
+        to = Quaternion.AngleAxis(-angle, localRight) * transform.localRotation;
         elapsed = 0;
         transition = Transition.rotation;
     }
+
     public void YawClock(InputAction.CallbackContext context)
     {
         if (elapsed < transitionTime || context.phase != InputActionPhase.Performed)
         {
             return;
         }
-        from = transform.rotation;
-        to = Quaternion.AngleAxis(angle, transform.up) * transform.rotation;
+        from = transform.localRotation;
+        Vector3 localUp = from * Vector3.up;
+        to = Quaternion.AngleAxis(angle,localUp) * transform.localRotation;
         elapsed = 0;
         transition = Transition.rotation;
     }
+
     public void YawCount(InputAction.CallbackContext context)
     {
         if (elapsed < transitionTime || context.phase != InputActionPhase.Performed)
         {
             return;
         }
-        from = transform.rotation;
-        to = Quaternion.AngleAxis(-angle, transform.up) * transform.rotation;
+        
+        from = transform.localRotation;
+        Vector3 localUp = from * Vector3.up;
+        to = Quaternion.AngleAxis(-angle, localUp) * transform.localRotation;
         elapsed = 0;
         transition = Transition.rotation;
     }
+
     public void RollClock(InputAction.CallbackContext context)
     {
         if (elapsed < transitionTime || context.phase != InputActionPhase.Performed)
         {
             return;
         }
-        from = transform.rotation;
-        to = Quaternion.AngleAxis(angle, transform.forward) * transform.rotation;
+        from = transform.localRotation;
+        Vector3 localForward = from * Vector3.forward;
+        to = Quaternion.AngleAxis(angle, localForward) * transform.localRotation;
         elapsed = 0;
         transition = Transition.rotation;
     }
+
     public void RollCount(InputAction.CallbackContext context)
     {
         if (elapsed < transitionTime || context.phase != InputActionPhase.Performed)
         {
             return;
         }
-        from = transform.rotation;
-        to = Quaternion.AngleAxis(-angle, transform.forward) * transform.rotation;
+        from = transform.localRotation;
+        Vector3 localForward = from * Vector3.forward;
+        to = Quaternion.AngleAxis(-angle, localForward) * transform.localRotation;
         elapsed = 0;
         transition = Transition.rotation;
     }
@@ -524,8 +530,7 @@ public class CornerCamera : MonoBehaviour
 
     void Awake()
     {
-        Debug.Log("Awake");
-        //ns = FindObjectOfType<NematodeSchool>();
+        ns = FindObjectOfType<NematodeSchool>();
         //ns.ts = 0;
         oldShaderTime = 1;
         oldTime = CornerCamera.timeScale;                      
@@ -534,7 +539,6 @@ public class CornerCamera : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log("Start");
         //float v = 100.0f;
         //RenderSettings.ambientLight = new Color(v,v,v,1);
         elapsed = transitionTime;
@@ -548,7 +552,7 @@ public class CornerCamera : MonoBehaviour
         newTime = 0;
 
         Vector3 lp = cam.transform.localPosition;
-        lp.z = CornerCamera.distance; 
+        CornerCamera.distance = lp.z; 
         cam.transform.localPosition = lp;
         
         //material.SetFloat("_TimeMultiplier", 0);
@@ -567,6 +571,7 @@ public class CornerCamera : MonoBehaviour
         float oldBloom = bloom.intensity.GetValue<float>();
         float lerpedBloom = Mathf.Lerp(oldBloom, desiredBloom, Time.deltaTime);
         bloom.intensity.Override(lerpedBloom);
+
         if (elapsed < transitionTime)
         {
             elapsed += Time.deltaTime;
@@ -591,7 +596,7 @@ public class CornerCamera : MonoBehaviour
                 }
                 case Transition.rotation:
                 {
-                    transform.rotation = Quaternion.Slerp(from, to, t);
+                    transform.localRotation = Quaternion.Slerp(from, to, t);
                     break;
                 }
                 case Transition.time:

@@ -227,8 +227,6 @@ namespace BGE.Forms
         void StartUpdateThreads()
         {
             running = true;
-            Debug.Log("Starting thread...");
-
             for (int i = 0; i < boids.Count; i++)
             {
                 Boid boid = boids[i];
