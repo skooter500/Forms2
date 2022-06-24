@@ -14,7 +14,7 @@ OcclusionCullingSettings:
 RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 9
-  m_Fog: 1
+  m_Fog: 0
   m_FogColor: {r: 0, g: 0, b: 0, a: 1}
   m_FogMode: 3
   m_FogDensity: 0.00015
@@ -401,17 +401,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18bd9e6fcef51504a8084fcf58b4969d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  autoAssignBones: 1
-  alignmentStrategy: 0
-  bones: []
-  boneTransforms: []
   offsets: []
-  bondDamping: 25
-  angularBondDamping: 2
-  suspended: 0
-  boid: {fileID: 0}
-  useSpineAnimatorSystem: 1
-  spineAnimatorSystemToUse: 0
+  children: []
+  damping: 10
 --- !u!23 &4329278
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -770,7 +762,7 @@ MonoBehaviour:
   keepUpright: 0
   straighteningTendancy: 20
   rollingTendancy: 0.05
-  integrateForces: 1
+  integrateForces: 0
   preferredTimeDelta: 0
   tagNeighbours: 0
   tagNeighboursDither: 0.5
@@ -803,17 +795,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18bd9e6fcef51504a8084fcf58b4969d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  autoAssignBones: 1
-  alignmentStrategy: 0
-  bones: []
-  boneTransforms: []
   offsets: []
-  bondDamping: 25
-  angularBondDamping: 2
-  suspended: 0
-  boid: {fileID: 0}
-  useSpineAnimatorSystem: 1
-  spineAnimatorSystemToUse: 0
+  children: []
+  damping: 10
 --- !u!23 &12453424
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1425,17 +1409,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18bd9e6fcef51504a8084fcf58b4969d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  autoAssignBones: 1
-  alignmentStrategy: 0
-  bones: []
-  boneTransforms: []
   offsets: []
-  bondDamping: 25
-  angularBondDamping: 2
-  suspended: 0
-  boid: {fileID: 0}
-  useSpineAnimatorSystem: 1
-  spineAnimatorSystemToUse: 0
+  children: []
+  damping: 10
 --- !u!114 &62183381
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5480,17 +5456,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18bd9e6fcef51504a8084fcf58b4969d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  autoAssignBones: 1
-  alignmentStrategy: 0
-  bones: []
-  boneTransforms: []
   offsets: []
-  bondDamping: 25
-  angularBondDamping: 2
-  suspended: 0
-  boid: {fileID: 0}
-  useSpineAnimatorSystem: 1
-  spineAnimatorSystemToUse: 0
+  children: []
+  damping: 10
 --- !u!23 &233267919
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5612,17 +5580,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18bd9e6fcef51504a8084fcf58b4969d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  autoAssignBones: 1
-  alignmentStrategy: 0
-  bones: []
-  boneTransforms: []
   offsets: []
-  bondDamping: 10
-  angularBondDamping: 12
-  suspended: 0
-  boid: {fileID: 0}
-  useSpineAnimatorSystem: 1
-  spineAnimatorSystemToUse: 0
+  children: []
+  damping: 10
 --- !u!23 &238797077
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -6916,17 +6876,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18bd9e6fcef51504a8084fcf58b4969d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  autoAssignBones: 1
-  alignmentStrategy: 0
-  bones: []
-  boneTransforms: []
   offsets: []
-  bondDamping: 15
-  angularBondDamping: 3
-  suspended: 0
-  boid: {fileID: 0}
-  useSpineAnimatorSystem: 1
-  spineAnimatorSystemToUse: 0
+  children: []
+  damping: 10
 --- !u!114 &270032588
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7161,17 +7113,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18bd9e6fcef51504a8084fcf58b4969d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  autoAssignBones: 1
-  alignmentStrategy: 0
-  bones: []
-  boneTransforms: []
   offsets: []
-  bondDamping: 10
-  angularBondDamping: 3
-  suspended: 0
-  boid: {fileID: 0}
-  useSpineAnimatorSystem: 0
-  spineAnimatorSystemToUse: 1
+  children: []
+  damping: 10
 --- !u!114 &273471069
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7409,17 +7353,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18bd9e6fcef51504a8084fcf58b4969d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  autoAssignBones: 1
-  alignmentStrategy: 0
-  bones: []
-  boneTransforms: []
   offsets: []
-  bondDamping: 10
-  angularBondDamping: 3
-  suspended: 0
-  boid: {fileID: 0}
-  useSpineAnimatorSystem: 1
-  spineAnimatorSystemToUse: 0
+  children: []
+  damping: 10
 --- !u!114 &276215435
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8873,17 +8809,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18bd9e6fcef51504a8084fcf58b4969d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  autoAssignBones: 1
-  alignmentStrategy: 0
-  bones: []
-  boneTransforms: []
   offsets: []
-  bondDamping: 25
-  angularBondDamping: 2
-  suspended: 0
-  boid: {fileID: 0}
-  useSpineAnimatorSystem: 1
-  spineAnimatorSystemToUse: 0
+  children: []
+  damping: 10
 --- !u!23 &349846123
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -11132,17 +11060,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18bd9e6fcef51504a8084fcf58b4969d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  autoAssignBones: 1
-  alignmentStrategy: 0
-  bones: []
-  boneTransforms: []
   offsets: []
-  bondDamping: 10
-  angularBondDamping: 3
-  suspended: 0
-  boid: {fileID: 0}
-  useSpineAnimatorSystem: 0
-  spineAnimatorSystemToUse: 0
+  children: []
+  damping: 10
 --- !u!114 &450184961
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11441,17 +11361,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18bd9e6fcef51504a8084fcf58b4969d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  autoAssignBones: 1
-  alignmentStrategy: 0
-  bones: []
-  boneTransforms: []
   offsets: []
-  bondDamping: 10
-  angularBondDamping: 3
-  suspended: 0
-  boid: {fileID: 0}
-  useSpineAnimatorSystem: 0
-  spineAnimatorSystemToUse: 1
+  children: []
+  damping: 10
 --- !u!114 &463311353
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11900,17 +11812,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18bd9e6fcef51504a8084fcf58b4969d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  autoAssignBones: 1
-  alignmentStrategy: 0
-  bones: []
-  boneTransforms: []
   offsets: []
-  bondDamping: 25
-  angularBondDamping: 2
-  suspended: 0
-  boid: {fileID: 0}
-  useSpineAnimatorSystem: 1
-  spineAnimatorSystemToUse: 0
+  children: []
+  damping: 10
 --- !u!114 &475269960
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14462,17 +14366,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18bd9e6fcef51504a8084fcf58b4969d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  autoAssignBones: 1
-  alignmentStrategy: 0
-  bones: []
-  boneTransforms: []
   offsets: []
-  bondDamping: 10
-  angularBondDamping: 3
-  suspended: 0
-  boid: {fileID: 0}
-  useSpineAnimatorSystem: 1
-  spineAnimatorSystemToUse: 0
+  children: []
+  damping: 10
 --- !u!114 &579152968
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14746,17 +14642,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18bd9e6fcef51504a8084fcf58b4969d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  autoAssignBones: 1
-  alignmentStrategy: 0
-  bones: []
-  boneTransforms: []
   offsets: []
-  bondDamping: 25
-  angularBondDamping: 2
-  suspended: 0
-  boid: {fileID: 0}
-  useSpineAnimatorSystem: 1
-  spineAnimatorSystemToUse: 0
+  children: []
+  damping: 10
 --- !u!23 &587879534
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -16501,6 +16389,10 @@ PrefabInstance:
       propertyPath: material
       value: 
       objectReference: {fileID: 2100000, guid: a4eaadbdcf669cc45b81d00303f74558, type: 2}
+    - target: {fileID: 6496192525376674923, guid: c6d07e96184a3f14885bed46e8bb6f15, type: 3}
+      propertyPath: transitionTime
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 6496192525376674923, guid: c6d07e96184a3f14885bed46e8bb6f15, type: 3}
       propertyPath: directionalLight
       value: 
@@ -20381,17 +20273,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18bd9e6fcef51504a8084fcf58b4969d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  autoAssignBones: 1
-  alignmentStrategy: 0
-  bones: []
-  boneTransforms: []
   offsets: []
-  bondDamping: 25
-  angularBondDamping: 2
-  suspended: 0
-  boid: {fileID: 0}
-  useSpineAnimatorSystem: 1
-  spineAnimatorSystemToUse: 0
+  children: []
+  damping: 10
 --- !u!23 &795903294
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -23158,23 +23042,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18bd9e6fcef51504a8084fcf58b4969d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  autoAssignBones: 0
-  alignmentStrategy: 0
-  bones:
-  - {fileID: 1572485848}
-  - {fileID: 146888080}
-  - {fileID: 2071328506}
-  - {fileID: 330960006}
-  - {fileID: 53137536}
-  - {fileID: 123600724}
-  boneTransforms: []
   offsets: []
-  bondDamping: 25
-  angularBondDamping: 3
-  suspended: 0
-  boid: {fileID: 0}
-  useSpineAnimatorSystem: 1
-  spineAnimatorSystemToUse: 0
+  children: []
+  damping: 10
 --- !u!23 &936940530
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -24875,17 +24745,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18bd9e6fcef51504a8084fcf58b4969d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  autoAssignBones: 1
-  alignmentStrategy: 0
-  bones: []
-  boneTransforms: []
   offsets: []
-  bondDamping: 10
-  angularBondDamping: 1
-  suspended: 0
-  boid: {fileID: 0}
-  useSpineAnimatorSystem: 1
-  spineAnimatorSystemToUse: 0
+  children: []
+  damping: 10
 --- !u!23 &1018140131
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -25218,17 +25080,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18bd9e6fcef51504a8084fcf58b4969d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  autoAssignBones: 1
-  alignmentStrategy: 0
-  bones: []
-  boneTransforms: []
   offsets: []
-  bondDamping: 25
-  angularBondDamping: 2
-  suspended: 0
-  boid: {fileID: 0}
-  useSpineAnimatorSystem: 1
-  spineAnimatorSystemToUse: 0
+  children: []
+  damping: 10
 --- !u!23 &1026808528
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -27375,17 +27229,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18bd9e6fcef51504a8084fcf58b4969d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  autoAssignBones: 1
-  alignmentStrategy: 0
-  bones: []
-  boneTransforms: []
   offsets: []
-  bondDamping: 25
-  angularBondDamping: 2
-  suspended: 0
-  boid: {fileID: 0}
-  useSpineAnimatorSystem: 1
-  spineAnimatorSystemToUse: 0
+  children: []
+  damping: 10
 --- !u!23 &1072054590
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -27968,17 +27814,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18bd9e6fcef51504a8084fcf58b4969d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  autoAssignBones: 1
-  alignmentStrategy: 0
-  bones: []
-  boneTransforms: []
   offsets: []
-  bondDamping: 15
-  angularBondDamping: 3
-  suspended: 0
-  boid: {fileID: 0}
-  useSpineAnimatorSystem: 1
-  spineAnimatorSystemToUse: 0
+  children: []
+  damping: 10
 --- !u!114 &1114504140
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29649,17 +29487,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18bd9e6fcef51504a8084fcf58b4969d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  autoAssignBones: 1
-  alignmentStrategy: 0
-  bones: []
-  boneTransforms: []
   offsets: []
-  bondDamping: 10
-  angularBondDamping: 3
-  suspended: 0
-  boid: {fileID: 0}
-  useSpineAnimatorSystem: 1
-  spineAnimatorSystemToUse: 0
+  children: []
+  damping: 10
 --- !u!114 &1208994175
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29978,17 +29808,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18bd9e6fcef51504a8084fcf58b4969d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  autoAssignBones: 1
-  alignmentStrategy: 0
-  bones: []
-  boneTransforms: []
   offsets: []
-  bondDamping: 10
-  angularBondDamping: 12
-  suspended: 0
-  boid: {fileID: 0}
-  useSpineAnimatorSystem: 1
-  spineAnimatorSystemToUse: 0
+  children: []
+  damping: 10
 --- !u!114 &1218639293
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30647,17 +30469,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18bd9e6fcef51504a8084fcf58b4969d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  autoAssignBones: 1
-  alignmentStrategy: 0
-  bones: []
-  boneTransforms: []
   offsets: []
-  bondDamping: 25
-  angularBondDamping: 2
-  suspended: 0
-  boid: {fileID: 0}
-  useSpineAnimatorSystem: 1
-  spineAnimatorSystemToUse: 0
+  children: []
+  damping: 10
 --- !u!23 &1249419337
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -31629,17 +31443,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18bd9e6fcef51504a8084fcf58b4969d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  autoAssignBones: 1
-  alignmentStrategy: 0
-  bones: []
-  boneTransforms: []
   offsets: []
-  bondDamping: 25
-  angularBondDamping: 2
-  suspended: 0
-  boid: {fileID: 0}
-  useSpineAnimatorSystem: 1
-  spineAnimatorSystemToUse: 0
+  children: []
+  damping: 10
 --- !u!114 &1320999005
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34368,17 +34174,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18bd9e6fcef51504a8084fcf58b4969d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  autoAssignBones: 1
-  alignmentStrategy: 0
-  bones: []
-  boneTransforms: []
   offsets: []
-  bondDamping: 10
-  angularBondDamping: 3
-  suspended: 0
-  boid: {fileID: 0}
-  useSpineAnimatorSystem: 1
-  spineAnimatorSystemToUse: 0
+  children: []
+  damping: 10
 --- !u!1 &1487014482
 GameObject:
   m_ObjectHideFlags: 0
@@ -39979,17 +39777,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18bd9e6fcef51504a8084fcf58b4969d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  autoAssignBones: 1
-  alignmentStrategy: 0
-  bones: []
-  boneTransforms: []
   offsets: []
-  bondDamping: 10
-  angularBondDamping: 1
-  suspended: 0
-  boid: {fileID: 0}
-  useSpineAnimatorSystem: 1
-  spineAnimatorSystemToUse: 0
+  children: []
+  damping: 10
 --- !u!23 &1658686417
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -40319,17 +40109,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18bd9e6fcef51504a8084fcf58b4969d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  autoAssignBones: 1
-  alignmentStrategy: 0
-  bones: []
-  boneTransforms: []
   offsets: []
-  bondDamping: 25
-  angularBondDamping: 25
-  suspended: 0
-  boid: {fileID: 0}
-  useSpineAnimatorSystem: 1
-  spineAnimatorSystemToUse: 0
+  children: []
+  damping: 10
 --- !u!114 &1670889057
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -43004,17 +42786,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18bd9e6fcef51504a8084fcf58b4969d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  autoAssignBones: 1
-  alignmentStrategy: 0
-  bones: []
-  boneTransforms: []
   offsets: []
-  bondDamping: 10
-  angularBondDamping: 12
-  suspended: 0
-  boid: {fileID: 0}
-  useSpineAnimatorSystem: 1
-  spineAnimatorSystemToUse: 0
+  children: []
+  damping: 10
 --- !u!23 &1770416923
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -45745,17 +45519,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18bd9e6fcef51504a8084fcf58b4969d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  autoAssignBones: 1
-  alignmentStrategy: 0
-  bones: []
-  boneTransforms: []
   offsets: []
-  bondDamping: 25
-  angularBondDamping: 3
-  suspended: 0
-  boid: {fileID: 0}
-  useSpineAnimatorSystem: 1
-  spineAnimatorSystemToUse: 0
+  children: []
+  damping: 10
 --- !u!23 &1866507636
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -46105,17 +45871,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18bd9e6fcef51504a8084fcf58b4969d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  autoAssignBones: 1
-  alignmentStrategy: 0
-  bones: []
-  boneTransforms: []
   offsets: []
-  bondDamping: 25
-  angularBondDamping: 2
-  suspended: 0
-  boid: {fileID: 0}
-  useSpineAnimatorSystem: 1
-  spineAnimatorSystemToUse: 0
+  children: []
+  damping: 10
 --- !u!23 &1874633691
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -46695,17 +46453,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18bd9e6fcef51504a8084fcf58b4969d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  autoAssignBones: 1
-  alignmentStrategy: 0
-  bones: []
-  boneTransforms: []
   offsets: []
-  bondDamping: 25
-  angularBondDamping: 2
-  suspended: 0
-  boid: {fileID: 0}
-  useSpineAnimatorSystem: 1
-  spineAnimatorSystemToUse: 0
+  children: []
+  damping: 10
 --- !u!23 &1885644610
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -48598,17 +48348,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18bd9e6fcef51504a8084fcf58b4969d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  autoAssignBones: 1
-  alignmentStrategy: 0
-  bones: []
-  boneTransforms: []
   offsets: []
-  bondDamping: 23
-  angularBondDamping: 5
-  suspended: 0
-  boid: {fileID: 0}
-  useSpineAnimatorSystem: 0
-  spineAnimatorSystemToUse: 1
+  children: []
+  damping: 10
 --- !u!114 &1977124164
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -49407,23 +49149,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18bd9e6fcef51504a8084fcf58b4969d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  autoAssignBones: 0
-  alignmentStrategy: 0
-  bones:
-  - {fileID: 1889769265}
-  - {fileID: 2044854982}
-  - {fileID: 1926753222}
-  - {fileID: 1616510001}
-  - {fileID: 668571918}
-  - {fileID: 1110249770}
-  boneTransforms: []
   offsets: []
-  bondDamping: 10
-  angularBondDamping: 12
-  suspended: 0
-  boid: {fileID: 0}
-  useSpineAnimatorSystem: 1
-  spineAnimatorSystemToUse: 0
+  children: []
+  damping: 10
 --- !u!1 &2031551020
 GameObject:
   m_ObjectHideFlags: 0
@@ -50312,23 +50040,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18bd9e6fcef51504a8084fcf58b4969d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  autoAssignBones: 0
-  alignmentStrategy: 0
-  bones:
-  - {fileID: 171753071}
-  - {fileID: 1893809734}
-  - {fileID: 480547749}
-  - {fileID: 806420565}
-  - {fileID: 543902108}
-  - {fileID: 1544947696}
-  boneTransforms: []
   offsets: []
-  bondDamping: 10
-  angularBondDamping: 12
-  suspended: 0
-  boid: {fileID: 0}
-  useSpineAnimatorSystem: 1
-  spineAnimatorSystemToUse: 0
+  children: []
+  damping: 10
 --- !u!1 &2075163148
 GameObject:
   m_ObjectHideFlags: 0

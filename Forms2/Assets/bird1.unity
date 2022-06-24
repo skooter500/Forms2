@@ -515,8 +515,6 @@ MonoBehaviour:
   frequency: 1.6
   numParts: 5
   gap: 0
-  color: {r: 0.9607843, g: 1, b: 0.38039216, a: 1}
-  assignColors: 1
   verticalSize: 2
   flatten: 0
   headPrefab: {fileID: 1287858449}
@@ -7921,8 +7919,6 @@ MonoBehaviour:
   frequency: 0.5
   numParts: 15
   gap: -0.04
-  color: {r: 0.9764706, g: 0.83137256, b: 0.007843138, a: 1}
-  assignColors: 1
   verticalSize: 1
   flatten: 0
   headPrefab: {fileID: 1183724176}
@@ -10114,8 +10110,6 @@ MonoBehaviour:
   frequency: 1.5
   numParts: 8
   gap: -1
-  color: {r: 0, g: 0, b: 1, a: 1}
-  assignColors: 1
   verticalSize: 5
   flatten: 0
   headPrefab: {fileID: 2135494542}
@@ -10181,8 +10175,6 @@ MonoBehaviour:
   frequency: 0.73
   numParts: 8
   gap: 0.01
-  color: {r: 0, g: 0.25517225, b: 1, a: 1}
-  assignColors: 1
   verticalSize: 1
   flatten: 0
   headPrefab: {fileID: 1056012717}
@@ -11595,8 +11587,6 @@ MonoBehaviour:
   frequency: 1
   numParts: 5
   gap: 0
-  color: {r: 0, g: 0, b: 1, a: 1}
-  assignColors: 1
   verticalSize: 1
   flatten: 0
   headPrefab: {fileID: 1409643636}
@@ -13290,8 +13280,6 @@ MonoBehaviour:
   frequency: 0.5
   numParts: 5
   gap: 0
-  color: {r: 0, g: 1, b: 0.17241383, a: 1}
-  assignColors: 0
   verticalSize: 1
   flatten: 0
   headPrefab: {fileID: 985699022}
@@ -17814,8 +17802,6 @@ MonoBehaviour:
   frequency: 0.5
   numParts: 15
   gap: -0.04
-  color: {r: 0.97794116, g: 0.8306549, b: 0.0071907504, a: 1}
-  assignColors: 1
   verticalSize: 1
   flatten: 0
   headPrefab: {fileID: 1183724176}
@@ -18141,8 +18127,6 @@ MonoBehaviour:
   frequency: 1.5
   numParts: 8
   gap: -1
-  color: {r: 0, g: 0, b: 1, a: 1}
-  assignColors: 1
   verticalSize: 5
   flatten: 0
   headPrefab: {fileID: 276316955}
@@ -18950,8 +18934,6 @@ MonoBehaviour:
   frequency: 0.73
   numParts: 8
   gap: 0.01
-  color: {r: 0, g: 0.25490198, b: 1, a: 1}
-  assignColors: 1
   verticalSize: 1
   flatten: 0
   headPrefab: {fileID: 672996482}
@@ -19251,8 +19233,6 @@ MonoBehaviour:
   frequency: 0.73
   numParts: 8
   gap: 0.01
-  color: {r: 0, g: 0.25517225, b: 1, a: 1}
-  assignColors: 1
   verticalSize: 1
   flatten: 0
   headPrefab: {fileID: 1056012717}
@@ -23728,8 +23708,6 @@ MonoBehaviour:
   frequency: 0.5
   numParts: 10
   gap: 0.3
-  color: {r: 0, g: 1, b: 0.8758622, a: 1}
-  assignColors: 0
   verticalSize: 1.2
   flatten: 0
   headPrefab: {fileID: 1879433208}
@@ -33130,8 +33108,6 @@ MonoBehaviour:
   frequency: 1
   numParts: 5
   gap: 0
-  color: {r: 0, g: 0, b: 1, a: 1}
-  assignColors: 1
   verticalSize: 1
   flatten: 0
   headPrefab: {fileID: 1409643636}
@@ -38142,8 +38118,6 @@ MonoBehaviour:
   frequency: 0.5
   numParts: 20
   gap: -0.1
-  color: {r: 0, g: 1, b: 0.8758622, a: 1}
-  assignColors: 0
   verticalSize: 1
   flatten: 0
   headPrefab: {fileID: 1056012717}
@@ -41279,8 +41253,6 @@ MonoBehaviour:
   frequency: 2
   numParts: 5
   gap: 0
-  color: {r: 0, g: 0, b: 0, a: 1}
-  assignColors: 1
   verticalSize: 1
   flatten: 0
   headPrefab: {fileID: 710318843}
@@ -44019,8 +43991,6 @@ MonoBehaviour:
   frequency: 0.5
   numParts: 10
   gap: 0.3
-  color: {r: 0, g: 1, b: 0.8758622, a: 1}
-  assignColors: 0
   verticalSize: 1.2
   flatten: 0
   headPrefab: {fileID: 793792842}
@@ -45744,8 +45714,6 @@ MonoBehaviour:
   frequency: 0.5
   numParts: 10
   gap: 0.5
-  color: {r: 0, g: 1, b: 0.8758622, a: 1}
-  assignColors: 0
   verticalSize: 1.2
   flatten: 0
   headPrefab: {fileID: 1510842589}
@@ -51207,8 +51175,6 @@ MonoBehaviour:
   frequency: 0.73
   numParts: 8
   gap: 0.01
-  color: {r: 0, g: 0.25490198, b: 1, a: 1}
-  assignColors: 1
   verticalSize: 1
   flatten: 0
   headPrefab: {fileID: 672996482}
@@ -52891,7 +52857,7 @@ MonoBehaviour:
   toDistance: 0
   to: {x: 0, y: 0, z: 0, w: 0}
   angle: 90
-  transitionTime: 10
+  transitionTime: 2
   elapsed: 0
   step: 50
   min: 0

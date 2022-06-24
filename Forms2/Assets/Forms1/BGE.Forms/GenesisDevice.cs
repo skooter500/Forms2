@@ -157,7 +157,7 @@ namespace BGE.Forms
                                 alive["" + pos] = newPlant;
                                 if (newPlant.GetComponent<LifeColours>())
                                 {
-                                    newPlant.GetComponent<LifeColours>().FadeIn();
+                                    //newPlant.GetComponent<LifeColours>().FadeIn();
                                 }
                                 yield return new WaitForSeconds(delay);
                             }

@@ -118,7 +118,7 @@ namespace BGE.Forms
 
                     if (lc != null)
                     {
-                        lc.FadeIn();
+                        //lc.FadeIn();
                     }
                     // Wait for a frame
                     yield return null;

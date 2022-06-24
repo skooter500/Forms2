@@ -176,7 +176,7 @@ Shader "Custom/Boid" {
 			
 			float ci = 1 + (_CI *  (1.0 / d));//pow(_CI, 1.0 / d);
 
-			fixed3 c = hsv_to_rgb(float3(hue, 1, b * ci));
+			fixed3 c = hsv_to_rgb(float3(hue, 1, 1));
 
 			/*
 			fixed4 c1 = fixed4(0,0,0,0);
