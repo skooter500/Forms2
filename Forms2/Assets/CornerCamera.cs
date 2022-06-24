@@ -183,7 +183,7 @@ public class CornerCamera : MonoBehaviour
 
     void OnApplicationFocus(bool f)
     {
-        shouldIgnore = ! f;
+        //shouldIgnore = ! f;
     }
 
     private static bool shouldIgnore = false;
