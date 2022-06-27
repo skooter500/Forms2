@@ -23,7 +23,6 @@ public class SceneSwitcher : MonoBehaviour
         for (i = 0; i < sceneCount; i++)
         {
             scenes[i] = System.IO.Path.GetFileNameWithoutExtension(UnityEngine.SceneManagement.SceneUtility.GetScenePathByBuildIndex(i));
-            Debug.Log("Scene: " + scenes[i]);
         }
         for (i = 0; i < sceneCount; i++)
         {
