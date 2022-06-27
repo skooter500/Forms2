@@ -4,5 +4,11 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/nematodes.unity
+    guid: 3d78994d2d0df8d42a8c0714df234770
+  - enabled: 1
+    path: Assets/bird2.unity
+    guid: 3671307ae934c834f974eb2a837f0d19
   m_configObjects: {}

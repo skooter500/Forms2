@@ -186,7 +186,7 @@ public class CornerCamera : MonoBehaviour
         //shouldIgnore = ! f;
     }
 
-    private static bool shouldIgnore = false;
+    public static bool shouldIgnore = false;
     private bool ShouldIgnore(InputAction.CallbackContext context)
     {
         //bool b = Mathf.Abs(Time.time - (float) context.time) > 600;

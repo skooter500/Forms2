@@ -367,6 +367,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: root
       objectReference: {fileID: 0}
+    - target: {fileID: 6496192525376674921, guid: c6d07e96184a3f14885bed46e8bb6f15, type: 3}
+      propertyPath: m_TagString
+      value: root
+      objectReference: {fileID: 0}
     - target: {fileID: 6496192525376674923, guid: c6d07e96184a3f14885bed46e8bb6f15, type: 3}
       propertyPath: material
       value: 

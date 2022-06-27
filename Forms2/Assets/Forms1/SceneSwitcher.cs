@@ -8,6 +8,14 @@ public class SceneSwitcher : MonoBehaviour
 {
     public void NextScene(InputAction.CallbackContext context)
     {
+        if (context.phase != InputActionPhase.Performed)
+        {
+            return;
+        }
+        if (CornerCamera.shouldIgnore)
+        {
+            return;
+        }
         int sceneCount = UnityEngine.SceneManagement.SceneManager.sceneCountInBuildSettings;
         string[] scenes = new string[sceneCount];
         string sceneName = SceneManager.GetActiveScene().name;
@@ -15,7 +23,7 @@ public class SceneSwitcher : MonoBehaviour
         for (i = 0; i < sceneCount; i++)
         {
             scenes[i] = System.IO.Path.GetFileNameWithoutExtension(UnityEngine.SceneManagement.SceneUtility.GetScenePathByBuildIndex(i));
-            
+            Debug.Log("Scene: " + scenes[i]);
         }
         for (i = 0; i < sceneCount; i++)
         {
@@ -34,7 +42,7 @@ public class SceneSwitcher : MonoBehaviour
             }
         }
         */
-            
+        Debug.Log("Loading Scene: " + scenes[i]);
         SceneManager.LoadScene(scenes[i]);      
     }
 }
