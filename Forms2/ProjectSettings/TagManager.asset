@@ -5,6 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - Ammo
+  - PlayerCruise
+  - PlayerBoid
+  - prefab
+  - root
   layers:
   - Default
   - TransparentFX

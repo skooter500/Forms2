@@ -123,6 +123,40 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &102911448 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6496192525376674921, guid: c6d07e96184a3f14885bed46e8bb6f15, type: 3}
+  m_PrefabInstance: {fileID: 6496192524460968377}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &102911452 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6496192525376674920, guid: c6d07e96184a3f14885bed46e8bb6f15, type: 3}
+  m_PrefabInstance: {fileID: 6496192524460968377}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &102911453
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 102911448}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 790c2974b8a15044b8aa85ba81af64d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &102911454
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 102911448}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c10c37805d7bec3439aa3d31953ea260, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -214,8 +248,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_Father: {fileID: 102911452}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1 &1024887881
 GameObject:
@@ -276,7 +310,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &6496192524460968377
 PrefabInstance:
@@ -287,7 +321,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6496192525376674920, guid: c6d07e96184a3f14885bed46e8bb6f15, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6496192525376674920, guid: c6d07e96184a3f14885bed46e8bb6f15, type: 3}
       propertyPath: m_LocalPosition.x
@@ -341,6 +375,46 @@ PrefabInstance:
       propertyPath: directionalLight
       value: 
       objectReference: {fileID: 705507994}
+    - target: {fileID: 6496192525376674925, guid: c6d07e96184a3f14885bed46e8bb6f15, type: 3}
+      propertyPath: m_ActionEvents.Array.size
+      value: 31
+      objectReference: {fileID: 0}
+    - target: {fileID: 6496192525376674925, guid: c6d07e96184a3f14885bed46e8bb6f15, type: 3}
+      propertyPath: m_ActionEvents.Array.data[30].m_ActionId
+      value: 55f847b4-e3f2-4f04-b8e8-3a3bf12d7df6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6496192525376674925, guid: c6d07e96184a3f14885bed46e8bb6f15, type: 3}
+      propertyPath: m_ActionEvents.Array.data[30].m_ActionName
+      value: MIDI Controls/NextScene[/MidiDevice/note040]
+      objectReference: {fileID: 0}
+    - target: {fileID: 6496192525376674925, guid: c6d07e96184a3f14885bed46e8bb6f15, type: 3}
+      propertyPath: m_ActionEvents.Array.data[30].m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6496192525376674925, guid: c6d07e96184a3f14885bed46e8bb6f15, type: 3}
+      propertyPath: m_ActionEvents.Array.data[30].m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6496192525376674925, guid: c6d07e96184a3f14885bed46e8bb6f15, type: 3}
+      propertyPath: m_ActionEvents.Array.data[30].m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 102911454}
+    - target: {fileID: 6496192525376674925, guid: c6d07e96184a3f14885bed46e8bb6f15, type: 3}
+      propertyPath: m_ActionEvents.Array.data[30].m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6496192525376674925, guid: c6d07e96184a3f14885bed46e8bb6f15, type: 3}
+      propertyPath: m_ActionEvents.Array.data[30].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: NextScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 6496192525376674925, guid: c6d07e96184a3f14885bed46e8bb6f15, type: 3}
+      propertyPath: m_ActionEvents.Array.data[30].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: SceneSwitcher, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6496192525376674925, guid: c6d07e96184a3f14885bed46e8bb6f15, type: 3}
+      propertyPath: m_ActionEvents.Array.data[30].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 6496192525389423821, guid: c6d07e96184a3f14885bed46e8bb6f15, type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
