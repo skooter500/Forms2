@@ -30,10 +30,13 @@ namespace ew
 
         public static SpineSystem Instance;
 
+        CornerCamera cc;
+
         protected override void OnCreate()
         {
             Instance = this;
             bootstrap = GameObject.FindObjectOfType<BoidBootstrap>();
+            cc = GameObject.FindObjectOfType<CornerCamera>();
 
             positions = new NativeArray<Vector3>(MAX_SPINES, Allocator.Persistent);
             rotations = new NativeArray<Quaternion>(MAX_SPINES, Allocator.Persistent);
@@ -58,7 +61,7 @@ namespace ew
             NativeArray<Vector3> positions = this.positions;
             NativeArray<Quaternion> rotations = this.rotations;
             BoidBootstrap bootstrap = this.bootstrap;
-            float dT = Time.DeltaTime;
+            float dT = Time.DeltaTime * cc.timeScale;
             float bondDamping = bootstrap.bondDamping;
             float angularBondDamping = bootstrap.angularDamping;
 

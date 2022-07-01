@@ -117,6 +117,7 @@ namespace ew
         {
             Instance = this;
             bootstrap = GameObject.FindObjectOfType<BoidBootstrap>();
+            cc = GameObject.FindObjectOfType<CornerCamera>();
             Enabled = false;
         }
 
@@ -125,12 +126,14 @@ namespace ew
             bootstrap = GameObject.FindObjectOfType<BoidBootstrap>();            
         }
 
+        CornerCamera cc;
+
         protected override void OnUpdate()
         {
             NativeArray<Vector3> positions = SpineSystem.Instance.positions;
             NativeArray<Quaternion> rotations = SpineSystem.Instance.rotations;
             NativeArray<float> speeds = BoidJobSystem.Instance.speeds;
-            float dT = Time.DeltaTime * bootstrap.speed;
+            float dT = Time.DeltaTime * cc.timeScale;
             float headAmplitude = bootstrap.headAmplitude;
             float tailAmplitude = bootstrap.tailAmplitude;
             float frequency = bootstrap.animationFrequency;

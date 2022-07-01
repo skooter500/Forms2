@@ -419,7 +419,6 @@ namespace ew
             entityManager = World.DefaultGameObjectInjectionWorld.EntityManager;
 
             constrainTranslation = transform.position;
-            Cursor.visible = false;
             constrainWeight = baseConstrainWeight;
 
             boidArchitype = entityManager.CreateArchetype(

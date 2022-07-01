@@ -493,7 +493,7 @@ public class CornerCamera : MonoBehaviour
         {
             return;
         }
-        float f = context.ReadValue<float>() * 100;
+        float f = context.ReadValue<float>() * max;
         Debug.Log("Radius: " + f);
         radius = f;
     }
