@@ -66,7 +66,6 @@ public class TwoDLifeSystem : SystemBase
 
     protected override void OnCreate()
     {
-        Debug.Log("On create");
         Instance = this;
         board = new NativeArray<int>((int)Mathf.Pow(size, 2), Allocator.Persistent);
         next = new NativeArray<int>((int)Mathf.Pow(size, 2), Allocator.Persistent);

@@ -78,11 +78,9 @@ namespace ew
 
         public void OnDestroy()
         {
-            Debug.Log("OnDestroy BoidBootstrap");
 
             if (World.DefaultGameObjectInjectionWorld != null && World.DefaultGameObjectInjectionWorld.IsCreated)
             {
-                Debug.Log("Destroying the entities");
                 entityManager.DestroyEntity(allTheBoids);
                 entityManager.DestroyEntity(allTheheadsAndTails);
                 entityManager.DestroyEntity(allTheSpines);

@@ -62,13 +62,13 @@ Material:
     - _ColorEnd: 0
     - _ColorShift: 0
     - _ColorStart: 0
-    - _ColorWidth: 1
+    - _ColorWidth: 0.984252
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
     - _Fade: 0.708
     - _GlossMapScale: 1
-    - _Glossiness: 0.8897638
+    - _Glossiness: 0.9370079
     - _GlossyReflections: 1
     - _Metallic: 1
     - _Mode: 0

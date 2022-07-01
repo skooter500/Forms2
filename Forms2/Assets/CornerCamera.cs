@@ -279,7 +279,6 @@ public class CornerCamera : MonoBehaviour
         float f = context.ReadValue<float>() * 50;        
         Debug.Log("Probe Length: " + f);
         probeLength = f;
-        ns.sideFeelerDepth  = f;
     }
 
     private Bloom bloom;
@@ -369,7 +368,7 @@ public class CornerCamera : MonoBehaviour
             return;
         }        
         
-        Debug.Log("Speed: " + context.ReadValue<float>());
+        Debug.Log("Timescale: " + context.ReadValue<float>() * 100);
         tTimeChanged = context.ReadValue<float>();
         if (! stopped)
         {

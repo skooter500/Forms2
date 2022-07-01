@@ -11,8 +11,7 @@
                     "id": "44cf3524-2496-400d-ada4-8f2635abc4c2",
                     "expectedControlType": "MidiValue",
                     "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
+                    "interactions": ""
                 },
                 {
                     "name": "Forward",
@@ -20,8 +19,7 @@
                     "id": "74aff319-5d7c-49cf-b986-407bb0366034",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
+                    "interactions": ""
                 },
                 {
                     "name": "Backward",
@@ -29,8 +27,7 @@
                     "id": "a8ebe27e-9825-473f-9ed2-41def4761c75",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
+                    "interactions": ""
                 },
                 {
                     "name": "Yaw Clock",
@@ -38,8 +35,7 @@
                     "id": "dc27f454-333f-4a80-8fc5-c8fec77612ad",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
+                    "interactions": ""
                 },
                 {
                     "name": "Yaw Counter",
@@ -47,8 +43,7 @@
                     "id": "e26990d5-845e-4d9b-8c95-978f963cc5bc",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
+                    "interactions": ""
                 },
                 {
                     "name": "Pitch Clock",
@@ -56,8 +51,7 @@
                     "id": "4e1c1724-02a5-4429-8be7-78dadf636e5d",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
+                    "interactions": ""
                 },
                 {
                     "name": "Pitch Counter",
@@ -65,8 +59,7 @@
                     "id": "24cf8cdd-33fc-4b75-a4c0-129e422262d8",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
+                    "interactions": ""
                 },
                 {
                     "name": "Roll Clock",
@@ -74,8 +67,7 @@
                     "id": "4ce96bec-4ecd-40c0-a161-96ddf5a431d5",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
+                    "interactions": ""
                 },
                 {
                     "name": "Roll Count",
@@ -83,8 +75,7 @@
                     "id": "639f586e-e01a-440a-8581-4d1dd3187f46",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
+                    "interactions": ""
                 },
                 {
                     "name": "Radius",
@@ -92,8 +83,7 @@
                     "id": "c10ae3b6-f2fe-47b3-bcec-4e56f1e8f889",
                     "expectedControlType": "MidiValue",
                     "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
+                    "interactions": ""
                 },
                 {
                     "name": "CenterLight",
@@ -101,8 +91,7 @@
                     "id": "b8ffc3fc-d8b4-45bc-aa80-97bb64e56b25",
                     "expectedControlType": "MidiValue",
                     "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
+                    "interactions": ""
                 },
                 {
                     "name": "AmbientLight",
@@ -110,8 +99,7 @@
                     "id": "13c264c7-40db-437c-8380-ae3f87227105",
                     "expectedControlType": "MidiValue",
                     "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
+                    "interactions": ""
                 },
                 {
                     "name": "Quit",
@@ -119,8 +107,7 @@
                     "id": "7d65c2c0-0d25-4f4d-ad55-39349371b35b",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
+                    "interactions": ""
                 },
                 {
                     "name": "ColorRange",
@@ -128,8 +115,7 @@
                     "id": "819d0f7a-7247-4c06-accc-35c3bbaede6d",
                     "expectedControlType": "MidiValue",
                     "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
+                    "interactions": ""
                 },
                 {
                     "name": "Feeler Depth",
@@ -137,8 +123,7 @@
                     "id": "15211e8b-2867-40cd-a7b3-df82a8025477",
                     "expectedControlType": "MidiValue",
                     "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
+                    "interactions": ""
                 },
                 {
                     "name": "Restart Scene",
@@ -146,8 +131,7 @@
                     "id": "a92d57c5-05fb-4281-bae8-1c06207149c7",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
+                    "interactions": ""
                 },
                 {
                     "name": "StopStart",
@@ -155,8 +139,7 @@
                     "id": "07873dce-11ef-4153-ad57-a6bad1811e5a",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
+                    "interactions": ""
                 },
                 {
                     "name": "Test",
@@ -164,8 +147,7 @@
                     "id": "5bfdbc37-dec6-4c28-8a9c-c0b8c7c929df",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
+                    "interactions": ""
                 },
                 {
                     "name": "Alpha",
@@ -173,8 +155,7 @@
                     "id": "bf2fe92b-332c-4c12-9377-48f148d55944",
                     "expectedControlType": "MidiValue",
                     "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
+                    "interactions": ""
                 },
                 {
                     "name": "ColorShift",
@@ -182,8 +163,7 @@
                     "id": "563ec407-07a8-4871-8700-5c9fcb35d298",
                     "expectedControlType": "MidiValue",
                     "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
+                    "interactions": ""
                 },
                 {
                     "name": "Bloom",
@@ -191,8 +171,7 @@
                     "id": "180a87ea-c524-467d-b589-f273a93044f8",
                     "expectedControlType": "MidiValue",
                     "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
+                    "interactions": ""
                 },
                 {
                     "name": "ShaderSpeed",
@@ -200,8 +179,7 @@
                     "id": "b8ec0e20-a6fc-4200-af52-2659598a85db",
                     "expectedControlType": "MidiValue",
                     "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
+                    "interactions": ""
                 },
                 {
                     "name": "ColorWidth",
@@ -209,8 +187,7 @@
                     "id": "d9116ac5-5270-406b-b4a9-fb6fb79ade50",
                     "expectedControlType": "MidiValue",
                     "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
+                    "interactions": ""
                 },
                 {
                     "name": "FogEnd",
@@ -218,8 +195,7 @@
                     "id": "f5ed9124-7ef1-4638-9b69-82fa12229ba3",
                     "expectedControlType": "MidiValue",
                     "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
+                    "interactions": ""
                 },
                 {
                     "name": "Smootyness",
@@ -227,8 +203,7 @@
                     "id": "03633395-216b-428b-9276-6c09fb143b02",
                     "expectedControlType": "MidiValue",
                     "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
+                    "interactions": ""
                 },
                 {
                     "name": "Metalic",
@@ -236,8 +211,7 @@
                     "id": "616eb8eb-1a01-428b-8076-2d0189630bda",
                     "expectedControlType": "MidiValue",
                     "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
+                    "interactions": ""
                 },
                 {
                     "name": "Temp",
@@ -245,8 +219,7 @@
                     "id": "3db9e6a6-0a92-4290-99e9-2afbdec90b29",
                     "expectedControlType": "MidiValue",
                     "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
+                    "interactions": ""
                 },
                 {
                     "name": "Tint",
@@ -254,8 +227,7 @@
                     "id": "d77f76f5-c2eb-4979-9f18-33cbb0c41d44",
                     "expectedControlType": "MidiValue",
                     "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
+                    "interactions": ""
                 },
                 {
                     "name": "Console",
@@ -263,8 +235,7 @@
                     "id": "bb5b105f-16bd-452e-9288-bdd4f6865971",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
+                    "interactions": ""
                 },
                 {
                     "name": "Display Values",
@@ -272,8 +243,7 @@
                     "id": "60aa23b3-0b07-4276-8259-8d198f653d21",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
+                    "interactions": ""
                 },
                 {
                     "name": "NextScene",
@@ -281,8 +251,7 @@
                     "id": "55f847b4-e3f2-4f04-b8e8-3a3bf12d7df6",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
+                    "interactions": ""
                 }
             ],
             "bindings": [
@@ -291,7 +260,7 @@
                     "id": "fc2cdc72-1015-4eab-a990-f92b24b5cf9e",
                     "path": "<MidiDevice>/control007",
                     "interactions": "",
-                    "processors": "Scale(factor=3)",
+                    "processors": "",
                     "groups": "",
                     "action": "Speed",
                     "isComposite": false,
