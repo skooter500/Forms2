@@ -58,7 +58,7 @@ Material:
     m_Floats:
     - _Alpha: 0.50000006
     - _BumpScale: 1
-    - _CI: 4.7244096
+    - _CI: 77.16535
     - _ColorEnd: 0
     - _ColorShift: 0
     - _ColorStart: 0
@@ -68,7 +68,7 @@ Material:
     - _DstBlend: 0
     - _Fade: 0.708
     - _GlossMapScale: 1
-    - _Glossiness: 0.9370079
+    - _Glossiness: 1
     - _GlossyReflections: 1
     - _Metallic: 1
     - _Mode: 0
@@ -76,7 +76,7 @@ Material:
     - _Offset: 42440
     - _Palette: 1
     - _Parallax: 0.02
-    - _PositionScale: 749.0307
+    - _PositionScale: 100.00015
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
