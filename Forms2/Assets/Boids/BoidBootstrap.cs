@@ -535,6 +535,8 @@ namespace ew
             }
             */
 
+            /*
+
             if (Input.GetAxis("DPadY") == -1)
             {
                 colorAdd = Mathf.Lerp(colorAdd, -colorSpeed, Time.deltaTime);
@@ -547,6 +549,8 @@ namespace ew
             material.SetFloat("_Offset", material.GetFloat("_Offset") + colorAdd);
             colorAdd = Mathf.Lerp(colorAdd, 0, Time.deltaTime * 0.5f);
 
+            */
+
 
             //if (Input.GetKeyDown(KeyCode.Joystick1Button8))
             //{
@@ -558,6 +562,8 @@ namespace ew
             //    DestroyEntities();
             //}
 
+
+            /*
             if (Input.GetKey(KeyCode.Joystick1Button2))
             {
                 speed -= Time.deltaTime;
@@ -576,6 +582,7 @@ namespace ew
                 }
             }
             Explosion();
+            */
         }
 
         float ellapsed = 1000;
