@@ -36,7 +36,7 @@ public class CornerCamera : MonoBehaviour
 
     public Utilities.EASE ease;
 
-    public float probeLength = 10;
+    public float probeLength = 2;
 
     float lastf = 0.5f;
 
@@ -276,7 +276,7 @@ public class CornerCamera : MonoBehaviour
             return;
         }
         
-        float f = context.ReadValue<float>() * 50;        
+        float f = context.ReadValue<float>() * 4;        
         Debug.Log("Probe Length: " + f);
         probeLength = f;
     }
@@ -368,8 +368,9 @@ public class CornerCamera : MonoBehaviour
             return;
         }        
         
-        Debug.Log("Timescale: " + context.ReadValue<float>() * 100);
-        tTimeChanged = context.ReadValue<float>();
+        tTimeChanged = context.ReadValue<float>() * 50;
+        Debug.Log("Timescale: " + tTimeChanged);
+
         if (! stopped)
         {
             timeScale = tTimeChanged;
@@ -505,7 +506,7 @@ public class CornerCamera : MonoBehaviour
         {
             return;
         }
-        float f = 1.0f + context.ReadValue<float>() * 200;
+        float f = 1.0f + context.ReadValue<float>() * 5000;
         Debug.Log("Desired Range: " + f);
         desiredRange = f;
     }
