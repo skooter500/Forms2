@@ -134,6 +134,7 @@ namespace ew
         {
             Instance = this;
             bootstrap = GameObject.FindObjectOfType<BoidBootstrap>();
+            cc = GameObject.FindObjectOfType<CornerCamera>();
             Enabled = false;
             neighbours = new NativeArray<int>(BoidBootstrap.MAX_BOIDS * BoidBootstrap.MAX_NEIGHBOURS, Allocator.Persistent);
             positions = new NativeArray<Vector3>(BoidBootstrap.MAX_BOIDS, Allocator.Persistent);
@@ -255,6 +256,8 @@ namespace ew
             cells.Dispose();
         }
 
+        CornerCamera cc;
+
         protected override void OnUpdate()
         {
 
@@ -273,7 +276,7 @@ namespace ew
             ComponentTypeHandle<LocalToWorld> ltwTHandle = GetComponentTypeHandle<LocalToWorld>();
             ComponentTypeHandle<ObstacleAvoidance> oaTHandle = GetComponentTypeHandle<ObstacleAvoidance>();
             
-            float deltaTime = Time.DeltaTime * bootstrap.speed;
+            float deltaTime = Time.DeltaTime * cc.timeScale;
 
             Unity.Mathematics.Random random = new Unity.Mathematics.Random((uint)UnityEngine.Random.Range(1, 100000));
 
@@ -350,7 +353,7 @@ namespace ew
                 constrainTypeHandle = conTHandle,
                 weight = bootstrap.constrainWeight,
                 centre = bootstrap.transform.position,
-                radius = bootstrap.radius                
+                radius = cc.radius                
             };
 
             var conjHandle = constrainJob.ScheduleParallel(constrainQuery, 1, Dependency);
@@ -377,7 +380,7 @@ namespace ew
                 positions = this.positions,
                 maxNeighbours = this.maxNeighbours,
                 neighbours = this.neighbours,
-                weight = bootstrap.cohesionWeight,
+                weight = cc.probeLength,
                 cohesionTypeHandle = cTHandle,
                 boidTypeHandle = bTHandle,
             };

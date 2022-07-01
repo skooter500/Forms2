@@ -36,6 +36,8 @@ public class CornerCamera : MonoBehaviour
 
     public Utilities.EASE ease;
 
+    public float probeLength = 10;
+
     float lastf = 0.5f;
 
     float oldTime = 2.5f;
@@ -69,7 +71,7 @@ public class CornerCamera : MonoBehaviour
         if (stopped)
         {
             Debug.Log("Starting");
-            newTime = CornerCamera.timeScale;;
+            newTime = timeScale;
             oldTime = 0;            
             newShaderTime = oldShaderTime;            
             oldShaderTime = 0;
@@ -82,7 +84,7 @@ public class CornerCamera : MonoBehaviour
         {
             Debug.Log("Stopping");            
             newTime = 0;
-            oldTime = ns.ts;            
+            oldTime = timeScale;            
             newShaderTime = 0;
             oldShaderTime = material.GetFloat("_TimeMultiplier");       
             //material.SetFloat("_TimeMultiplier", 0);
@@ -203,8 +205,8 @@ public class CornerCamera : MonoBehaviour
         {
             return;
         }
-        Debug.Log("Radius: " + ns.radius);
-        Debug.Log("Probe Length: " + ns.feelerDepth);
+        Debug.Log("Radius: " + radius);
+        Debug.Log("Probe Length: " + probeLength);
 
         Debug.Log("Center Light: " + material.GetFloat("_CI"));
         Debug.Log("Directional Light: " + directionalLight.intensity);
@@ -216,7 +218,7 @@ public class CornerCamera : MonoBehaviour
         Debug.Log("Smoothness: " + material.GetFloat("_Glossiness"));
         
         Debug.Log("Metalic: " + material.GetFloat("_Metallic"));
-        Debug.Log("Speed: " + CornerCamera.timeScale);
+        Debug.Log("TimeScale: " + timeScale);
         
 
         Debug.Log("Range: " + desiredRange);
@@ -263,7 +265,6 @@ public class CornerCamera : MonoBehaviour
 
     public void RestartScene(InputAction.CallbackContext context)
     {
-        CornerCamera.timeScale = ns.ts;
         CornerCamera.distance = cam.transform.localPosition.z;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
@@ -277,7 +278,7 @@ public class CornerCamera : MonoBehaviour
         
         float f = context.ReadValue<float>() * 50;        
         Debug.Log("Probe Length: " + f);
-        ns.feelerDepth = f;
+        probeLength = f;
         ns.sideFeelerDepth  = f;
     }
 
@@ -372,13 +373,13 @@ public class CornerCamera : MonoBehaviour
         tTimeChanged = context.ReadValue<float>();
         if (! stopped)
         {
-            ns.ts = tTimeChanged;
+            timeScale = tTimeChanged;
             newTime = tTimeChanged;
         }   
         else
         {
             newTime = tTimeChanged;
-            CornerCamera.timeScale = newTime;
+            timeScale = newTime;
         }     
     }
     float tTimeChanged = 0; 
@@ -494,7 +495,7 @@ public class CornerCamera : MonoBehaviour
         }
         float f = context.ReadValue<float>() * 100;
         Debug.Log("Radius: " + f);
-        ns.radius = f;
+        radius = f;
     }
 
 
@@ -525,15 +526,15 @@ public class CornerCamera : MonoBehaviour
         desiredShaderTime = f;
     }
 
-    private static float timeScale = 2.5f;
-
+    public float timeScale = 1.0f;
+    public float radius = 500;
 
     void Awake()
     {
         ns = FindObjectOfType<NematodeSchool>();
-        //ns.ts = 0;
+        //timeScale = 0;
         oldShaderTime = 1;
-        oldTime = CornerCamera.timeScale;                      
+        oldTime = timeScale;                      
     }
             
     // Start is called before the first frame update
@@ -547,7 +548,7 @@ public class CornerCamera : MonoBehaviour
 
         bloom = volume.profile.GetSetting<UnityEngine.Rendering.PostProcessing.Bloom>();
         colorGrading = volume.profile.GetSetting<UnityEngine.Rendering.PostProcessing.ColorGrading>();
-        oldTime = CornerCamera.timeScale;
+        oldTime = timeScale;
         
         newTime = 0;
 
@@ -602,7 +603,7 @@ public class CornerCamera : MonoBehaviour
                 case Transition.time:
                 {
                     Debug.Log("New Time: " + newTime);
-                    ns.ts = Mathf.Lerp(oldTime, newTime, t);         
+                    timeScale = Mathf.Lerp(oldTime, newTime, t);         
                     //float timeM = Mathf.Lerp(oldShaderTime, newShaderTime, t);                     
                     //material.SetFloat("_TimeMultiplier", timeM);      
                     if (elapsed == transitionTime)
