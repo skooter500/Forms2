@@ -36,13 +36,17 @@ namespace BGE.Forms
             }            
             children.Add(current);
         }
+
+        cc = GameObject.FindObjectOfType<CornerCamera>();
     }
 
         int skippedFrames = 0;
 
+        CornerCamera cc;
+
         void Update()
         {
-            float dt = Time.deltaTime * NematodeSchool.timeScale;
+            float dt = Time.deltaTime * cc.timeScale;
             for (int i = 1; i < children.Count; i++)
             {
                 Transform prev = children[i - 1];

@@ -79,9 +79,7 @@ namespace BGE.Forms
         {
             get
             {
-                float flockMultiplier = (school == null) ? 1 : school.timeMultiplier;
-                float timeDelta = multiThreaded ? CreatureManager.threadTimeDelta : Time.deltaTime;
-                return timeDelta * flockMultiplier * timeMultiplier;
+                return td;
             }
         }
 
@@ -99,6 +97,8 @@ namespace BGE.Forms
             UpdateLocalFromTransform();
 
             behaviours = GetComponents<SteeringBehaviour>();
+
+            cc = GameObject.FindObjectOfType<CornerCamera>();
 
             //if (transform.parent.gameObject.GetComponent<School>() != null)
             //{
@@ -142,6 +142,9 @@ namespace BGE.Forms
 
         public bool suspended;
 
+        CornerCamera cc;
+        float td;
+
         void FixedUpdate()
         {
         
@@ -158,20 +161,21 @@ namespace BGE.Forms
                 force = CalculateForce();                
             }
 
+            td = Time.deltaTime * cc.timeScale;
 
             
             Vector3 newAcceleration = force / mass;
-            smoothRate = Utilities.Clip(9.0f * Time.deltaTime, 0.15f, 0.4f) / 2.0f;
+            smoothRate = Utilities.Clip(9.0f * td, 0.15f, 0.4f) / 2.0f;
             Utilities.BlendIntoAccumulator(smoothRate, newAcceleration, ref acceleration);
             
             if (applyGravity)
             {
-                velocity += gravity * Time.deltaTime;
+                velocity += gravity * td;
             }
 
-            velocity += acceleration * Time.deltaTime;
+            velocity += acceleration * td;
 
-            desiredPosition = desiredPosition + (velocity * Time.deltaTime);
+            desiredPosition = desiredPosition + (velocity * td);
             
             // the length of this global-upward-pointing vector controls the vehicle's
             // tendency to right itself as it is rolled over from turning acceleration
@@ -183,7 +187,7 @@ namespace BGE.Forms
             // combined banking, sum of UP due to turning and global UP
             Vector3 bankUp = accelUp + globalUp;
             // blend bankUp into vehicle's UP basis vector
-            smoothRate = Time.deltaTime;// * 3.0f;
+            smoothRate = td;// * 3.0f;
             Vector3 tempUp = transform.up;
             Utilities.BlendIntoAccumulator(smoothRate, bankUp, ref tempUp);
 
@@ -206,7 +210,7 @@ namespace BGE.Forms
                 }
                 else
                 {
-                    transform.forward = Vector3.RotateTowards(transform.forward, velocity, Mathf.Deg2Rad * maxTurnDegrees * Time.deltaTime, float.MaxValue);
+                    transform.forward = Vector3.RotateTowards(transform.forward, velocity, Mathf.Deg2Rad * maxTurnDegrees * td, float.MaxValue);
                 }
                 if (keepUpright)
                 {
@@ -220,7 +224,7 @@ namespace BGE.Forms
                     Quaternion q = Quaternion.LookRotation(transform.forward, tempUp);
                     transform.rotation = q;
                 }
-                velocity *= (1.0f - (damping * Time.deltaTime));
+                velocity *= (1.0f - (damping * td));
                 UpdateLocalFromTransform();
             }
 
