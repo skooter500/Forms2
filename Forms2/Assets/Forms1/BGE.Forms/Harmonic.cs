@@ -39,6 +39,8 @@ namespace BGE.Forms
         public virtual void Start()
         {
             theta = UnityEngine.Random.Range(0, Mathf.PI);
+
+            cc = GameObject.FindObjectOfType<CornerCamera>();
         }
 
         public void OnDrawGizmos()
@@ -89,9 +91,12 @@ namespace BGE.Forms
             worldTarget = boid.position + Quaternion.Euler(yawRoll) * localTarget;
             return boid.SeekForce(worldTarget);
         }
+
+        CornerCamera cc;
+
         public override void Update()
         {
-            this.theta += Time.deltaTime * frequency * Mathf.PI * 2.0f;
+            this.theta += Time.deltaTime * frequency * Mathf.PI * 2.0f * cc.timeScale;
             /*
             if (auto)
             {

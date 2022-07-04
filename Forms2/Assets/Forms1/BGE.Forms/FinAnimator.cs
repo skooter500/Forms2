@@ -65,7 +65,7 @@ namespace BGE.Forms
                     lerpedAmplitude  = Mathf.Lerp(lerpedAmplitude, amplitude, Time.deltaTime);
                 }
                 */
-                lerpedAmplitude = Mathf.Lerp(lerpedAmplitude, amplitude, Time.deltaTime);
+                lerpedAmplitude = Mathf.Lerp(lerpedAmplitude, amplitude, boid.TimeDelta);
 
                 float angle = Mathf.Sin((theta * wigglyness + offset))
                               * (harmonic.rampedAmplitude / initialAmplitude) * lerpedAmplitude;

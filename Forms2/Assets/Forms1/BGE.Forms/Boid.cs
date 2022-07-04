@@ -24,8 +24,6 @@ namespace BGE.Forms
         public float maxForce = 10.0f;
         public float weight = 1.0f;
         [Range(0.0f, 10.0f)]
-        public float timeMultiplier = 1.0f;
-        [Range(0.0f, 1.0f)]
         public float damping = 0.01f;
         public enum CalculationMethods { WeightedTruncatedSum, WeightedTruncatedRunningSumWithPrioritisation, PrioritisedDithering };
         public CalculationMethods calculationMethod = CalculationMethods.WeightedTruncatedRunningSumWithPrioritisation;
