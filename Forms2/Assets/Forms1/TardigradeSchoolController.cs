@@ -77,9 +77,11 @@ public class TardigradeSchoolController : CreatureController {
 	
 	// Update is called once per frame
 	void Update () {
+        /*
         if (Input.GetKeyDown(KeyCode.JoystickButton0))
         {
                 GetComponent<StateMachine>().ChangeState(new BackFlip());
         }
+        */
     }
 }

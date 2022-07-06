@@ -163,6 +163,7 @@ namespace BGE.Forms
         {
             CreatureManager.Log("T: " + targetCreatureCount + " A: " + alive.Count + " S: " + suspended.Count);
 
+            /*
             if (Input.GetKeyDown(KeyCode.P))
             {
                 targetCreatureCount += 5;
@@ -174,6 +175,7 @@ namespace BGE.Forms
                     targetCreatureCount -= 5;
                 }
             }
+            */
 
         }
 
