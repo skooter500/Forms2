@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using BGE.Forms;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Rendering.PostProcessing;
@@ -54,6 +55,19 @@ public class CornerCamera : MonoBehaviour
     public Material material;
 
     public float fogMax = 500;
+
+    PlayerController pc;
+
+    public void NextCreature(InputAction.CallbackContext context)
+    {
+        pc.NextCreatuere(context);
+    }
+
+    public void PreviousCreature(InputAction.CallbackContext context)
+    {
+        pc.PreviousCreatuere(context);
+    }
+    
 
 
     public void StopStart(InputAction.CallbackContext context)
@@ -549,6 +563,8 @@ public class CornerCamera : MonoBehaviour
         bloom = volume.profile.GetSetting<UnityEngine.Rendering.PostProcessing.Bloom>();
         colorGrading = volume.profile.GetSetting<UnityEngine.Rendering.PostProcessing.ColorGrading>();
         oldTime = timeScale;
+
+        pc = GameObject.FindObjectOfType<PlayerController>();
         
         newTime = 0;
 

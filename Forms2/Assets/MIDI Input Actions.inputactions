@@ -252,6 +252,22 @@
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
+                },
+                {
+                    "name": "NextCreature",
+                    "type": "Button",
+                    "id": "aa2efd0e-ba0a-4a0c-9fff-7d1b40e51f58",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "PreviousCreature",
+                    "type": "Button",
+                    "id": "007b8616-4558-4692-b733-49ae2060f876",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
                 }
             ],
             "bindings": [
@@ -780,6 +796,28 @@
                     "processors": "",
                     "groups": "",
                     "action": "NextScene",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "db696ef3-ab3d-4daf-b86f-2b763091cc2e",
+                    "path": "<MidiDevice>/note049",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "NextCreature",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "fac29b68-f9dc-4b30-b58f-8dd212ea764e",
+                    "path": "<MidiDevice>/note041",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "PreviousCreature",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

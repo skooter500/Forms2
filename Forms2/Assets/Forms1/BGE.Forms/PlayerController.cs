@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.SceneManagement;
+using UnityEngine.InputSystem;
 
 namespace BGE.Forms
 {
@@ -16,8 +17,6 @@ namespace BGE.Forms
                 pc = owner.GetComponent<PlayerController>();
                 pc.controlType = ControlType.Player;
                 pc.player.GetComponent<Rigidbody>().isKinematic = false;
-                pc.vrController.enabled = true;
-                pc.fc.enabled = true;
             }
 
             public override void Exit() { }
@@ -47,7 +46,7 @@ namespace BGE.Forms
                 pc.player.transform.parent = pc.playerCruise.transform;
                 pc.player.transform.localPosition = Vector3.zero;
                 pc.player.transform.rotation = pc.cruise.transform.rotation;
-                pc.fc.desiredRotation = pc.cruise.transform.rotation;
+                //pc.fc.desiredRotation = pc.cruise.transform.rotation;
                 c.gameObject.SetActive(true);
                 c.enabled = true;
             }
@@ -185,8 +184,7 @@ namespace BGE.Forms
         public GameObject species;
         public GameObject creature;
         GameObject playerCruise;
-        MonoBehaviour vrController;
-        ForceController fc;
+        //ForceController fc;
         Cruise cruise;
         
         public Mother mother;
@@ -251,15 +249,13 @@ namespace BGE.Forms
 
         // Use this for initialization
         void Start() {
-            /*
             //AudioListener.pause = true;
             player = GameObject.FindGameObjectWithTag("Player");
             playerCruise = GameObject.FindGameObjectWithTag("PlayerCruise");
 
-            fc = player.GetComponent<ForceController>();
+            //fc = player.GetComponent<ForceController>();
 
             sm = GetComponent<StateMachine>();
-            vrController = player.GetComponent<ViveController>();
             cruise = playerCruise.GetComponent<Cruise>();
             
 
@@ -276,7 +272,6 @@ namespace BGE.Forms
             newToad = GetComponent<NewToad>();
 
             //Invoke("LateStart", 5);
-            */
 
         }
 
@@ -293,6 +288,26 @@ namespace BGE.Forms
         public void LateStart()
         {
             StopAllCoroutines();
+            showCoroutine = null;
+        }
+
+        public void NextCreatuere(InputAction.CallbackContext context)
+        {
+            StopAllCoroutines();
+            if (showCoroutine == null || ! (sm.currentState is FollowState))
+            {                            
+                sm.ChangeState(new FollowState());
+            }
+            showCoroutine = null;
+        }
+
+        public void PreviousCreatuere(InputAction.CallbackContext context)
+        {
+            StopAllCoroutines();
+            if (showCoroutine == null || ! (sm.currentState is FollowState))
+            {                            
+                sm.ChangeState(new FollowState());
+            }
             showCoroutine = null;
         }
 
