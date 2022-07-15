@@ -383,7 +383,7 @@ public class CornerCamera : MonoBehaviour
             return;
         }        
         
-        tTimeChanged = context.ReadValue<float>() * 50;
+        tTimeChanged = context.ReadValue<float>() * 3.0f;
         Debug.Log("Timescale: " + tTimeChanged);
 
         if (! stopped)

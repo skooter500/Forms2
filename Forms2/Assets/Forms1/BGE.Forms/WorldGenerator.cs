@@ -397,7 +397,7 @@ namespace BGE.Forms
             tile.layer = this.gameObject.layer;
             tile.transform.parent = this.transform;
             MeshRenderer renderer = tile.AddComponent<MeshRenderer>();
-            renderer.enabled = true;
+            renderer.enabled = false;
             tile.SetActive(true);
             renderer.shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.Off;
             renderer.receiveShadows = true;
@@ -430,11 +430,11 @@ namespace BGE.Forms
             meshCollider.sharedMesh = null;
             meshCollider.sharedMesh = mesh;
 
-            GameObject surface = MakeSurface(position);
-            surface.transform.parent = tile.transform;
-            surface.transform.localPosition = new Vector3(0, surfaceHeight, 0);
+            //GameObject surface = MakeSurface(position);
+            //surface.transform.parent = tile.transform;
+            //surface.transform.localPosition = new Vector3(0, surfaceHeight, 0);
             tile.isStatic = true;
-            surface.isStatic = true;
+            //surface.isStatic = true;
             //surface.SetActive(false);
             return tile;
         }
