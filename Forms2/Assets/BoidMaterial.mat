@@ -56,7 +56,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - _Alpha: 0.50000006
+    - _Alpha: 0.82758665
     - _BumpScale: 1
     - _CI: 114.96063
     - _ColorEnd: 0
@@ -68,7 +68,7 @@ Material:
     - _DstBlend: 0
     - _Fade: 0.708
     - _GlossMapScale: 1
-    - _Glossiness: 0.007874017
+    - _Glossiness: 0.43307087
     - _GlossyReflections: 1
     - _Metallic: 1
     - _Mode: 0
@@ -76,7 +76,7 @@ Material:
     - _Offset: 42440
     - _Palette: 1
     - _Parallax: 0.02
-    - _PositionScale: 99.99999
+    - _PositionScale: 100.000015
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1

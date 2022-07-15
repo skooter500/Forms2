@@ -14,7 +14,7 @@ namespace BGE.Forms
         Vector3 offset;
 
         // Start is called before the first frame update
-        void Start()
+        public void Start()
         {
             if (leaderGameObject != null)
             {

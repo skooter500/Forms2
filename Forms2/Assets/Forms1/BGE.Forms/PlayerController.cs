@@ -61,14 +61,13 @@ namespace BGE.Forms
 
         public void StartFollowing()
         {
-            //StartCoroutine(FollowCoRoutine());
+            StartCoroutine(FollowCoRoutine());
         }
 
 
 
-        //System.Collections.IEnumerator FollowCoRoutine()
-        //{
-            /*
+        System.Collections.IEnumerator FollowCoRoutine()
+        {
             PlayerController pc;
             pc = this;
             pc.PickNewSpecies();
@@ -76,8 +75,6 @@ namespace BGE.Forms
             pc.PickNewTarget();
             pc.controlType = ControlType.Following;
             pc.player.GetComponent<Rigidbody>().isKinematic = true;
-            pc.vrController.enabled = false;
-            pc.fc.enabled = false;
             WorldGenerator.Instance.ForceCheck();
 
             // Calculate the position to move to
@@ -101,20 +98,19 @@ namespace BGE.Forms
             pc.playerBoid.transform.position = p;
             pc.playerBoid.UpdateLocalFromTransform();
 
-            pc.op.leader = pc.creature;
+            pc.op.leader = pc.creature.GetComponent<Boid>();
             pc.playerBoid.velocity = pc.creature.GetComponent<Boid>().velocity;
             pc.op.Start();
             Utilities.SetActive(pc.sceneAvoidance, true);
             Utilities.SetActive(pc.op, true);
             pc.player.transform.position = p;
             pc.player.transform.rotation =
-                Quaternion.LookRotation(pc.op.leaderBoid.transform.position - p);
+                Quaternion.LookRotation(pc.op.leader.transform.position - p);
 
             Utilities.SetActive(pc.op, true);
             Utilities.SetActive(pc.seek, false);
             Utilities.SetActive(pc.sceneAvoidance, true);
-            */
-        //}
+        }
 
         class FollowState : State
         {
@@ -353,6 +349,7 @@ namespace BGE.Forms
                 }
                 clickCount = 0;
             }
+            */
 
             switch (controlType)
             {
@@ -362,12 +359,11 @@ namespace BGE.Forms
                 case ControlType.Following:
                     player.transform.position = playerBoid.transform.position;
                     player.transform.rotation = Quaternion.Slerp(player.transform.rotation
-                        , Quaternion.LookRotation(op.leaderBoid.transform.position - player.transform.position)
+                        , Quaternion.LookRotation(op.leader.transform.position - player.transform.position)
                         , Time.deltaTime / 2
                     );
                     break;
             }
-            */
         }
     }
 }

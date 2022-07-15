@@ -60,6 +60,7 @@ public class CornerCamera : MonoBehaviour
 
     public void NextCreature(InputAction.CallbackContext context)
     {
+        Debug.Log("Next creature");
         pc.NextCreatuere(context);
     }
 
