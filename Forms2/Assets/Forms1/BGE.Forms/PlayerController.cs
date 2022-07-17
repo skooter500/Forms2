@@ -61,7 +61,47 @@ namespace BGE.Forms
 
         public void StartFollowing()
         {
-    
+            PlayerController pc;
+            pc = this;
+            pc.PickNewSpecies();
+            pc.PickNewTarget();
+            pc.controlType = ControlType.Following;
+            pc.player.GetComponent<Rigidbody>().isKinematic = true;
+            WorldGenerator.Instance.ForceCheck();
+
+            // Calculate the position to move to
+            SpawnParameters sp = pc.species.GetComponent<SpawnParameters>();
+            float a = sp.followCameraHalfFOV;
+            float angle = Random.Range(-a, a);
+            
+            Vector3 lp = Quaternion.Euler(sp.underneath ? 30 : 0, angle, 0) * Vector3.forward;
+            lp.Normalize();
+            lp *= pc.distance;
+            Vector3 p = pc.creature.GetComponent<Boid>().TransformPoint(lp);
+            //p = Utilities.TransformPointNoScale(lp, pc.creature.GetComponent<Boid>().transform);
+            float y = WorldGenerator.Instance.SamplePos(p.x, p.z);
+            if (p.y < y)
+            {
+                p.y = y + 50;
+            }
+            pc.playerBoid.enabled = true;
+            pc.playerBoid.maxSpeed = pc.species.GetComponent<SpawnParameters>().followCameraSpeed;
+            pc.playerBoid.desiredPosition = p;
+            pc.playerBoid.transform.position = p;
+            pc.playerBoid.UpdateLocalFromTransform();
+
+            pc.op.leader = pc.creature.GetComponent<Boid>();
+            pc.playerBoid.velocity = pc.creature.GetComponent<Boid>().velocity;
+            pc.op.Start();
+            Utilities.SetActive(pc.sceneAvoidance, true);
+            Utilities.SetActive(pc.op, true);
+            pc.player.transform.position = p;
+            pc.player.transform.rotation =
+                Quaternion.LookRotation(pc.op.leader.transform.position - p);
+
+            Utilities.SetActive(pc.op, true);
+            Utilities.SetActive(pc.seek, false);
+            Utilities.SetActive(pc.sceneAvoidance, true);
         }
 
 
