@@ -31,7 +31,7 @@ namespace BGE.Forms
             Cruise c;
             public override void Enter()
             {
-                //Debug.Log("Journeying state");
+                Debug.Log("Enter on the Journeying state");
                 pc = owner.GetComponent<PlayerController>();
                 pc.controlType = ControlType.Journeying;
                 c = pc.cruise;
@@ -61,56 +61,9 @@ namespace BGE.Forms
 
         public void StartFollowing()
         {
-            StartCoroutine(FollowCoRoutine());
+    
         }
 
-
-
-        System.Collections.IEnumerator FollowCoRoutine()
-        {
-            PlayerController pc;
-            pc = this;
-            pc.PickNewSpecies();
-            yield return new WaitForSeconds(0.1f);
-            pc.PickNewTarget();
-            pc.controlType = ControlType.Following;
-            pc.player.GetComponent<Rigidbody>().isKinematic = true;
-            WorldGenerator.Instance.ForceCheck();
-
-            // Calculate the position to move to
-            SpawnParameters sp = pc.species.GetComponent<SpawnParameters>();
-            float a = sp.followCameraHalfFOV;
-            float angle = Random.Range(-a, a);
-            
-            Vector3 lp = Quaternion.Euler(sp.underneath ? 30 : 0, angle, 0) * Vector3.forward;
-            lp.Normalize();
-            lp *= pc.distance;
-            Vector3 p = pc.creature.GetComponent<Boid>().TransformPoint(lp);
-            //p = Utilities.TransformPointNoScale(lp, pc.creature.GetComponent<Boid>().transform);
-            float y = WorldGenerator.Instance.SamplePos(p.x, p.z);
-            if (p.y < y)
-            {
-                p.y = y + 50;
-            }
-            pc.playerBoid.enabled = true;
-            pc.playerBoid.maxSpeed = pc.species.GetComponent<SpawnParameters>().followCameraSpeed;
-            pc.playerBoid.desiredPosition = p;
-            pc.playerBoid.transform.position = p;
-            pc.playerBoid.UpdateLocalFromTransform();
-
-            pc.op.leader = pc.creature.GetComponent<Boid>();
-            pc.playerBoid.velocity = pc.creature.GetComponent<Boid>().velocity;
-            pc.op.Start();
-            Utilities.SetActive(pc.sceneAvoidance, true);
-            Utilities.SetActive(pc.op, true);
-            pc.player.transform.position = p;
-            pc.player.transform.rotation =
-                Quaternion.LookRotation(pc.op.leader.transform.position - p);
-
-            Utilities.SetActive(pc.op, true);
-            Utilities.SetActive(pc.seek, false);
-            Utilities.SetActive(pc.sceneAvoidance, true);
-        }
 
         class FollowState : State
         {
@@ -262,7 +215,7 @@ namespace BGE.Forms
             op = playerBoid.GetComponent<OffsetPursue>();
             
             sm = GetComponent<StateMachine>();
-            sm.ChangeState(new PlayerState());
+            sm.ChangeState(new FollowState());
 
 
             newToad = GetComponent<NewToad>();
@@ -307,7 +260,7 @@ namespace BGE.Forms
             showCoroutine = null;
         }
 
-        private void Update()
+         void Update()
         {
             /*
             if (Input.GetKeyDown(KeyCode.JoystickButton3) || Input.GetKeyDown(KeyCode.J))
