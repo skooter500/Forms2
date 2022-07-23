@@ -109,7 +109,6 @@ namespace BGE.Forms
             instance = this;
             style.fontSize = 18;
             style.normal.textColor = Color.white;
-            Cursor.visible = false;
 
             DisablePrefabs();
         }

@@ -62,7 +62,7 @@ Material:
     - _ColorEnd: 0
     - _ColorShift: 0
     - _ColorStart: 0
-    - _ColorWidth: 0.65354335
+    - _ColorWidth: 0.16535434
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
@@ -76,11 +76,11 @@ Material:
     - _Offset: 42440
     - _Palette: 1
     - _Parallax: 0.02
-    - _PositionScale: 100.00001
+    - _PositionScale: 99.99998
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
-    - _TimeMultiplier: 49.999996
+    - _TimeMultiplier: 49.99999
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:

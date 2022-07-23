@@ -34,7 +34,6 @@ public class ParticleController : MonoBehaviour
         camera = Camera.main.transform;
         target = camera.position;
         //StartCoroutine(Change());
-        Cursor.visible = false;
     }
 
     public void OnDestroy()
