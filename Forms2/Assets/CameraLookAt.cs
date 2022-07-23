@@ -5,9 +5,9 @@ using UnityEngine;
 public class CameraLookAt : MonoBehaviour
 {
     public GameObject target; 
-    BGE.Forms.Boid b;
+    public BGE.Forms.Boid b;
     // Start is called before the first frame update
-    void Start()
+    void AssignBoid()
     {
         b = target.GetComponentInChildren<BGE.Forms.Boid>();
     }
@@ -15,6 +15,9 @@ public class CameraLookAt : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.LookAt(b.transform);
+        if (b != null)
+        {
+            transform.LookAt(b.transform);
+        }
     }
 }
