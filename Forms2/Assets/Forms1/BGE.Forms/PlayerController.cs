@@ -77,8 +77,8 @@ namespace BGE.Forms
             Vector3 lp = Quaternion.Euler(sp.underneath ? 30 : 0, angle, 0) * Vector3.forward;
             lp.Normalize();
             lp *= pc.distance;
-            Vector3 p = pc.creature.GetComponent<Boid>().TransformPoint(lp);
-            //p = Utilities.TransformPointNoScale(lp, pc.creature.GetComponent<Boid>().transform);
+            //Vector3 p = pc.creature.transform.TransformPoint(lp);
+            Vector3 p = Utilities.TransformPointNoScale(lp, pc.creature.transform);
             float y = WorldGenerator.Instance.SamplePos(p.x, p.z);
             if (p.y < y)
             {
@@ -88,11 +88,13 @@ namespace BGE.Forms
             pc.playerBoid.maxSpeed = pc.species.GetComponent<SpawnParameters>().followCameraSpeed;
             pc.playerBoid.desiredPosition = p;
             pc.playerBoid.transform.position = p;
+            transform.position = p;
             pc.playerBoid.UpdateLocalFromTransform();
 
+            pc.op.leaderGameObject = null;
             pc.op.leader = pc.creature.GetComponent<Boid>();
             pc.playerBoid.velocity = pc.creature.GetComponent<Boid>().velocity;
-            pc.op.Start();
+            pc.op.CalculateOffset();
             Utilities.SetActive(pc.sceneAvoidance, true);
             Utilities.SetActive(pc.op, true);
             pc.player.transform.position = p;

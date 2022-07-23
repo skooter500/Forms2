@@ -13,8 +13,14 @@ namespace BGE.Forms
         Vector3 worldTarget;
         public Vector3 offset;
 
+        public void OnDrawGizmos()
+        {
+            Gizmos.color = Color.green;
+            Gizmos.DrawSphere(targetPos, 2);
+        }
+
         // Start is called before the first frame update
-        public void Start()
+        public void CalculateOffset()
         {
             if (leaderGameObject != null)
             {
@@ -23,6 +29,7 @@ namespace BGE.Forms
 
             offset = transform.position - leader.transform.position;
             offset = Quaternion.Inverse(leader.transform.rotation) * offset;
+            Debug.Log("In Start: " + offset);            
         }
 
         // Update is called once per frame
