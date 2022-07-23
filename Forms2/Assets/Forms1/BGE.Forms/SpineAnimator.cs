@@ -51,7 +51,7 @@ namespace BGE.Forms
                 Transform prev = children[i - 1];
                 Transform current = children[i];
                 Vector3 wantedPosition = prev.position + ((prev.rotation * offsets[i - 1]));
-                Quaternion wantedRotation = Quaternion.LookRotation(prev.transform.position - current.position, current.transform.up);
+                Quaternion wantedRotation = Quaternion.LookRotation(prev.transform.position - current.position, prev.transform.up);
 
                 Vector3 lerpedPosition = Vector3.Lerp(current.position, wantedPosition, dt * damping);
 
