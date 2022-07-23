@@ -60,12 +60,19 @@ public class CornerCamera : MonoBehaviour
 
     public void NextCreature(InputAction.CallbackContext context)
     {
-        Debug.Log("Next creature");
+        if (context.phase != InputActionPhase.Started)
+        {
+            return;
+        }
         pc.NextCreatuere(context);
     }
 
     public void PreviousCreature(InputAction.CallbackContext context)
     {
+        if (context.phase != InputActionPhase.Started)
+        {
+            return;
+        }
         pc.PreviousCreatuere(context);
     }
     
@@ -521,7 +528,7 @@ public class CornerCamera : MonoBehaviour
         {
             return;
         }
-        float f = 1.0f + context.ReadValue<float>() * 5000;
+        float f = 1.0f + context.ReadValue<float>() * 100;
         Debug.Log("Desired Range: " + f);
         desiredRange = f;
     }

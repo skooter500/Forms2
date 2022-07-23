@@ -26,120 +26,98 @@ namespace BGE.Forms
 
         public bool spawmInWorld = true;
 
-        System.Collections.IEnumerator ManageSchool()
+        void ManageSchool()
         {
             int maxAudioBoids = 5;
             int audioBoids = 0;
 
             WorldGenerator wg = FindObjectOfType<WorldGenerator>();
             LifeColours lc = GetComponent<LifeColours>();
-            while (true)
-            {
-                yield return null;
-                while (alive.Count < targetCreatureCount)
-                {                    
-                    Vector3 unit = UnityEngine.Random.insideUnitSphere;
-                    Vector3 pos = transform.position + unit * UnityEngine.Random.Range(0, radius * spread);
+            while (alive.Count < targetCreatureCount)
+            {                    
+                Vector3 unit = UnityEngine.Random.insideUnitSphere;
+                Vector3 pos = transform.position + unit * UnityEngine.Random.Range(0, radius * spread);
 
-                    GameObject fish = null;
-                    TrailRenderer tr;
-                    if (suspended.Count > 0)
+                GameObject fish = null;
+                TrailRenderer tr;
+                if (suspended.Count > 0)
+                {
+                    fish = suspended[suspended.Count - 1];
+                    suspended.RemoveAt(suspended.Count - 1);
+                    fish.SetActive(true);
+                    fish.GetComponentInChildren<Boid>().suspended = false;                                                
+                }
+                else
+                {
+                    fish = GameObject.Instantiate<GameObject>(prefab, pos, Quaternion.AngleAxis(Random.Range(0, 360), Vector3.up));                       
+                }
+
+                alive.Add(fish);
+
+                if (wg != null && spawmInWorld)
+                {
+                    float groundHeight = wg.SamplePos(pos.x, pos.z);
+                    if (pos.y < groundHeight)
                     {
-                        fish = suspended[suspended.Count - 1];
-                        suspended.RemoveAt(suspended.Count - 1);
-                        fish.SetActive(true);
-                        fish.GetComponentInChildren<Boid>().suspended = false;                                                
+                        pos.y = groundHeight + UnityEngine.Random.Range(10, radius * spread);
+                    }
+                }
+
+                fish.SetActive(true);
+
+                tr = fish.GetComponentInChildren<TrailRenderer>();
+                if (tr != null)
+                {
+                    tr.enabled = false;
+                    tr.Clear();
+                }
+                fish.transform.position = pos;
+                fish.transform.rotation = Quaternion.AngleAxis(Random.Range(0.0f, 360.0f), Vector3.up);
+                if (tr != null)
+                {
+                    tr.enabled = true;
+                    tr.Clear();
+                }
+                fish.transform.parent = transform;
+                Boid boid = fish.GetComponentInChildren<Boid>();
+                if (boid != null)
+                {
+                    boid.school = this;
+                    Constrain c = boid.GetComponent<Constrain>();
+                    if (c != null)
+                    {
+                        c.radius = radius;
+                        c.centre = pos;
+                    }
+                    //boid.transform.position = pos;
+                    boid.position = pos;
+                    boid.desiredPosition = pos;
+                    boid.maxSpeed += boid.maxSpeed * UnityEngine.Random.Range(-speedVariation, speedVariation);
+
+                    boids.Add(boid);
+                }
+
+                AudioSource audioSource = fish.GetComponent<AudioSource>();
+                if (audioSource != null)
+                {
+                    if (audioBoids < maxAudioBoids)
+                    {
+                        audioSource.enabled = true;
+                        audioSource.loop = true;
+                        audioSource.Play();
+                        audioBoids++;
                     }
                     else
                     {
-                        fish = GameObject.Instantiate<GameObject>(prefab, pos, Quaternion.AngleAxis(Random.Range(0, 360), Vector3.up));                       
+                        audioSource.enabled = false;
                     }
-
-                    alive.Add(fish);
-
-                    if (wg != null && spawmInWorld)
-                    {
-                        float groundHeight = wg.SamplePos(pos.x, pos.z);
-                        if (pos.y < groundHeight)
-                        {
-                            pos.y = groundHeight + UnityEngine.Random.Range(10, radius * spread);
-                        }
-                    }
-
-                    fish.SetActive(true);
-
-                    tr = fish.GetComponentInChildren<TrailRenderer>();
-                    if (tr != null)
-                    {
-                        tr.enabled = false;
-                        tr.Clear();
-                    }
-                    fish.transform.position = pos;
-                    fish.transform.rotation = Quaternion.AngleAxis(Random.Range(0.0f, 360.0f), Vector3.up);
-                    if (tr != null)
-                    {
-                        tr.enabled = true;
-                        tr.Clear();
-                    }
-                    fish.transform.parent = transform;
-                    Boid boid = fish.GetComponentInChildren<Boid>();
-                    if (boid != null)
-                    {
-                        boid.school = this;
-                        Constrain c = boid.GetComponent<Constrain>();
-                        if (c != null)
-                        {
-                            c.radius = radius;
-                            c.centre = pos;
-                        }
-                        //boid.transform.position = pos;
-                        boid.position = pos;
-                        boid.desiredPosition = pos;
-                        boid.maxSpeed += boid.maxSpeed * UnityEngine.Random.Range(-speedVariation, speedVariation);
-
-                        boids.Add(boid);
-                    }
-
-                    AudioSource audioSource = fish.GetComponent<AudioSource>();
-                    if (audioSource != null)
-                    {
-                        if (audioBoids < maxAudioBoids)
-                        {
-                            audioSource.enabled = true;
-                            audioSource.loop = true;
-                            audioSource.Play();
-                            audioBoids++;
-                        }
-                        else
-                        {
-                            audioSource.enabled = false;
-                        }
-                    }
-
-                    if (lc != null)
-                    {
-                        //lc.FadeIn();
-                    }
-                    // Wait for a frame
-                    yield return null;
-                    // Suspend any that we dont need                    
                 }
-                while (alive.Count > targetCreatureCount)
+
+                if (lc != null)
                 {
-                    // Suspend the creature
-                    GameObject creature = alive[alive.Count - 1];
-                    creature.SetActive(false);
-                    Boid b = creature.GetComponentInChildren<Boid>();
-                    if (b != null)
-                    {
-                        //b.suspended = true;
-                    }
-                    suspended.Add(creature);
-                    alive.RemoveAt(alive.Count - 1);
-                    boids.Remove(b);
-                    yield return null;
+                    //lc.FadeIn();
                 }
-            }
+            }            
         }
 
         public void Suspend()
@@ -186,13 +164,9 @@ namespace BGE.Forms
                 return;
             }
             targetCreatureCount = Random.Range(minBoidCount, maxBoidCount);
+            ManageSchool();
         }
 
         Coroutine cr = null;
-
-        void OnEnable()
-        {
-            cr = StartCoroutine(ManageSchool());
-        }
     }
 }
