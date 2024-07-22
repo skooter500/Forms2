@@ -15,7 +15,11 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.burst": {
+<<<<<<< HEAD
       "version": "1.7.3",
+=======
+      "version": "1.6.0",
+>>>>>>> 722f895164788bf0dc383f270826f4a1b1e64e61
       "depth": 1,
       "source": "registry",
       "dependencies": {
@@ -99,7 +103,11 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.inputsystem": {
+<<<<<<< HEAD
       "version": "1.4.1",
+=======
+      "version": "1.2.0",
+>>>>>>> 722f895164788bf0dc383f270826f4a1b1e64e61
       "depth": 1,
       "source": "registry",
       "dependencies": {
@@ -117,21 +125,34 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.mathematics": {
+<<<<<<< HEAD
       "version": "1.2.6",
+=======
+      "version": "1.2.5",
+>>>>>>> 722f895164788bf0dc383f270826f4a1b1e64e61
       "depth": 1,
       "source": "registry",
       "dependencies": {},
       "url": "https://packages.unity.com"
     },
     "com.unity.nuget.mono-cecil": {
+<<<<<<< HEAD
       "version": "1.11.4",
       "depth": 2,
+=======
+      "version": "1.10.1",
+      "depth": 1,
+>>>>>>> 722f895164788bf0dc383f270826f4a1b1e64e61
       "source": "registry",
       "dependencies": {},
       "url": "https://packages.unity.com"
     },
     "com.unity.nuget.newtonsoft-json": {
+<<<<<<< HEAD
       "version": "3.0.2",
+=======
+      "version": "2.0.0",
+>>>>>>> 722f895164788bf0dc383f270826f4a1b1e64e61
       "depth": 2,
       "source": "registry",
       "dependencies": {},
@@ -220,7 +241,11 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.scriptablebuildpipeline": {
+<<<<<<< HEAD
       "version": "1.20.1",
+=======
+      "version": "1.19.5",
+>>>>>>> 722f895164788bf0dc383f270826f4a1b1e64e61
       "depth": 1,
       "source": "registry",
       "dependencies": {},
@@ -251,7 +276,11 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.subsystemregistration": {
+<<<<<<< HEAD
       "version": "1.1.1",
+=======
+      "version": "1.1.0",
+>>>>>>> 722f895164788bf0dc383f270826f4a1b1e64e61
       "depth": 2,
       "source": "registry",
       "dependencies": {
